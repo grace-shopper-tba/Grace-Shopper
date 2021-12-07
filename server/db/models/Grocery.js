@@ -18,20 +18,8 @@ const Grocery = db.define("grocery", {
     type: Sequelize.ENUM,
     values: ["winter", "spring", "summer", "fall"],
   },
-  //note that price may be returned as a string, if so, check the below example at https://github.com/sequelize/sequelize/issues/8019#:~:text=some%20extra%20sugar%20on%20this
-  // sequelize.define("user", {
-  //   foo: {
-  //     type: Sequelize.DECIMAL,
-  //     get() {
-  //       // Workaround until sequelize issue #8019 is fixed
-  //       const value = this.getDataValue('foo');
-  //       return value === null ? null : parseFloat(value);
-  //     }
-  //   }
-  // });
-
   price: {
-    type: Sequelize.DECIMAL(10, 2),
+    type: Sequelize.FLOAT(4, 2),
     allowNull: false,
     validate: {
       notEmpty: true,

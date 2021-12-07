@@ -26,7 +26,7 @@ async function seed() {
       "summer",
       "fall",
     ]);
-    let price = faker.datatype.number({ min: 1.0, max: 50, precision: 0.01 });
+    let price = faker.datatype.float({ min: 1.0, max: 50, precision: 0.01 });
     let imageUrl = faker.image.food(200, 600, true);
 
     groceries.push({

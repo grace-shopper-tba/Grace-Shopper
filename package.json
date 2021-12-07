@@ -1,7 +1,7 @@
 {
-  "name": "graceGrocer",
+  "name": "grace-grocer",
   "version": "2.0.0",
-  "description": "Grocery shopping simulator",
+  "description": "Simulated ecommerce grocery shopping experience",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
@@ -59,3 +59,4 @@
     "webpack-cli": "^4.3.1"
   }
 }
+

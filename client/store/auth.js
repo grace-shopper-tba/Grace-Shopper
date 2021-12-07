@@ -28,9 +28,14 @@ export const me = () => async dispatch => {
   }
 }
 
-export const authenticate = (username, password, method) => async dispatch => {
+export const authenticate = (username, password, method, firstName, lastName) => async dispatch => {
   try {
-    const res = await axios.post(`/auth/${method}`, {username, password})
+    let res;
+    if (firstName && lastName) {
+      res = await axios.post(`/auth/${method}`, {username, password, firstName, lastName});
+    } else {
+      res = await axios.post(`/auth/${method}`, { username, password });
+    }
     window.localStorage.setItem(TOKEN, res.data.token)
     dispatch(me())
   } catch (authError) {

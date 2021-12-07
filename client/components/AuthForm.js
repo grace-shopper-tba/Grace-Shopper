@@ -1,7 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {authenticate} from '../store'
-import AllProduce from './AllProduce'
 
 /**
  * COMPONENT
@@ -29,7 +28,6 @@ const AuthForm = props => {
         </div>
         {error && error.response && <div> {error.response.data} </div>}
       </form>
-      <AllProduce />
     </div>
   )
 }

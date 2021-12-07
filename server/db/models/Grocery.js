@@ -19,7 +19,7 @@ const Grocery = db.define("grocery", {
     values: ["winter", "spring", "summer", "fall"],
   },
   price: {
-    type: Sequelize.FLOAT(4, 2),
+    type: Sequelize.FLOAT(),
     allowNull: false,
     validate: {
       notEmpty: true,

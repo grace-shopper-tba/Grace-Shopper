@@ -47,6 +47,7 @@ async function seed() {
   ]);
 
   console.log(`seeded ${users.length} users`);
+  console.log(`seeded ${groceries.length} groceries`);
   console.log(`seeded successfully`);
   return {
     users: {

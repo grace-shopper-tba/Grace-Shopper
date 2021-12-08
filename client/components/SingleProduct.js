@@ -20,9 +20,11 @@ class SingleProduct extends React.Component {
     })
   }
   decrement() {
-    this.setState({
-      quantity: this.state.quantity - 1,
-    })
+    if (this.state.quantity > 0) {
+      this.setState({
+        quantity: this.state.quantity - 1,
+      })
+    }
   }
   render() {
     const { product } = this.props

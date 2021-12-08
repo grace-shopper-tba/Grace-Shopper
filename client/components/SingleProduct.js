@@ -1,31 +1,72 @@
-import React from "react";
+import React from 'react'
+import { connect } from 'react-redux'
+import { fetchSingleProduct } from '../store/singleProduct'
 
-const product = {
-  name: "apple",
-  type: "fruit",
-  season: "autumn",
-  price: "$0.56",
-  imageUrl:
-    "https://images.unsplash.com/photo-1619546813926-a78fa6372cd2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-};
-
-const SingleProduct = (props) => {
-  return (
-    <div>
+class SingleProduct extends React.Component {
+  constructor(props) {
+    super(props),
+      (this.state = {
+        quantity: 0,
+      })
+    this.increment = this.increment.bind(this)
+    this.decrement = this.decrement.bind(this)
+  }
+  componentDidMount() {
+    this.props.fetchProduct(1)
+  }
+  increment() {
+    this.setState({
+      quantity: this.state.quantity + 1,
+    })
+  }
+  decrement() {
+    if (this.state.quantity > 0) {
+      this.setState({
+        quantity: this.state.quantity - 1,
+      })
+    }
+  }
+  render() {
+    const { product } = this.props
+    return (
       <div>
-        <img src={product.imageUrl} />
-        <button className="quantity-decrement-button">-</button>
-        <p>Quantity placeholder</p>
-        <button className="quantity-increment-button">+</button>
-        <button id="add-to-cart-button">Add to Cart</button>
+        <div>
+          <img src={product.imageUrl} />
+          <button
+            className="quantity-decrement-button"
+            onClick={this.decrement}
+          >
+            -
+          </button>
+          <p>{this.state.quantity}</p>
+          <button
+            className="quantity-increment-button"
+            onClick={this.increment}
+          >
+            +
+          </button>
+          <button id="add-to-cart-button">Add to Cart</button>
+        </div>
+        <div>
+          <h1>{product.name}</h1>
+          <p>Season: {product.season}</p>
+          <p>Price: {product.price}</p>
+        </div>
       </div>
-      <div>
-        <h1>{product.name}</h1>
-        <p>Season: {product.season}</p>
-        <p>Price: {product.price}</p>
-      </div>
-    </div>
-  );
-};
+    )
+  }
+}
 
-export default SingleProduct;
+const mapState = (state) => {
+  return {
+    product: state.singleProduct,
+  }
+}
+
+const mapDispatch = (dispatch) => {
+  return {
+    fetchProduct: (id) => dispatch(fetchSingleProduct(id)),
+  }
+}
+
+export default connect(mapState, mapDispatch)(SingleProduct)

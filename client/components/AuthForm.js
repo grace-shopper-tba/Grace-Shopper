@@ -38,13 +38,13 @@ const AuthForm = props => {
           <label htmlFor="username">
             <small>Username</small>
           </label>
-          <input name="username" type="text" />
+          <input name="username" type="text" autoComplete="Username" />
         </div>
         <div>
           <label htmlFor="password">
             <small>Password</small>
           </label>
-          <input name="password" type="password" />
+          <input name="password" type="password" autoComplete="Username" />
         </div>
         <div>
           <button type="submit">{displayName}</button>

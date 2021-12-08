@@ -1,33 +1,33 @@
-"use strict";
+'use strict'
 
 const {
   db,
   models: { User, Grocery },
-} = require("../server/db");
-const faker = require("faker");
+} = require('../server/db')
+const faker = require('faker')
 
 /**
  * seed - this function clears the database, updates tables to
  *      match the models, and populates the database.
  */
 async function seed() {
-  await db.sync({ force: true }); // clears db and matches models to tables
-  console.log("db synced!");
+  await db.sync({ force: true }) // clears db and matches models to tables
+  console.log('db synced!')
 
   //creating groceries
-  let groceries = [];
+  let groceries = []
 
-  for (let i = 0; i <= 100; i++) {
-    let name = faker.lorem.word();
-    let type = faker.random.arrayElement(["fruit", "vegetable"]);
+  for (let i = 0; i < 100; i++) {
+    let name = faker.lorem.word()
+    let type = faker.random.arrayElement(['fruit', 'vegetable'])
     let season = faker.random.arrayElement([
-      "winter",
-      "spring",
-      "summer",
-      "fall",
-    ]);
-    let price = faker.datatype.float({ min: 1.0, max: 50, precision: 0.01 });
-    let imageUrl = faker.image.food(200, 600, true);
+      'winter',
+      'spring',
+      'summer',
+      'fall',
+    ])
+    let price = faker.datatype.float({ min: 1.0, max: 50, precision: 0.01 })
+    let imageUrl = faker.image.food(200, 600, true)
 
     groceries.push({
       name,
@@ -35,27 +35,53 @@ async function seed() {
       season,
       price,
       imageUrl,
-    });
+    })
   }
 
-  await Grocery.bulkCreate(groceries);
+  await Grocery.bulkCreate(groceries)
 
   // Creating Users
-  const users = await Promise.all([
-    User.create({ username: "cody", password: "123" }),
-    User.create({ username: "murphy", password: "123" }),
-  ]);
+  let users = []
+  for (let i = 0; i < 100; i++) {
+    let firstName = faker.name.firstName()
+    let lastName = faker.name.lastName()
+    let email = faker.internet.exampleEmail(firstName, lastName)
+    let password = faker.internet.password(10, true)
+    let phoneNumber = faker.phone.phoneNumber('###########')
+    let state = faker.address.stateAbbr()
+    let address = `${faker.address.streetAddress(
+      true
+    )}, ${faker.address.city()}, ${state}, ${faker.address.zipCodeByState(
+      state
+    )}`
+    let isAdmin = faker.datatype.boolean()
 
-  console.log(`seeded ${users.length} users`);
-  console.log(`seeded ${groceries.length} groceries`);
-  console.log(`seeded successfully`);
+    users.push({
+      firstName,
+      lastName,
+      email,
+      password,
+      phoneNumber,
+      state,
+      address,
+      isAdmin,
+    })
+  }
+
+  await User.bulkCreate(users)
+
+  // const users = await Promise.all([
+  //   User.create({ firstName: 'cody', email: "cody@example.com", password: "123" }),
+  //   User.create({ firstName: 'murphy', email: "murphy@example.com", password: "123" }),
+  // ]);
+
+  console.log(`seeded ${users.length} users`)
+  console.log(`seeded ${groceries.length} groceries`)
+  console.log(`seeded successfully`)
   return {
-    users: {
-      cody: users[0],
-      murphy: users[1],
-    },
+    users,
     groceries,
-  };
+  }
 }
 
 /*
@@ -64,16 +90,16 @@ async function seed() {
  The `seed` function is concerned only with modifying the database.
 */
 async function runSeed() {
-  console.log("seeding...");
+  console.log('seeding...')
   try {
-    await seed();
+    await seed()
   } catch (err) {
-    console.error(err);
-    process.exitCode = 1;
+    console.error(err)
+    process.exitCode = 1
   } finally {
-    console.log("closing db connection");
-    await db.close();
-    console.log("db connection closed");
+    console.log('closing db connection')
+    await db.close()
+    console.log('db connection closed')
   }
 }
 
@@ -83,8 +109,8 @@ async function runSeed() {
   any errors that might occur inside of `seed`.
 */
 if (module === require.main) {
-  runSeed();
+  runSeed()
 }
 
 // we export the seed function for testing purposes (see `./seed.spec.js`)
-module.exports = seed;
+module.exports = seed

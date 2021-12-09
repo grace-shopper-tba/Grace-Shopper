@@ -35,16 +35,16 @@ const AuthForm = props => {
         )}
 
         <div>
-          <label htmlFor="username">
-            <small>Username</small>
+          <label htmlFor="email">
+            <small>Email</small>
           </label>
-          <input name="username" type="text" autoComplete="Username" />
+          <input name="email" type="text" autoComplete="Email" />
         </div>
         <div>
           <label htmlFor="password">
             <small>Password</small>
           </label>
-          <input name="password" type="password" autoComplete="Username" />
+          <input name="password" type="password" autoComplete="Password" />
         </div>
         <div>
           <button type="submit">{displayName}</button>
@@ -83,11 +83,11 @@ const mapDispatch = dispatch => {
     handleSubmit(evt) {
       evt.preventDefault()
       const formName = evt.target.name
-      const username = evt.target.username.value
+      const email = evt.target.email.value
       const password = evt.target.password.value
       const firstName = evt.target.firstName? evt.target.firstName.value : undefined
       const lastName = evt.target.lastName? evt.target.lastName.value : undefined
-      dispatch(authenticate(username, password, formName, firstName, lastName))
+      dispatch(authenticate(email, password, formName, firstName, lastName))
     }
   }
 }

@@ -12,7 +12,7 @@ class SingleProduct extends React.Component {
     this.decrement = this.decrement.bind(this)
   }
   componentDidMount() {
-    this.props.fetchProduct(1)
+    this.props.fetchProduct(this.props.match.params.productId)
   }
   increment() {
     this.setState({

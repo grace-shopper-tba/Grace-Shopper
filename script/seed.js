@@ -4,7 +4,28 @@ const {
   db,
   models: { User, Grocery },
 } = require('../server/db')
+const groceryList = require('./groceriesList')
+
 const faker = require('faker')
+const axios = require('axios')
+
+const dotenv = require('dotenv').config()
+const { createClient } = require('pexels')
+const key = process.env.pexelKey
+const client = createClient(key)
+
+//for demo --
+// async function test() {
+//   try {
+//     const query = 'potato'
+//     let { photos } = await client.photos.search({ query, per_page: 1 })
+//     // console.log('query search', response['photos'][0]['url'])
+//     console.log(photos[0].url)
+//   } catch (error) {
+//     console.log(error)
+//   }
+// }
+// test()
 
 /**
  * seed - this function clears the database, updates tables to
@@ -17,8 +38,8 @@ async function seed() {
   //creating groceries
   let groceries = []
 
-  for (let i = 0; i < 100; i++) {
-    let name = faker.lorem.word()
+  for (let i = 0; i < groceryList.length; i++) {
+    let name = groceryList[i]
     let type = faker.random.arrayElement(['fruit', 'vegetable'])
     let season = faker.random.arrayElement([
       'winter',
@@ -27,7 +48,8 @@ async function seed() {
       'fall',
     ])
     let price = faker.datatype.float({ min: 1.0, max: 50, precision: 0.01 })
-    let imageUrl = faker.image.food(200, 600, true)
+    let { photos } = await client.photos.search({ name, per_page: 1 })
+    let imageUrl = photos[0].url
 
     groceries.push({
       name,

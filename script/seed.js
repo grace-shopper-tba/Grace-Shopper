@@ -4,7 +4,7 @@ const {
   db,
   models: { User, Grocery },
 } = require('../server/db')
-const groceryList = require('./groceriesList')
+const groceries = require('./groceries')
 
 const faker = require('faker')
 const axios = require('axios')
@@ -14,16 +14,10 @@ const { createClient } = require('pexels')
 const key = process.env.pexelKey
 const client = createClient(key)
 
-//for demo --
-// async function test() {
-//   try {
-//     const query = 'potato'
-//     let { photos } = await client.photos.search({ query, per_page: 1 })
-//     // console.log('query search', response['photos'][0]['url'])
-//     console.log(photos[0].url)
-//   } catch (error) {
-//     console.log(error)
-//   }
+// for demo --
+// function test() {
+//   let word = faker.name.firstName()
+//   console.log('test word --->', word)
 // }
 // test()
 
@@ -36,29 +30,33 @@ async function seed() {
   console.log('db synced!')
 
   //creating groceries
-  let groceries = []
+  // let groceries = []
 
-  for (let i = 0; i < groceryList.length; i++) {
-    let name = groceryList[i]
-    let type = faker.random.arrayElement(['fruit', 'vegetable'])
-    let season = faker.random.arrayElement([
-      'winter',
-      'spring',
-      'summer',
-      'fall',
-    ])
-    let price = faker.datatype.float({ min: 1.0, max: 50, precision: 0.01 })
-    let { photos } = await client.photos.search({ name, per_page: 1 })
-    let imageUrl = photos[0].url
+  // for (let i = 119; i < groceryList.length; i++) {
+  //   let name = groceryList[i]
+  //   let type = faker.random.arrayElement(['fruit', 'vegetable'])
+  //   let season = faker.random.arrayElement([
+  //     'winter',
+  //     'spring',
+  //     'summer',
+  //     'fall',
+  //   ])
+  //   let price = faker.datatype.float({ min: 1.0, max: 50, precision: 0.01 })
+  //   let { photos } = await client.photos.search({ query: name, per_page: 1 })
+  //   let imageUrl = photos[0]
+  //     ? photos[0]['url']
+  //     : 'https://images.unsplash.com/photo-1444459094717-a39f1e3e0903?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80'
+  //   console.log(imageUrl)
+  //   // let imageUrl = faker.image.imageUrl()
 
-    groceries.push({
-      name,
-      type,
-      season,
-      price,
-      imageUrl,
-    })
-  }
+  //   groceries.push({
+  //     name,
+  //     type,
+  //     season,
+  //     price,
+  //     imageUrl,
+  //   })
+  // }
 
   await Grocery.bulkCreate(groceries)
 

@@ -16,8 +16,37 @@ nav a {
 }
 
 form div {
+  font-size: 14px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 10px;
   margin: 1em;
-  display: inline-block;
+  padding: 2px 0;
+}
+
+.form-container {
+  text-align: center;
+}
+
+input {
+  height: 100%;
+  width: fit-content;
+  padding: 6px 8px;
+  line-height: 16px;
+  box-sizing: border-box;
+  align-self: center;
+}
+
+button {
+  display: block;
+  font-size: 14px;
+  height: 50px;
+  width: fit-content;
+  align-self: center;
+  border-radius: 3px;
+  box-sizing: border-box;
 }
 
 .products-container {

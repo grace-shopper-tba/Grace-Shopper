@@ -1,15 +1,16 @@
 import React from 'react'
-import {connect} from 'react-redux'
-import {authenticate} from '../store'
+import { connect } from 'react-redux'
+import { authenticate } from '../store'
 
 /**
  * COMPONENT
  */
-const AuthForm = props => {
-  const {name, displayName, handleSubmit, error} = props
+const AuthForm = (props) => {
+  const { name, displayName, handleSubmit, error } = props
 
   return (
-    <div>
+    <div className="form-container">
+      <h3>{displayName}</h3>
       <form onSubmit={handleSubmit} name={name}>
         {name === 'signup' && (
           <>
@@ -62,33 +63,37 @@ const AuthForm = props => {
  *   function, and share the same Component. This is a good example of how we
  *   can stay DRY with interfaces that are very similar to each other!
  */
-const mapLogin = state => {
+const mapLogin = (state) => {
   return {
     name: 'login',
     displayName: 'Login',
-    error: state.auth.error
+    error: state.auth.error,
   }
 }
 
-const mapSignup = state => {
+const mapSignup = (state) => {
   return {
     name: 'signup',
     displayName: 'Sign Up',
-    error: state.auth.error
+    error: state.auth.error,
   }
 }
 
-const mapDispatch = dispatch => {
+const mapDispatch = (dispatch) => {
   return {
     handleSubmit(evt) {
       evt.preventDefault()
       const formName = evt.target.name
       const email = evt.target.email.value
       const password = evt.target.password.value
-      const firstName = evt.target.firstName? evt.target.firstName.value : undefined
-      const lastName = evt.target.lastName? evt.target.lastName.value : undefined
+      const firstName = evt.target.firstName
+        ? evt.target.firstName.value
+        : undefined
+      const lastName = evt.target.lastName
+        ? evt.target.lastName.value
+        : undefined
       dispatch(authenticate(email, password, formName, firstName, lastName))
-    }
+    },
   }
 }
 

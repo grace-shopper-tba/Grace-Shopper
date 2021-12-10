@@ -5,6 +5,7 @@ const {
   models: { User, Grocery },
 } = require('../server/db')
 const groceries = require('./groceries')
+// const groceryList = require('./groceries')
 
 const faker = require('faker')
 const axios = require('axios')
@@ -15,9 +16,15 @@ const key = process.env.pexelKey
 const client = createClient(key)
 
 // for demo --
-// function test() {
-//   let word = faker.name.firstName()
-//   console.log('test word --->', word)
+// async function test() {
+//   try {
+//     const query = 'potato'
+//     let { photos } = await client.photos.search({ query, per_page: 1 })
+//     console.log('query search', photos[0].src.medium)
+//     // console.log(photos[0].url)
+//   } catch (error) {
+//     console.log(error)
+//   }
 // }
 // test()
 
@@ -32,7 +39,7 @@ async function seed() {
   //creating groceries
   // let groceries = []
 
-  // for (let i = 119; i < groceryList.length; i++) {
+  // for (let i = 0; i < groceryList.length; i++) {
   //   let name = groceryList[i]
   //   let type = faker.random.arrayElement(['fruit', 'vegetable'])
   //   let season = faker.random.arrayElement([
@@ -44,7 +51,7 @@ async function seed() {
   //   let price = faker.datatype.float({ min: 1.0, max: 50, precision: 0.01 })
   //   let { photos } = await client.photos.search({ query: name, per_page: 1 })
   //   let imageUrl = photos[0]
-  //     ? photos[0]['url']
+  //     ? photos[0].src.original
   //     : 'https://images.unsplash.com/photo-1444459094717-a39f1e3e0903?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80'
   //   console.log(imageUrl)
   //   // let imageUrl = faker.image.imageUrl()

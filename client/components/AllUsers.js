@@ -1,17 +1,21 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { fetchUsers } from '../store/users';
 
-const dummyData = [{id: 1, firstName: "A"}, {id: 2, firstName: "B"}, {id: 3, firstName: "C"}, {id: 4, firstName: "D"}, {id: 5, firstName: "E"}]
 
 class AllUsers extends React.Component {
+  componentDidMount() {
+    this.props.getUsers()
+  }
 
 render() {
-  const users = dummyData;
+  const users = this.props.users;
   return (
     <div>
       {users.map(user => (
         <p key={user.id}>
           ID: {user.id} <br />
-          Name: {user.firstName}
+          Name: {user.firstName} {user.lastName} <br />
         </p>
       ))}
     </div>
@@ -19,4 +23,16 @@ render() {
   }
 }
 
-export default (AllUsers);
+const mapState = (state) => {
+  return {
+    users: state.users,
+  }
+}
+
+const mapDispatch = (dispatch) => {
+  return {
+    getUsers: () => dispatch(fetchUsers()),
+  }
+}
+
+export default connect(mapState, mapDispatch)(AllUsers);

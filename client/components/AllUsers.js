@@ -15,7 +15,10 @@ render() {
       {users.map(user => (
         <p key={user.id}>
           ID: {user.id} <br />
-          Name: {user.firstName} {user.lastName} <br />
+          First Name: {user.firstName} <br />
+          Last Name: {user.lastName} <br />
+          Email: {user.email} <br />
+          Account Created: {user.createdAt}
         </p>
       ))}
     </div>

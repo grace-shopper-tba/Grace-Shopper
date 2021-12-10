@@ -23,6 +23,7 @@ const Grocery = db.define('grocery', {
     allowNull: false,
     validate: {
       notEmpty: true,
+      min: 100,
     },
   },
   imageUrl: {

@@ -23,7 +23,7 @@ class AllProducts extends React.Component {
               <Link style={style} to={`/products/${product.id}`}>
                 <img src={product.imageUrl} className="products-img" /> <br />
                 <h3 className="product-name">{product.name}</h3>
-                <p>Price: ${product.price}</p>
+                <p>Price: ${(product.price / 100).toFixed(2)}</p>
               </Link>
             </div>
           ))}

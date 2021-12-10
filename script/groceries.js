@@ -16,7 +16,7 @@ for (let i = 0; i < groceriesArray.length; i++) {
   let name = groceriesArray[i]
   let type = faker.random.arrayElement(['fruit', 'vegetable'])
   let season = faker.random.arrayElement(['winter', 'spring', 'summer', 'fall'])
-  let price = faker.datatype.float({ min: 1.0, max: 50, precision: 0.01 })
+  let price = faker.datatype.number({ min: 100, max: 5000, precision: 25 })
   let imageUrl = imageUrlsArray[i]
 
   groceryObjectsArray.push({

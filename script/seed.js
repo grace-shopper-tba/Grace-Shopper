@@ -9,12 +9,12 @@ const groceries = require('./groceries')
 
 const faker = require('faker')
 const axios = require('axios')
-
+/*
 const dotenv = require('dotenv').config()
 const { createClient } = require('pexels')
 const key = process.env.pexelKey
 const client = createClient(key)
-
+*/
 // for demo --
 // async function test() {
 //   try {

@@ -92,7 +92,10 @@ const mapDispatch = (dispatch) => {
       const lastName = evt.target.lastName
         ? evt.target.lastName.value
         : undefined
-      dispatch(authenticate(email, password, formName, firstName, lastName))
+      const address = evt.target.address ? evt.target.address.value : undefined
+      dispatch(
+        authenticate(email, password, formName, firstName, lastName, address)
+      )
     },
   }
 }

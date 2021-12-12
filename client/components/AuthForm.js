@@ -9,11 +9,11 @@ const AuthForm = (props) => {
   const { name, displayName, handleSubmit, error } = props
 
   return (
-    <div className="form-container">
+    <div className="flex-container form">
       <h3>{displayName}</h3>
       <form onSubmit={handleSubmit} name={name}>
         {name === 'signup' && (
-          <>
+          <div>
             <div>
               <label htmlFor="firstName">
                 {/* <small>First Name</small> */}
@@ -28,7 +28,7 @@ const AuthForm = (props) => {
               <label htmlFor="address">{/* <small>Address</small> */}</label>
               <input name="address" type="text" placeholder="Address" />
             </div>
-          </>
+          </div>
         )}
 
         <div>

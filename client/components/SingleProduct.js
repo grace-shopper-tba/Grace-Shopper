@@ -29,10 +29,10 @@ class SingleProduct extends React.Component {
   render() {
     const { product } = this.props
     return (
-      <div className="single-product-container">
+      <div className="flex-container single-product-container">
         <div>
           <img src={product.imageUrl} />
-          <div id="add-to-cart-container">
+          <div className="flex-container" id="add-to-cart-container">
             <button
               className="quantity-decrement-button"
               onClick={this.decrement}

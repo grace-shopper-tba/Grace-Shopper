@@ -10,7 +10,7 @@ class AllUsers extends React.Component {
   render() {
     const users = this.props.users
     return (
-      <div className="users-container">
+      <div className="flex-container users-container">
         {users.map((user) => (
           <div key={user.id}>
             <p>

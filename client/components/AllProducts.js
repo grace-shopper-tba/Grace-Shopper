@@ -14,12 +14,12 @@ class AllProducts extends React.Component {
       color: 'black',
     }
     return (
-      <div>
+      <div className="grid-item">
         <h1>Store</h1>
 
-        <div className="products-container">
+        <div className="flex-container products-container">
           {allProducts.map((product) => (
-            <div className="product-items" key={product.id}>
+            <div className="flex-container product-items" key={product.id}>
               <Link style={style} to={`/products/${product.id}`}>
                 <img src={product.imageUrl} className="products-img" /> <br />
                 <h3 className="product-name">{product.name}</h3>

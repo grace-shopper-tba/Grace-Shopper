@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { authenticate } from '../store'
-
+import { Link } from 'react-router-dom'
 /**
  * COMPONENT
  */
@@ -49,10 +49,16 @@ const AuthForm = (props) => {
             placeholder="Password"
           />
         </div>
-        <div>
+        <div className="submit-button">
           <button type="submit">{displayName}</button>
         </div>
         {error && error.response && <div> {error.response.data} </div>}
+        <div>
+          <h3>
+            <span>New To Grace Grocer? </span>
+            <Link to="/signup">Sign Up Here</Link>
+          </h3>
+        </div>
       </form>
     </div>
   )

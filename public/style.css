@@ -42,13 +42,13 @@ nav a {
 }
 
 .grid {
-  max-width: max-content;
+  max-width: 1920px;
   height: max-content;
   margin: 0 auto;
 
   display: grid;
   grid-template-columns: 150px 1fr;
-  gap: 10px;
+  gap: 10px 20px;
   /* border: 5px solid yellow; */
 }
 
@@ -151,7 +151,8 @@ button {
 
 .products-container,
 .homepage-container,
-.single-product-container {
+.single-product-container,
+.account-info {
   flex-flow: row wrap;
   justify-content: space-evenly;
   box-sizing: border-box;
@@ -165,8 +166,10 @@ button {
   margin-right: 10px; */
 }
 
-.product-items {
+.product-items,
+.account-info {
   flex-flow: column;
+  justify-content: space-evenly;
 }
 
 .products-container img,

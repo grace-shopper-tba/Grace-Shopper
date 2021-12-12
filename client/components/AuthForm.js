@@ -16,36 +16,38 @@ const AuthForm = (props) => {
           <>
             <div>
               <label htmlFor="firstName">
-                <small>First Name</small>
+                {/* <small>First Name</small> */}
               </label>
-              <input name="firstName" type="text" />
+              <input name="firstName" type="text" placeholder="First Name" />
             </div>
             <div>
-              <label htmlFor="lastName">
-                <small>Last Name</small>
-              </label>
-              <input name="lastName" type="text" />
+              <label htmlFor="lastName">{/* <small>Last Name</small> */}</label>
+              <input name="lastName" type="text" placeholder="Last Name" />
             </div>
             <div>
-              <label htmlFor="address">
-                <small>Address</small>
-              </label>
-              <input name="address" type="text" />
+              <label htmlFor="address">{/* <small>Address</small> */}</label>
+              <input name="address" type="text" placeholder="Address" />
             </div>
           </>
         )}
 
         <div>
-          <label htmlFor="email">
-            <small>Email</small>
-          </label>
-          <input name="email" type="text" autoComplete="Email" />
+          <label htmlFor="email">{/* <small>Email</small> */}</label>
+          <input
+            name="email"
+            type="text"
+            autoComplete="Email"
+            placeholder="Email"
+          />
         </div>
         <div>
-          <label htmlFor="password">
-            <small>Password</small>
-          </label>
-          <input name="password" type="password" autoComplete="Password" />
+          <label htmlFor="password">{/* <small>Password</small> */}</label>
+          <input
+            name="password"
+            type="password"
+            autoComplete="Password"
+            placeholder="Password"
+          />
         </div>
         <div>
           <button type="submit">{displayName}</button>
@@ -66,7 +68,7 @@ const AuthForm = (props) => {
 const mapLogin = (state) => {
   return {
     name: 'login',
-    displayName: 'Login',
+    displayName: 'Log In',
     error: state.auth.error,
   }
 }

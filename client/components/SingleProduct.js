@@ -29,24 +29,27 @@ class SingleProduct extends React.Component {
   render() {
     const { product } = this.props
     return (
-      <div>
+      <div className="single-product-container">
         <div>
           <img src={product.imageUrl} />
-          <button
-            className="quantity-decrement-button"
-            onClick={this.decrement}
-          >
-            -
-          </button>
-          <p>{this.state.quantity}</p>
-          <button
-            className="quantity-increment-button"
-            onClick={this.increment}
-          >
-            +
-          </button>
-          <button id="add-to-cart-button">Add to Cart</button>
+          <div id="add-to-cart-container">
+            <button
+              className="quantity-decrement-button"
+              onClick={this.decrement}
+            >
+              -
+            </button>
+            <p>{this.state.quantity}</p>
+            <button
+              className="quantity-increment-button"
+              onClick={this.increment}
+            >
+              +
+            </button>
+            <button id="add-to-cart-button">Add to Cart</button>
+          </div>
         </div>
+
         <div>
           <h1>{product.name}</h1>
           <p>Season: {product.season}</p>

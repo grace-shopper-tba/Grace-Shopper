@@ -105,6 +105,13 @@ async function seed() {
   console.log(`seeded ${users.length} users`)
   console.log(`seeded ${groceries.length} groceries`)
   console.log(`seeded successfully`)
+
+  const testUser = await User.findByPk(1)
+  const createOrder = await testUser.createOrder()
+  console.log(createOrder)
+  const addOrderItem = await createOrder.createOrderItem({quantity: 3, subtotal: 18})
+  const setGrocery = await addOrderItem.setGrocery(1)
+
   return {
     users,
     groceries,

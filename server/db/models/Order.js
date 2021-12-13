@@ -4,6 +4,7 @@ const db = require('../db')
 const Order = db.define('order', {
   inCart: {
     type: Sequelize.BOOLEAN,
+    defaultValue: false
   },
 })
 

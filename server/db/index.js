@@ -23,7 +23,6 @@ module.exports = {
   models: {
     User,
     Grocery,
-    Cart,
     Order
   },
 };

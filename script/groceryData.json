@@ -200,7 +200,7 @@
         "season": ["autumn","spring","summer","winter"],
         "taste":["astringent"],
         "imageUrl": "",
-        "cookingTechniques" :["boil","braise","cream", "gratine", "raw","saute","steam","stir-fry"]
+        "cookingTechniques" :["boil","braise","cream", "gratin", "raw","saute","steam","stir-fry"]
     },
     {
         "name": "celery root",
@@ -453,196 +453,163 @@
     },
     {
         "name": "romaine lettuce",
-        "type": "",
-        "season": "",
+        "type": "vegetable",
+        "season": ["spring","summer","autumn"],
+        "taste":["sweet", "bitter"],
         "imageUrl": ""
     },
     {
-        "name": "Lima Beans",
-        "type": "",
-        "season": "",
+        "name": "lime",
+        "type": "fruit",
+        "season": ["autumn","spring","summer","winter"],
+        "taste":["sour"],
         "imageUrl": ""
     },
     {
-        "name": "Lime",
-        "type": "",
-        "season": "",
-        "imageUrl": ""
+        "name": "lychee",
+        "type": "fruit",
+        "season": ["summer"],
+        "taste":["sweet"],
+        "imageUrl": "",
+        "cookingTechniques":["raw"]
     },
     {
-        "name": "Longan",
-        "type": "",
-        "season": "",
-        "imageUrl": ""
+        "name": "mango",
+        "type": "fruit",
+        "season": ["spring","summer"],
+        "taste":["sweet"],
+        "imageUrl": "",
+        "cookingTechniques":["raw"]
     },
     {
-        "name": "Loquat",
-        "type": "",
-        "season": "",
-        "imageUrl": ""
+        "name": "mushroom",
+        "type": "vegetable",
+        "season": ["spring","summer","autumn"],
+        "imageUrl": "",
+        "cookingTechniques":["bake","broil","deep-fry","grill","pan roast","raw","roast","saute","soup","steam","stew"]
     },
     {
-        "name": "Lychee",
-        "type": "",
-        "season": "",
-        "imageUrl": ""
+        "name": "nectarine",
+        "type": "fruit",
+        "season": ["spring","summer","autumn"],
+        "taste":["sweet"],
+        "imageUrl": "",
+        "cookingTechniques":["bake", "broil","grill","poach", "raw","saute"]
     },
     {
-        "name": "Madarins",
-        "type": "",
-        "season": "",
-        "imageUrl": ""
+        "name": "okra",
+        "type": "vegetable",
+        "season": ["summer","autumn"],
+        "imageUrl": "",
+        "cookingTechniques":["boil","braise","deep-fry","fry","grill","saute","steam","stew"]
     },
     {
-        "name": "Malanga",
-        "type": "",
-        "season": "",
-        "imageUrl": ""
+        "name": "onion",
+        "type": "vegetable",
+        "season": ["autumn","spring","summer","winter"],
+        "taste":["pungent"],
+        "imageUrl": "",
+        "cookingTechniques":["bake","boil","braise","deep-fry","fry","grill","roast","saute", "stir-fry"],
+        "tips": "Onions increase appetite"
     },
     {
-        "name": "Madarin Oranges",
-        "type": "",
-        "season": "",
-        "imageUrl": ""
+        "name": "orange",
+        "type": "fruit",
+        "season": ["autumn","spring","summer","winter"],
+        "taste":["sour","sweet"],
+        "imageUrl": "",
+        "cookingTechniques":["poach","raw"],
+        "tips": "Lemon brightens the flavor of orange"
     },
     {
-        "name": "Mango",
-        "type": "",
-        "season": "",
-        "imageUrl": ""
+        "name": "papayas",
+        "type": "fruit",
+        "season": ["summer","autumn"],
+        "taste":["sweet"],
+        "imageUrl": "",
+        "cookingTechniques":["bake","grill","raw","saute"]
     },
     {
-        "name": "Mulberries",
-        "type": "",
-        "season": "",
-        "imageUrl": ""
+        "name": "parsnip",
+        "type": "vegetable",
+        "season": ["autumn","winter"],
+        "taste":["sweet"],
+        "imageUrl": "",
+        "cookingTechniques":["cooked","bake","boil","braise","deep-fry","grill","mash", "puree","roast","steam"]
     },
     {
-        "name": "Mushroom",
-        "type": "",
-        "season": "",
-        "imageUrl": ""
+        "name": "passion fruit",
+        "type": "fruit",
+        "season": ["autumn","spring","summer","winter"],
+        "taste":["sweet"],
+        "imageUrl": "",
+        "cookingTechniques":["puree","raw"]
     },
     {
-        "name": "Nectarine",
-        "type": "",
-        "season": "",
-        "imageUrl": ""
+        "name": "peach",
+        "type": "fruit",
+        "season": ["summer", "spring","autumn"],
+        "taste":["sweet"],
+        "imageUrl": "",
+        "cookingTechniques":["bake","broil","grill","poach","raw","roast","saute"]
     },
     {
-        "name": "Okra",
-        "type": "",
-        "season": "",
-        "imageUrl": ""
+        "name": "pear",
+        "type": "fruit",
+        "season": ["autumn","winter"],
+        "taste":["sweet"],
+        "imageUrl": "",
+        "cookingTechniques":["bake","deep-fry","chips", "grill","poach","raw","roast","saute","stew"]
     },
     {
-        "name": "Onion",
-        "type": "",
-        "season": "",
-        "imageUrl": ""
+        "name": "peas",
+        "type": "vegetable",
+        "season": ["spring","summer"],
+        "taste":["sweet"],
+        "imageUrl": "",
+        "cookingTechniques":["boil","braise","saute","steam"]
     },
     {
-        "name": "Orange",
-        "type": "",
-        "season": "",
-        "imageUrl": ""
+        "name": "pineapple",
+        "type": "fruit",
+        "season": ["winter","spring","summer"],
+        "taste":["sweet"],
+        "imageUrl": "",
+        "cookingTechniques":["bake","broil","grill","poach","raw","roast","saute"]
     },
     {
-        "name": "Papayas",
-        "type": "",
-        "season": "",
-        "imageUrl": ""
+        "name": "green plantains",
+        "type": "fruit",
+        "season":[],
+        "imageUrl": "",
+        "cookingTechniques":["bake","boil","deep-fry","mash","saute"],
+        "tips": "Look for green plaintains without any yellow"
+
     },
     {
-        "name": "Parsnip",
-        "type": "",
-        "season": "",
-        "imageUrl": ""
+        "name": "plums",
+        "type": "fruit",
+        "season": ["spring","autumn"],
+        "taste":["sweet","astringent"],
+        "imageUrl": "",
+        "cookingTechniques":["bake","poach","raw","stew"]
     },
     {
-        "name": "Passion Fruit",
-        "type": "",
-        "season": "",
-        "imageUrl": ""
+        "name": "pomegranate",
+        "type": "fruit",
+        "season": ["autumn"],
+        "taste":["sweet","sour"],
+        "imageUrl": "",
+        "cookingTechniques":["raw","sorbet"]
     },
     {
-        "name": "Peach",
-        "type": "",
-        "season": "",
-        "imageUrl": ""
+        "name": "potatoes",
+        "type": "vegetable",
+        "season": ["autumn","spring","summer","winter"],
+        "imageUrl": "",
+        "cookingTechniques":["bake","boil","deep-fry","gratin","grill","mash","puree","roast","saute","steam"]
     },
     {
-        "name": "Pear",
-        "type": "",
-        "season": "",
-        "imageUrl": ""
-    },
-    {
-        "name": "Peas",
-        "type": "",
-        "season": "",
-        "imageUrl": ""
-    },
-    {
-        "name": "Bell Peppers",
-        "type": "",
-        "season": "",
-        "imageUrl": ""
-    },
-    {
-        "name": "Persimmons",
-        "type": "",
-        "season": "",
-        "imageUrl": ""
-    },
-    {
-        "name": "Pineapple",
-        "type": "",
-        "season": "",
-        "imageUrl": ""
-    },
-    {
-        "name": "Plantains",
-        "type": "",
-        "season": "",
-        "imageUrl": ""
-    },
-    {
-        "name": "Plums",
-        "type": "",
-        "season": "",
-        "imageUrl": ""
-    },
-    {
-        "name": "Pomegranate",
-        "type": "",
-        "season": "",
-        "imageUrl": ""
-    },
-    {
-        "name": "Potatoes",
-        "type": "",
-        "season": "",
-        "imageUrl": ""
-    },
-    {
-        "name": "Prickly Pear",
-        "type": "",
-        "season": "",
-        "imageUrl": ""
-    },
-    {
-        "name": "Prunes",
-        "type": "",
-        "season": "",
-        "imageUrl": ""
-    },
-    {
-        "name": "Pummelo",
-        "type": "",
-        "season": "",
-        "imageUrl": ""
-    },{
         "name": "Pumpkin",
         "type": "",
         "season": "",

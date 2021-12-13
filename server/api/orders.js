@@ -39,3 +39,23 @@ router.post('/', async (req, res, next) => {
      next(error);
   }
 })
+
+router.delete('/', async (req, res, next) => {
+  try {
+    const itemId = req.body.itemId
+    const deletedItem = await OrderItem.destroy({
+      where: { id: itemId },
+    })
+
+    if (deletedItem) {
+      res.send('Deleted item from order');
+    } else {
+      res.send('Item not found');
+    }
+  } catch(error) {
+    console.log('Error in orders delete route');
+    next(error);
+  }
+})
+
+

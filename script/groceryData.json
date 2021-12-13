@@ -1,0 +1,844 @@
+[
+    {
+        "name": "sprouts",
+        "type": "vegetable",
+        "season": ["winter", "spring", "summer", "autumn"],
+        "imageUrl": "",
+        "cookingTechniques": ["saute", "steam", "stir-fry"],
+        "tips" : "Cook for less than 30 seconds or they will wilt"
+    },
+    {
+        "name": "apple",
+        "type": "fruit",
+        "season": ["autumn"],
+        "taste": ["sweet", "astringent"],
+        "imageUrl": "",
+        "cookingTechniques": ["bake", "caramelize", "deep-fry", "grill", "poach", "raw", "saute", "stew"]
+    },
+    {
+        "name": "apricot",
+        "type": "fruit",
+        "season": ["summer"],
+        "taste": ["sweet"],
+        "imageUrl": "",
+        "cookingTechniques":["bake", "grill", "poach", "raw", "stew"]
+    },
+    {
+        "name": "artichoke",
+        "type": "vegetable",
+        "season": ["spring", "autumn"],
+        "imageUrl": "",
+        "cookingTechniques":["bake", "boil", "braise", "deep-fry", "grill", "raw", "roast", "saute", "steam", "stew"]
+    },
+    {
+        "name": "arugula",
+        "type": "vegetable",
+        "season": ["spring", "summer"],
+        "taste": ["bitter"],
+        "imageUrl": "",
+        "cookingTechniques":["braise", "raw", "saute", "soup", "wilt"]
+    },
+    {
+        "name": "asparagus",
+        "type": "vegetable",
+        "season": ["spring"],
+        "imageUrl": "",
+        "cookingTechniques":["blanch", "boil", "deep-fry", "grill", "pan roast", "simmer", "steam", "stir-fry"]
+    },
+    {
+        "name": "avocado",
+        "type": "fruit",
+        "season": ["spring", "summer"],
+        "imageUrl": "",
+        "cookingTechniques":["raw"],
+        "tips": "Use to add richness to a dish"
+    },
+    {
+        "name": "banana",
+        "type": "fruit",
+        "season": ["winter"],
+        "taste":["sweet", "astringent"],
+        "imageUrl": "",
+        "cookingTechniques":["bake", "boil", "caramelize", "deep-fry", "grill", "poach", "raw", "saute"],
+        "tips": "Sugar enhances the flavor of bananas"
+    },
+    
+    {
+        "name": "basil",
+        "type": "vegetable",
+        "season": ["summer"],
+        "taste": ["sweet"],
+        "imageUrl": "",
+        "tips": "Add just before serving. Use to add a note of freshness to a dish"
+    },
+    {
+        "name": "beets",
+        "type": "vegetable",
+        "season": ["autumn","spring","summer","winter"],
+        "taste":["sweet"],
+        "imageUrl": "",
+        "cookingTechniques":["bake","boil","carpaccio","chips","roast", "steam", "soup"]
+    },
+    {
+        "name": "bell peppers",
+        "type": "vegetable",
+        "season": ["summer", "autumn"],
+        "taste":["bitter", "sweet"],
+        "imageUrl": "",
+        "cookingTechniques":["bake","broil", "grill", "roast", "saute", "steam", "stew", "stir-fry", "stuff"],
+        "tips": "taste is bitter to sweet, from unripe (green) to ripe (yellow to red)"
+    },
+    {
+        "name": "blackberries",
+        "type": "fruit",
+        "season": ["summer"],
+        "taste":["sour"],
+        "imageUrl": "",
+        "cookingTechniques":["cooked", "raw"]
+    },
+    {
+        "name": "blueberries",
+        "type": "fruit",
+        "season": ["spring","summer"],
+        "taste":["sour", "sweet"],
+        "imageUrl": "",
+        "cookingTechniques":["cooked", "raw"],
+        "tips": "Can substitute huckleberries"
+    },
+    {
+        "name": "bok Choy",
+        "type": "vegetable",
+        "season": ["autumn","spring", "summer","winter"],
+        "taste":["bitter"],
+        "imageUrl": "",
+        "cookingTechniques":["boil", "braise","raw","stir-fry"]
+    },
+    {
+        "name": "boysenberries",
+        "type": "fruit",
+        "season": ["summer"],
+        "taste":["sour", "sweet"],
+        "imageUrl": ""
+    },
+    {
+        "name": "broccoli",
+        "type": "vegetable",
+        "season": ["autumn","winter"],
+        "imageUrl": "",
+        "cookingTechniques":["boil", "deep-fry","saute", "steam", "stir-fry"]
+    },
+
+    {
+        "name": "broccolini",
+        "type": "vegetable",
+        "season": ["autumn","spring","summer","winter"],
+        "imageUrl": "",
+        "cookingTechniques":["blanch","raw","saute","stir-fry"]
+    },
+    {
+        "name": "broccoli rabe",
+        "type": "vegetable",
+        "season": ["autumn","spring"],
+        "taste":["bitter"],
+        "imageUrl": "",
+        "cookingTechniques":["boil","saute","steam","stir-fry"]
+    },
+    {
+        "name": "brussels sprouts",
+        "type": "vegetable",
+        "season": ["winter", "autumn"],
+        "taste":["bitter"],
+        "imageUrl": "",
+        "cookingTechniques":["boil","braise","saute","simmer","steam","stew", "stir-fry"]
+    },
+    {
+        "name": "napa cabbage",
+        "type": "vegetable",
+        "season": ["autumn","spring","summer","winter"],
+        "imageUrl": "",
+        "cookingTechniques":["bake", "braise","grill","marinate","raw","saute","stir-fry"]
+    },
+    {
+        "name": "red cabbage",
+        "type": "vegetable",
+        "season": ["autumn","winter"],
+        "imageUrl": "",
+        "cookingTechniques":["braise","marinate","raw"]
+    },
+    {
+        "name": "savoy cabbage",
+        "type": "vegetable",
+        "season": ["autumn","winter"],
+        "imageUrl": "",
+        "cookingTechniques":["boil","braise","raw","roast","steam"]
+    },
+    {
+        "name": "cantaloupe",
+        "type": "fruit",
+        "season": ["summer"],
+        "taste":["sweet"],
+        "imageUrl": ""
+    },
+    {
+        "name": "carrots",
+        "type": "vegetable",
+        "season": ["autumn","spring"],
+        "imageUrl": "",
+        "cookingTechniques":["boil","braise","grill","raw","roast","saute","simmer","steam","stir-fry"]
+    },
+    {
+        "name": "cauliflower",
+        "type": "vegetable",
+        "season": ["autumn","winter"],
+        "taste":["astringent"],
+        "imageUrl": "",
+        "cookingTechniques":["boil","braise","deep-fry","gratin","puree", "raw","roast","saute","simmer","steam"]
+    },
+    {
+        "name": "celery",
+        "type": "vegetable",
+        "season": ["autumn","spring","summer","winter"],
+        "taste":["astringent"],
+        "imageUrl": "",
+        "cookingTechniques" :["boil","braise","cream", "gratine", "raw","saute","steam","stir-fry"]
+    },
+    {
+        "name": "celery root",
+        "type": "vegetable",
+        "season": ["autumn","spring"],
+        "imageUrl": "",
+        "cookingTechniques" :["boil","deep-fry", "raw","roast","steam"],
+        "tips": "Always peel before using"
+    },
+    {
+        "name": "chard",
+        "type": "vegetable",
+        "season": ["autumn","spring","summer","winter"],
+        "taste":["bitter"],
+        "imageUrl": "",
+        "cookingTechniques":["boil","braise","parboil", "saute","steam","stir-fry"]
+    },
+    {
+        "name": "cherries",
+        "type": "fruit",
+        "season": ["spring","summer"],
+        "taste":["sweet"],
+        "imageUrl": "",
+        "cookingTechniques":["flambe", "poach","raw","stew"]
+    },
+    {
+        "name": "chile peppers",
+        "type": "fruit",
+        "season": ["summer"],
+        "taste":["hot"],
+        "imageUrl": "",
+        "cookingTechniques":["roast","raw","saute"],
+        "tips": "Add at the end of the cooking process."
+    },
+    {
+        "name": "chives",
+        "type": "vegetable",
+        "season": ["spring","summer","autumn"],
+        "imageUrl": "",
+        "tips": "Always use fresh, not cooked. Use in stir-fries"
+    },
+    {
+        "name": "cilantro",
+        "type": "vegetable",
+        "season": ["spring","summer"],
+        "taste":["sweet", "sour"],
+        "imageUrl": "",
+        "tips": "Always use fresh, not cooked. Use cilantro to provide a cooling note to chile-pepper-spiced dishes"
+    },
+    {
+        "name": "coconut",
+        "type": "fruit",
+        "season": ["autumn","winter","spring"],
+        "taste":["sweet"],
+        "imageUrl": "",
+        "cookingTechniques":["stir-fry"]
+    },
+    {
+        "name": "collard greens",
+        "type": "vegetable",
+        "season": ["winter","spring"],
+        "taste":["bitter"],
+        "imageUrl": "",
+        "cookingTechniques":["boil","braise","steam","stir-fry"]
+    },
+    {
+        "name": "corn",
+        "type": "vegetable",
+        "season": ["summer"],
+        "taste":["sweet"],
+        "imageUrl": "",
+        "cookingTechniques":["boil","grill","roast","saute","steam"]
+    },
+    {
+        "name": "cranberries",
+        "type": "fruit",
+        "season": ["autumn","winter"],
+        "taste":["sour"],
+        "imageUrl": "",
+        "cookingTechniques":["boil"]
+    },
+    {
+        "name": "cucumbers",
+        "type": "fruit",
+        "season": ["spring","summer"],
+        "taste":["sweet","astringent"],
+        "imageUrl": "",
+        "cookingTechniques":["pickle","raw","salads","saute","soup"]
+    },
+    {
+        "name": "dates",
+        "type": "fruit",
+        "season": ["autumn","winter"],
+        "taste":["sweet"],
+        "imageUrl": ""
+    },
+    {
+        "name": "dill",
+        "type": "vegetable",
+        "season": ["autumn","spring"],
+        "taste":["sweet","sour"],
+        "imageUrl": "",
+        "tips": "Always use fresh"
+    },
+    {
+        "name": "eggplant",
+        "type": "vegetable",
+        "season": ["summer"],
+        "taste":["bitter"],
+        "imageUrl": "",
+        "cookingTechniques":["bake","boil","braise","broil","deep-fry","grill","roast","saute","steam","stir-fry","stuff"]
+    },
+    {
+        "name": "endive",
+        "type": "vegetable",
+        "season": ["winter","spring"],
+        "taste":["bitter","sweet"],
+        "imageUrl": "",
+        "cookingTechniques":["braise", "glaze","grill","raw","roast"]
+    },
+    {
+        "name": "escarole",
+        "type": "vegetable",
+        "season": ["autumn","spring","summer","winter"],
+        "taste":["bitter"],
+        "imageUrl": "",
+        "cookingTechniques":["braise","grill","roast"]
+    },
+    {
+        "name": "fennel",
+        "type": "vegetable",
+        "season": ["autumn","spring","summer","winter"],
+        "taste":["sweet"],
+        "imageUrl": "",
+        "cookingTechniques":["boil","braise","fry","grill","raw","roast","saute","steam"]
+    },
+    {
+        "name": "figs",
+        "type": "fruit",
+        "season": ["summer","autumn"],
+        "taste":["sweet","astringent"],
+        "imageUrl": "",
+        "cookingTechniques":["bake","broil","caramelize","deep-fry","grill","raw","roast"]
+    },
+    {
+        "name": "garlic",
+        "type": "vegetable",
+        "season": ["autumn","spring","summer","winter"],
+        "imageUrl": "",
+        "cookingTechniques":["grill","raw","roast","saute"]
+    },
+    {
+        "name": "grapefruit",
+        "type": "fruit",
+        "season": ["autumn","spring","summer","winter"],
+        "taste":["sour"],
+        "imageUrl": "",
+        "cookingTechniques":["bake","broil","raw"]
+    },
+    {
+        "name": "grapes",
+        "type": "fruit",
+        "season": ["summer","autumn"],
+        "taste":["sweet"],
+        "imageUrl": ""
+    },
+    {
+        "name": "green beans",
+        "type": "vegetable",
+        "season": ["summer", "autumn"],
+        "imageUrl": "",
+        "cookingTechniques":["boil", "grill", "saute", "steam", "stir-fry"]
+    },
+    {
+        "name": "guava",
+        "type": "fruit",
+        "season": ["summer","autumn"],
+        "taste":["sweet"],
+        "imageUrl": "",
+        "cookingTechniques":["bake","juice","poach"]
+    },
+
+    {
+        "name": "honeydew melon",
+        "type": "fruit",
+        "season": ["summer"],
+        "taste":["sweet"],
+        "imageUrl": ""
+    },
+    {
+        "name": "Jerusalem Artichoke",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "jicama",
+        "type": "fruit",
+        "season": ["winter","spring"],
+        "taste":["sweet"],
+        "imageUrl": "",
+        "cookingTechniques":["cooked","stir-fry","raw"]
+    },
+    {
+        "name": "kale",
+        "type": "vegetable",
+        "season": ["autumn","spring"],
+        "taste":["bitter","sweet"],
+        "imageUrl": "",
+        "cookingTechniques":["blanch","boil","braise","saute","steam","stir-fry"]
+    },
+    {
+        "name": "kiwi fruit",
+        "type": "fruit",
+        "season": ["autumn","spring"],
+        "taste":["sour"],
+        "imageUrl": "",
+        "cookingTechniques":["raw"]
+    },
+    {
+        "name": "kohlrabi",
+        "type": "vegetable",
+        "season": ["summer","autumn"],
+        "imageUrl": "",
+        "cookingTechniques":["boil","steam","stir-fry"]
+    },
+    {
+        "name": "kumquat",
+        "type": "",
+        "season": ["autumn","winter"],
+        "taste":["sour","bitter"],
+        "imageUrl": "",
+        "cookingTechniques":["raw","stew"]
+    },
+    {
+        "name": "leeks",
+        "type": "vegetable",
+        "season": ["autumn","winter","spring"],
+        "taste":["sweet"],
+        "imageUrl": "",
+        "cookingTechniques":["boil","braise","fry","grill","roast","steam"],
+        "tips": "Add early in cooking process"
+    },
+    {
+        "name": "lemon",
+        "type": "",
+        "season": ["autumn","spring","summer","winter"],
+        "taste":["sour"],
+        "imageUrl": ""
+    },
+    {
+        "name": "romaine lettuce",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Lima Beans",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Lime",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Longan",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Loquat",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Lychee",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Madarins",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Malanga",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Madarin Oranges",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Mango",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Mulberries",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Mushroom",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Nectarine",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Okra",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Onion",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Orange",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Papayas",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Parsnip",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Passion Fruit",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Peach",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Pear",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Peas",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Bell Peppers",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Persimmons",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Pineapple",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Plantains",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Plums",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Pomegranate",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Potatoes",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Prickly Pear",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Prunes",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Pummelo",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },{
+        "name": "Pumpkin",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Quince",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Radicchio",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Radishes",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Raisins",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Raspberries",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Red Cabbage",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Rhubarb",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+
+    {
+        "name": "Rutabaga",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Shallots",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Snow Peas",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Spinach",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Sprouts",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Acorn Squash",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Buttercup Squash",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Butternut Squash",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Strawberries",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Green Beans",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Sweet Potato",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Tangelo",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Tangerines",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Tomatillo",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Tomato",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Turnip",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Ugli Fruit",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Watermelon",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Water Chesnuts",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Watercress",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Waxed Beans",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Yams",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Yellow Squash",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Yuca",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    },
+    {
+        "name": "Zucchini Squash",
+        "type": "",
+        "season": "",
+        "imageUrl": ""
+    }
+]

@@ -1,55 +1,64 @@
 import React from 'react'
-import {connect} from 'react-redux'
-import {authenticate} from '../store'
-
+import { connect } from 'react-redux'
+import { authenticate } from '../store'
+import { Link } from 'react-router-dom'
 /**
  * COMPONENT
  */
-const AuthForm = props => {
-  const {name, displayName, handleSubmit, error} = props
+const AuthForm = (props) => {
+  const { name, displayName, handleSubmit, error } = props
 
   return (
-    <div>
+    <div className="flex-container form">
+      <h3>{displayName}</h3>
       <form onSubmit={handleSubmit} name={name}>
         {name === 'signup' && (
-          <>
+          <div>
             <div>
               <label htmlFor="firstName">
-                <small>First Name</small>
+                {/* <small>First Name</small> */}
               </label>
-              <input name="firstName" type="text" />
+              <input name="firstName" type="text" placeholder="First Name" />
             </div>
             <div>
-              <label htmlFor="lastName">
-                <small>Last Name</small>
-              </label>
-              <input name="lastName" type="text" />
+              <label htmlFor="lastName">{/* <small>Last Name</small> */}</label>
+              <input name="lastName" type="text" placeholder="Last Name" />
             </div>
             <div>
-              <label htmlFor="address">
-                <small>Address</small>
-              </label>
-              <input name="address" type="text" />
+              <label htmlFor="address">{/* <small>Address</small> */}</label>
+              <input name="address" type="text" placeholder="Address" />
             </div>
-          </>
+          </div>
         )}
 
         <div>
-          <label htmlFor="email">
-            <small>Email</small>
-          </label>
-          <input name="email" type="text" autoComplete="Email" />
+          <label htmlFor="email">{/* <small>Email</small> */}</label>
+          <input
+            name="email"
+            type="text"
+            autoComplete="Email"
+            placeholder="Email"
+          />
         </div>
         <div>
-          <label htmlFor="password">
-            <small>Password</small>
-          </label>
-          <input name="password" type="password" autoComplete="Password" />
+          <label htmlFor="password">{/* <small>Password</small> */}</label>
+          <input
+            name="password"
+            type="password"
+            autoComplete="Password"
+            placeholder="Password"
+          />
         </div>
-        <div>
+        <div className="submit-button">
           <button type="submit">{displayName}</button>
         </div>
         {error && error.response && <div> {error.response.data} </div>}
+        <div>
+          <h3>
+            <span>New To Grace Grocer? </span>
+            <Link to="/signup">Sign Up Here</Link>
+          </h3>
+        </div>
       </form>
     </div>
   )
@@ -62,33 +71,37 @@ const AuthForm = props => {
  *   function, and share the same Component. This is a good example of how we
  *   can stay DRY with interfaces that are very similar to each other!
  */
-const mapLogin = state => {
+const mapLogin = (state) => {
   return {
     name: 'login',
-    displayName: 'Login',
-    error: state.auth.error
+    displayName: 'Log In',
+    error: state.auth.error,
   }
 }
 
-const mapSignup = state => {
+const mapSignup = (state) => {
   return {
     name: 'signup',
     displayName: 'Sign Up',
-    error: state.auth.error
+    error: state.auth.error,
   }
 }
 
-const mapDispatch = dispatch => {
+const mapDispatch = (dispatch) => {
   return {
     handleSubmit(evt) {
       evt.preventDefault()
       const formName = evt.target.name
       const email = evt.target.email.value
       const password = evt.target.password.value
-      const firstName = evt.target.firstName? evt.target.firstName.value : undefined
-      const lastName = evt.target.lastName? evt.target.lastName.value : undefined
+      const firstName = evt.target.firstName
+        ? evt.target.firstName.value
+        : undefined
+      const lastName = evt.target.lastName
+        ? evt.target.lastName.value
+        : undefined
       dispatch(authenticate(email, password, formName, firstName, lastName))
-    }
+    },
   }
 }
 

@@ -1,11 +1,16 @@
-import React, {Component, Fragment} from 'react'
-import {connect} from 'react-redux'
-import {withRouter, Route, Switch, Redirect} from 'react-router-dom'
-import { Login, Signup } from './components/AuthForm';
-import Home from './components/Home';
-import {me} from './store'
-import AllProducts from './components/AllProducts';
+import React, { Component, Fragment } from 'react'
+import { connect } from 'react-redux'
+import { withRouter, Route, Switch, Redirect } from 'react-router-dom'
+import { Login, Signup } from './components/AuthForm'
+import Home from './components/Home'
+import { me } from './store'
+import AllProducts from './components/AllProducts'
 import SingleProduct from './components/SingleProduct'
+import AllUsers from './components/AllUsers'
+import MyAccount from './components/MyAccount'
+import Homepage from './components/Homepage'
+import Sidebar from './components/Sidebar'
+
 
 /**
  * COMPONENT
@@ -16,12 +21,16 @@ class Routes extends Component {
   }
 
   render() {
-    const {isLoggedIn} = this.props
+    const { isLoggedIn } = this.props
 
     return (
-      <div>
+      <div className={isLoggedIn ? 'grid' : null}>
+        {isLoggedIn ? <Sidebar /> : null}
         {isLoggedIn ? (
           <Switch>
+            <Route path="/" exact component={Homepage} />
+            <Route path="/myaccount" component={MyAccount} />
+            <Route path="/users" component={AllUsers} />
             <Route path="/home" component={Home} />
             <Route path="/products/:productId" component={SingleProduct} />
             <Route path="/products" component={AllProducts} />
@@ -29,7 +38,7 @@ class Routes extends Component {
           </Switch>
         ) : (
           <Switch>
-            <Route path="/" exact component={Login} />
+            <Route path="/" exact component={Homepage} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
             <Route path="/products/:productId" component={SingleProduct} />
@@ -44,19 +53,19 @@ class Routes extends Component {
 /**
  * CONTAINER
  */
-const mapState = state => {
+const mapState = (state) => {
   return {
     // Being 'logged in' for our purposes will be defined has having a state.auth that has a truthy id.
     // Otherwise, state.auth will be an empty object, and state.auth.id will be falsey
-    isLoggedIn: !!state.auth.id
+    isLoggedIn: !!state.auth.id,
   }
 }
 
-const mapDispatch = dispatch => {
+const mapDispatch = (dispatch) => {
   return {
     loadInitialData() {
       dispatch(me())
-    }
+    },
   }
 }
 

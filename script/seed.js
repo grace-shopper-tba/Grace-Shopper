@@ -9,12 +9,12 @@ const groceries = require('./groceries')
 
 const faker = require('faker')
 const axios = require('axios')
-/*
-const dotenv = require('dotenv').config()
-const { createClient } = require('pexels')
-const key = process.env.pexelKey
-const client = createClient(key)
-*/
+
+// const dotenv = require('dotenv').config()
+// const { createClient } = require('pexels')
+// const key = process.env.pexelKey
+// const client = createClient(key)
+
 // for demo --
 // async function test() {
 //   try {
@@ -51,7 +51,9 @@ async function seed() {
   //   let price = faker.datatype.float({ min: 1.0, max: 50, precision: 0.01 })
   //   let { photos } = await client.photos.search({ query: name, per_page: 1 })
   //   let imageUrl = photos[0]
-  //     ? photos[0].src.original
+  //     ? photos[0].src.medium
+  // ? photos[0].src.medium
+  // : photos[0].src.original
   //     : 'https://images.unsplash.com/photo-1444459094717-a39f1e3e0903?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80'
   //   console.log(imageUrl)
   //   // let imageUrl = faker.image.imageUrl()

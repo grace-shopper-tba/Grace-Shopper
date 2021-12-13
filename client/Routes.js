@@ -8,6 +8,9 @@ import AllProducts from './components/AllProducts'
 import SingleProduct from './components/SingleProduct'
 import AllUsers from './components/AllUsers'
 import MyAccount from './components/MyAccount'
+import Homepage from './components/Homepage'
+import Sidebar from './components/Sidebar'
+
 
 /**
  * COMPONENT
@@ -21,9 +24,11 @@ class Routes extends Component {
     const { isLoggedIn } = this.props
 
     return (
-      <div>
+      <div className={isLoggedIn ? 'grid' : null}>
+        {isLoggedIn ? <Sidebar /> : null}
         {isLoggedIn ? (
           <Switch>
+            <Route path="/" exact component={Homepage} />
             <Route path="/myaccount" component={MyAccount} />
             <Route path="/users" component={AllUsers} />
             <Route path="/home" component={Home} />
@@ -33,7 +38,7 @@ class Routes extends Component {
           </Switch>
         ) : (
           <Switch>
-            <Route path="/" exact component={Login} />
+            <Route path="/" exact component={Homepage} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
             <Route path="/products/:productId" component={SingleProduct} />

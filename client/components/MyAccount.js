@@ -1,23 +1,20 @@
 import React from 'react'
-import {connect} from 'react-redux'
-
+import { connect } from 'react-redux'
 
 class MyAccount extends React.Component {
   render() {
-    const {firstName, lastName, email} = this.props
+    const { firstName, lastName, email } = this.props
     return (
-      <div>
-        <p>
-          First Name: {firstName} <br />
-          Last Name: {lastName} <br />
-          Email: {email}
-        </p>
+      <div className="grid-item flex-container account-info">
+        <p>First Name: {firstName}</p>
+        <p>Last Name: {lastName}</p>
+        <p>Email: {email}</p>
       </div>
     )
   }
 }
 
-const mapState = state => {
+const mapState = (state) => {
   return {
     firstName: state.auth.firstName,
     lastName: state.auth.lastName,

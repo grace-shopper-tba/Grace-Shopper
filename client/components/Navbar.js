@@ -5,12 +5,12 @@ import { logout } from '../store'
 
 const Navbar = ({ handleClick, isLoggedIn, admin }) => (
   <div>
-    <h1>Grace Grocer</h1>
-    <nav>
+    <nav className="flex-container">
+      <h1 id="logo">Grace Grocer</h1>
       {isLoggedIn ? (
         <div>
           {/* The navbar will show these links after you log in */}
-          <Link to="/home">Home</Link>
+          <Link to="/">Home</Link>
           <Link to="/myaccount">My Account</Link>
           {/* if the user is an admin, show another link for a users page */}
           {admin ? <Link to="/users">Users</Link> : null}
@@ -24,11 +24,11 @@ const Navbar = ({ handleClick, isLoggedIn, admin }) => (
           {/* The navbar will show these links before you log in */}
           <Link to="/products">Products</Link>
           <Link to="/login">Login</Link>
-          <Link to="/signup">Sign Up</Link>
+          <Link to="/">Cart</Link>
         </div>
       )}
     </nav>
-    <hr />
+    {/* <hr /> */}
   </div>
 )
 

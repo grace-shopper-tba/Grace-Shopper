@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { authenticate } from '../store'
-
+import { Link } from 'react-router-dom'
 /**
  * COMPONENT
  */
@@ -9,48 +9,56 @@ const AuthForm = (props) => {
   const { name, displayName, handleSubmit, error } = props
 
   return (
-    <div className="form-container">
+    <div className="flex-container form">
       <h3>{displayName}</h3>
       <form onSubmit={handleSubmit} name={name}>
         {name === 'signup' && (
-          <>
+          <div>
             <div>
               <label htmlFor="firstName">
-                <small>First Name</small>
+                {/* <small>First Name</small> */}
               </label>
-              <input name="firstName" type="text" />
+              <input name="firstName" type="text" placeholder="First Name" />
             </div>
             <div>
-              <label htmlFor="lastName">
-                <small>Last Name</small>
-              </label>
-              <input name="lastName" type="text" />
+              <label htmlFor="lastName">{/* <small>Last Name</small> */}</label>
+              <input name="lastName" type="text" placeholder="Last Name" />
             </div>
             <div>
-              <label htmlFor="address">
-                <small>Address</small>
-              </label>
-              <input name="address" type="text" />
+              <label htmlFor="address">{/* <small>Address</small> */}</label>
+              <input name="address" type="text" placeholder="Address" />
             </div>
-          </>
+          </div>
         )}
 
         <div>
-          <label htmlFor="email">
-            <small>Email</small>
-          </label>
-          <input name="email" type="text" autoComplete="Email" />
+          <label htmlFor="email">{/* <small>Email</small> */}</label>
+          <input
+            name="email"
+            type="text"
+            autoComplete="Email"
+            placeholder="Email"
+          />
         </div>
         <div>
-          <label htmlFor="password">
-            <small>Password</small>
-          </label>
-          <input name="password" type="password" autoComplete="Password" />
+          <label htmlFor="password">{/* <small>Password</small> */}</label>
+          <input
+            name="password"
+            type="password"
+            autoComplete="Password"
+            placeholder="Password"
+          />
         </div>
-        <div>
+        <div className="submit-button">
           <button type="submit">{displayName}</button>
         </div>
         {error && error.response && <div> {error.response.data} </div>}
+        <div>
+          <h3>
+            <span>New To Grace Grocer? </span>
+            <Link to="/signup">Sign Up Here</Link>
+          </h3>
+        </div>
       </form>
     </div>
   )
@@ -66,7 +74,7 @@ const AuthForm = (props) => {
 const mapLogin = (state) => {
   return {
     name: 'login',
-    displayName: 'Login',
+    displayName: 'Log In',
     error: state.auth.error,
   }
 }

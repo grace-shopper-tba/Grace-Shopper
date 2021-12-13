@@ -11,16 +11,18 @@ class AllUsers extends React.Component {
     const users = this.props.users
     const admin = this.props.admin
     return (
-      <div>
+      <div className="flex-container users-container">
         {admin ? (
           users.map((user) => (
-            <p key={user.id}>
-              ID: {user.id} <br />
-              First Name: {user.firstName} <br />
-              Last Name: {user.lastName} <br />
-              Email: {user.email} <br />
-              Account Created: {user.createdAt}
-            </p>
+            <div key={user.id}>
+              <p>
+                ID: {user.id} <br />
+                First Name: {user.firstName} <br />
+                Last Name: {user.lastName} <br />
+                Email: {user.email} <br />
+                Account Created: {user.createdAt}
+              </p>
+            </div>
           ))
         ) : (
           <h1>You need to be an admin to view this page</h1>

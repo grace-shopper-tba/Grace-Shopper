@@ -13,7 +13,7 @@ export const setCart = (cart) => {
     cart
   }
 }
-// Note: this will need to change
+// Note: this will need to change or be removed depending on how backend express route is changed
 export const removeFromCart = (placeholder) => {
   return {
     type: REMOVE_FROM_CART,

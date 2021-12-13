@@ -50,7 +50,7 @@ export const addToCart = (addObj) => {
 export const _removeFromCart = (itemId) => {
   return async (dispatch) => {
     try {
-      const {data} = await axios.put('/api/orders', itemId)
+      const {data} = await axios.delete('/api/orders', itemId)
       dispatch(removeFromCart(data))
     }
     catch (err) {

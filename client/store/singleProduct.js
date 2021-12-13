@@ -30,12 +30,12 @@ export const fetchSingleProduct = (productId) => {
   }
 }
 
-export const updateProduct = (product) => {
+export const updateProduct = (id, name, type, season, price, imageUrl) => {
   return async (dispatch) => {
     if (token) {
       const { data: updated } = await axios.put(
-        `/api/products/${product.id}`,
-        product,
+        `/api/products/${id}`,
+        { name, type, season, price, imageUrl },
         {
           headers: {
             authorization: token,

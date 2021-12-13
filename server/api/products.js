@@ -22,6 +22,7 @@ router.get('/:productId', async (req, res, next) => {
 
 router.post('/', authorized, isAdmin, async (req, res, next) => {
   try {
+    console.log('ehyo', req.body)
     res.send(await Grocery.create(req.body))
   } catch (err) {
     next(err)

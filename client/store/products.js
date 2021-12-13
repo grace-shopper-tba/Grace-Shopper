@@ -38,14 +38,18 @@ export const fetchProducts = () => {
   }
 }
 
-export const createProduct = (product) => {
+export const createProduct = (name, type, season, price, imageUrl) => {
   return async (dispatch) => {
     if (token) {
-      const { data: created } = await axios.post('/api/products', product, {
-        headers: {
-          authorization: token,
-        },
-      })
+      const { data: created } = await axios.post(
+        '/api/products',
+        { name, type, season, price, imageUrl },
+        {
+          headers: {
+            authorization: token,
+          },
+        }
+      )
       return dispatch(_createProduct(created))
     }
   }
@@ -53,7 +57,7 @@ export const createProduct = (product) => {
 
 export const deleteProduct = (productId) => {
   return async (dispatch) => {
-    await axios.delete(`/api/products/${productId}`, productId, {
+    await axios.delete(`/api/products/${productId}`, {
       headers: {
         authorization: token,
       },

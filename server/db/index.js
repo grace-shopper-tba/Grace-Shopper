@@ -23,6 +23,7 @@ module.exports = {
   models: {
     User,
     Grocery,
-    Order
+    Order, 
+    OrderItem
   },
 };

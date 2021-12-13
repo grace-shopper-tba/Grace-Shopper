@@ -4,7 +4,6 @@ const db = require("./db");
 
 const User = require("./models/User");
 const Grocery = require("./models/Grocery");
-const Cart = require("./models/OrderItem");
 const Order = require("./models/Order");
 const OrderItem = require("./models/OrderItem");
 

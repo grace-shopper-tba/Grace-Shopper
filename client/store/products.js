@@ -4,7 +4,6 @@ const token = window.localStorage.getItem(TOKEN)
 
 const SET_PRODUCTS = 'SET_PRODUCTS'
 const CREATE_PRODUCT = 'CREATE_PRODUCT'
-const UPDATE_PRODUCT = 'UPDATE_PRODUCT'
 const DELETE_PRODUCT = 'DELETE_PRODUCT'
 
 export const setProducts = (products) => {
@@ -17,13 +16,6 @@ export const setProducts = (products) => {
 const _createProduct = (product) => {
   return {
     type: CREATE_PRODUCT,
-    product,
-  }
-}
-
-const _updateProduct = (product) => {
-  return {
-    type: UPDATE_PRODUCT,
     product,
   }
 }
@@ -59,23 +51,6 @@ export const createProduct = (product) => {
   }
 }
 
-export const updateProduct = (product) => {
-  return async (dispatch) => {
-    if (token) {
-      const { data: updated } = await axios.put(
-        `/api/products/${product.id}`,
-        product,
-        {
-          headers: {
-            authorization: token,
-          },
-        }
-      )
-      dispatch(_updateProduct(updated))
-    }
-  }
-}
-
 export const deleteProduct = (productId) => {
   return async (dispatch) => {
     await axios.delete(`/api/products/${productId}`, productId, {
@@ -93,8 +68,6 @@ export default function productsReducer(state = [], action) {
       return action.products
     case CREATE_PRODUCT:
       return [...state, action.product]
-    // case UPDATE_PRODUCT:
-    //   return
     case DELETE_PRODUCT:
       return state.filter((product) => product.id !== action.productId)
     default:

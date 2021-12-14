@@ -60,12 +60,13 @@ export const removeFromCart = (itemId) => {
   }
 }
 
-// thunk to update an item
+// thunk to update an item in cart
+// the Express route updates the orderItem with req.body
 
-export const changeItemInCart = (itemId) => {
+export const changeItemInCart = (itemId, updateObj) => {
   return async (dispatch) => {
     if (token) {
-      const { data: orderItem } = await axios.put(`/api/orders/${itemId}`, {
+      const { data: orderItem } = await axios.put(`/api/orders/${itemId}`, updateObj, {
         headers: {
           authorization: token,
         },

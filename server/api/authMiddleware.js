@@ -13,6 +13,19 @@ const authorized = async (req, res, next) => {
     next(error)
   }
 }
+// Checking that the user exists in our db
+const isUser = async (req, res, next) => {
+  try {
+    if (req.headers.authorization) {
+      const token = req.headers.authorization
+      const user = await User.findByToken(token)
+      req.user = user
+      next()
+    }
+  } catch (error) {
+    next(error)
+  }
+}
 // Checking that the user is an admin by finding that user and checking the isAdmin property
 const isAdmin = async (req, res, next) => {
   try {
@@ -32,4 +45,5 @@ const isAdmin = async (req, res, next) => {
 module.exports = {
   authorized,
   isAdmin,
+  isUser,
 }

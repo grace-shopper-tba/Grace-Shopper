@@ -26,11 +26,10 @@ export const removeFromCart = (placeholder) => {
 export const fetchCart = (userId) => {
   return async (dispatch) => {
     try {
-      const data = await axios.get('/api/orders', userId)
-      console.log('hellow we are in fetch--->', data)
-      dispatch(setCart(data))
+      const { data: cart } = await axios.get(`/api/orders/${userId}`)
+      dispatch(setCart(cart))
     } catch (err) {
-      console.log(err)
+      console.error(err)
     }
   }
 }

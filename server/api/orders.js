@@ -5,13 +5,11 @@ const {
 
 module.exports = router
 //api/orders
-router.get('/', async (req, res, next) => {
+router.get('/:userId', async (req, res, next) => {
   try {
-    const { userId } = req.body
     const order = await Order.findOne({
-      where: { userId: userId, active: true },
+      where: { userId: req.params.userId, active: true },
     })
-
     const orderItems = await order.getOrderItems()
     res.send(orderItems)
   } catch (error) {

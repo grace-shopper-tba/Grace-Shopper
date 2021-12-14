@@ -15,7 +15,7 @@ const Grocery = db.define('grocery', {
     values: ['fruit', 'vegetable'],
   },
   season: {
-    type: Sequelize.ENUM,
+    type: Sequelize.ARRAY(Sequelize.STRING),
     values: ['winter', 'spring', 'summer', 'fall'],
   },
   price: {

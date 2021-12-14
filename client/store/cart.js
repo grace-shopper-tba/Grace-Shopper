@@ -4,7 +4,7 @@ const token = window.localStorage.getItem(TOKEN)
 
 const SET_CART = 'SET_CART'
 const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
-const UPDATE_ITEM = 'UPDATE_ITEM'
+// const UPDATE_ITEM = 'UPDATE_ITEM'
 
 export const setCart = (cart) => {
   return {
@@ -20,12 +20,12 @@ export const _removeFromCart = (itemId) => {
   }
 }
 
-export const _changeItemInCart = (orderItem) => {
-  return {
-    type: UPDATE_ITEM,
-    orderItem
-  }
-}
+// export const _changeItemInCart = (orderItem) => {
+//   return {
+//     type: UPDATE_ITEM,
+//     orderItem
+//   }
+// }
 
 // thunk to get user's cart aka active order
 // a new user with no cart will have a cart made
@@ -64,14 +64,15 @@ export const removeFromCart = (itemId) => {
 // the Express route updates the orderItem with req.body
 
 export const changeItemInCart = (itemId, updateObj) => {
-  return async (dispatch) => {
+  return async () => {
     if (token) {
       const { data: orderItem } = await axios.put(`/api/orders/${itemId}`, updateObj, {
         headers: {
           authorization: token,
         },
       })
-      dispatch(_changeItemInCart(orderItem))
+      const { userId } = orderItem.Order
+      fetchCart(userId)
     }
   }
 }
@@ -82,8 +83,8 @@ export default function cartReducer(state = [], action) {
       return action.cart
     case REMOVE_FROM_CART:
       return state.filter(item => item.groceryId !== action.itemId)
-    case UPDATE_ITEM:
-      return [...state, action.orderItem]
+    // case UPDATE_ITEM:
+    //   return
     default:
       return state
   }

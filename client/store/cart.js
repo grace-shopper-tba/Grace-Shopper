@@ -4,6 +4,7 @@ const token = window.localStorage.getItem(TOKEN)
 
 const SET_CART = 'SET_CART'
 const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
+const UPDATE_ITEM = 'UPDATE_ITEM'
 
 export const setCart = (cart) => {
   return {
@@ -16,6 +17,13 @@ export const _removeFromCart = (itemId) => {
   return {
     type: REMOVE_FROM_CART,
     itemId
+  }
+}
+
+export const _changeItemInCart = (orderItem) => {
+  return {
+    type: UPDATE_ITEM,
+    orderItem
   }
 }
 
@@ -49,12 +57,29 @@ export const removeFromCart = (itemId) => {
   }
 }
 
+// thunk to update an item
+
+export const changeItemInCart = (itemId) => {
+  return async (dispatch) => {
+    if (token) {
+      const { data: orderItem} = await axios.put(`/api/orders/${itemId}`, {
+        headers: {
+          authorization: token,
+        },
+      })
+      dispatch(_changeItemInCart(orderItem))
+    }
+  }
+}
+
 export default function cartReducer(state = [], action) {
   switch (action.type) {
     case SET_CART:
       return action.cart
     case REMOVE_FROM_CART:
       return state.filter(item => item.groceryId !== action.itemId)
+    case UPDATE_ITEM:
+      return [...state, action.orderItem]
     default:
       return state
   }

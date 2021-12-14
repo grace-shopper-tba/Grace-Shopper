@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class Cart extends Component {
+class Cart extends Component {
   render() {
     return (
       <div>
@@ -29,5 +29,11 @@ export default class Cart extends Component {
         <button>Cancel</button>
       </div>
     )
+  }
+}
+
+const mapState = (state) => {
+  return {
+    cart: state.cart,
   }
 }

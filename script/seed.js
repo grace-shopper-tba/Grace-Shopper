@@ -59,19 +59,31 @@ async function seed() {
 
   await User.bulkCreate(users)
 
-  // const users = await Promise.all([
-  //   User.create({ firstName: 'cody', email: "cody@example.com", password: "123" }),
-  //   User.create({ firstName: 'murphy', email: "murphy@example.com", password: "123" }),
-  // ]);
+  await Promise.all([
+    User.create({
+      firstName: 'hello',
+      email: 'hello@example.com',
+      password: '123',
+    }),
+    User.create({
+      firstName: 'world',
+      email: 'world@example.com',
+      password: '123',
+      isAdmin: true,
+    }),
+  ])
 
   console.log(`seeded ${users.length} users`)
   console.log(`seeded ${groceries.length} groceries`)
   console.log(`seeded successfully`)
 
-  const testUser = await User.findByPk(1)
+  const testUser = await User.findByPk(101)
   const createOrder = await testUser.createOrder()
   console.log(createOrder)
-  const addOrderItem = await createOrder.createOrderItem({quantity: 3, subtotal: 18})
+  const addOrderItem = await createOrder.createOrderItem({
+    quantity: 3,
+    subtotal: 18,
+  })
   const setGrocery = await addOrderItem.setGrocery(1)
 
   return {

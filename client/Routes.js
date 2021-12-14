@@ -30,11 +30,11 @@ class Routes extends Component {
           <Switch>
             <Route path="/" exact component={Homepage} />
             <Route path="/myaccount" component={MyAccount} />
+            <Route path="/users/:userId/cart" component={Cart} />
             <Route path="/users" component={AllUsers} />
             <Route path="/home" component={Home} />
             <Route path="/products/:productId" component={SingleProduct} />
             <Route path="/products" component={AllProducts} />
-            <Route path="/cart" component={Cart} />
             <Redirect to="/home" />
           </Switch>
         ) : (

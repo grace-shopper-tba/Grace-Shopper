@@ -62,7 +62,7 @@ export const removeFromCart = (itemId) => {
 export const changeItemInCart = (itemId) => {
   return async (dispatch) => {
     if (token) {
-      const { data: orderItem} = await axios.put(`/api/orders/${itemId}`, {
+      const { data: orderItem } = await axios.put(`/api/orders/${itemId}`, {
         headers: {
           authorization: token,
         },

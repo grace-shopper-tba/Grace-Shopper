@@ -27,7 +27,10 @@ export const _changeItemInCart = (orderItem) => {
   }
 }
 
-//thunk to get user's cart aka active order
+// thunk to get user's cart aka active order
+// a new user with no cart will have a cart made
+// this is an empty array, which you could check for
+// in react and instead render something else
 
 export const fetchCart = (userId) => {
   return async (dispatch) => {

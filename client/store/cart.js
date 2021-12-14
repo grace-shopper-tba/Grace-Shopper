@@ -71,6 +71,8 @@ export const changeItemInCart = (itemId, updateObj) => {
           authorization: token,
         },
       })
+      // data from Express route is including Order, which has userId
+      // so I thought I could use that to refetch the cart here
       const { userId } = orderItem.Order
       fetchCart(userId)
     }

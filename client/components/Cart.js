@@ -1,7 +1,16 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { fetchCart } from '../store/cart'
 
-export default class Cart extends Component {
+class Cart extends Component {
+  componentDidMount() {
+    console.log('before component did mount', this.props)
+    this.props.getCart({ userId: this.props.match.params.userId })
+    console.log('after component did mount', this.props)
+  }
+
   render() {
+    console.log('code reaches --->', this.props)
     return (
       <div>
         <h2>Shopping Cart</h2>
@@ -31,3 +40,18 @@ export default class Cart extends Component {
     )
   }
 }
+
+const mapState = (state) => {
+  return {
+    cart: state.cart,
+    userId: state.auth.id,
+  }
+}
+
+const mapDispatch = (dispatch) => {
+  return {
+    getCart: (userId) => dispatch(fetchCart(userId)),
+  }
+}
+
+export default connect(mapState, mapDispatch)(Cart)

@@ -1,0 +1,742 @@
+[
+    {
+        "name": "apple",
+        "type": "fruit",
+        "season": ["autumn"],
+        "taste": ["sweet", "astringent"],
+        "imageUrl": "https://images.unsplash.com/photo-1601914781700-97710f76a931?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+        "cookingTechniques": ["bake", "caramelize", "deep-fry", "grill", "poach", "raw", "saute", "stew"]
+    },
+    {
+        "name": "apricot",
+        "type": "fruit",
+        "season": ["summer"],
+        "taste": ["sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1602813812581-0713dae489da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=430&q=80",
+        "cookingTechniques":["bake", "grill", "poach", "raw", "stew"]
+    },
+    {
+        "name": "artichoke",
+        "type": "vegetable",
+        "season": ["spring", "autumn"],
+        "imageUrl": "https://images.unsplash.com/photo-1587576293597-a5a06ee59239?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+        "cookingTechniques":["bake", "boil", "braise", "deep-fry", "grill", "raw", "roast", "saute", "steam", "stew"]
+    },
+    {
+        "name": "arugula",
+        "type": "vegetable",
+        "season": ["spring", "summer"],
+        "taste": ["bitter"],
+        "imageUrl": "https://images.unsplash.com/photo-1595574446720-ca5f6736b8fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=844&q=80",
+        "cookingTechniques":["braise", "raw", "saute", "soup", "wilt"]
+    },
+    {
+        "name": "asparagus",
+        "type": "vegetable",
+        "season": ["spring"],
+        "imageUrl": "https://images.unsplash.com/photo-1555704574-f9ecf4717298?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+        "cookingTechniques":["blanch", "boil", "deep-fry", "grill", "pan roast", "simmer", "steam", "stir-fry"]
+    },
+    {
+        "name": "avocado",
+        "type": "fruit",
+        "season": ["spring", "summer"],
+        "imageUrl": "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1075&q=80",
+        "cookingTechniques":["raw"],
+        "tips": "Use to add richness to a dish"
+    },
+    {
+        "name": "banana",
+        "type": "fruit",
+        "season": ["winter"],
+        "taste":["sweet", "astringent"],
+        "imageUrl": "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+        "cookingTechniques":["bake", "boil", "caramelize", "deep-fry", "grill", "poach", "raw", "saute"],
+        "tips": "Sugar enhances the flavor of bananas"
+    },
+    
+    {
+        "name": "basil",
+        "type": "vegetable",
+        "season": ["summer"],
+        "taste": ["sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1624160719218-33eb1081919c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+        "tips": "Add just before serving. Use to add a note of freshness to a dish"
+    },
+    {
+        "name": "beets",
+        "type": "vegetable",
+        "season": ["autumn","spring","summer","winter"],
+        "taste":["sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1503623758111-863eb2abd7a9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+        "cookingTechniques":["bake","boil","carpaccio","chips","roast", "steam", "soup"]
+    },
+    {
+        "name": "bell peppers",
+        "type": "vegetable",
+        "season": ["summer", "autumn"],
+        "taste":["bitter", "sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1573067485648-4cb2618b5e09?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+        "cookingTechniques":["bake","broil", "grill", "roast", "saute", "steam", "stew", "stir-fry", "stuff"],
+        "tips": "taste is bitter to sweet, from unripe (green) to ripe (yellow to red)"
+    },
+    {
+        "name": "blackberries",
+        "type": "fruit",
+        "season": ["summer"],
+        "taste":["sour"],
+        "imageUrl": "https://images.unsplash.com/photo-1567870335471-1129836babcf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+        "cookingTechniques":["cooked", "raw"]
+    },
+    {
+        "name": "blueberries",
+        "type": "fruit",
+        "season": ["spring","summer"],
+        "taste":["sour", "sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1498557850523-fd3d118b962e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80",
+        "cookingTechniques":["cooked", "raw"],
+        "tips": "Can substitute huckleberries"
+    },
+    {
+        "name": "bok Choy",
+        "type": "vegetable",
+        "season": ["autumn","spring", "summer","winter"],
+        "taste":["bitter"],
+        "imageUrl": "https://images.pexels.com/photos/6157084/pexels-photo-6157084.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "cookingTechniques":["boil", "braise","raw","stir-fry"]
+    },
+    {
+        "name": "boysenberry",
+        "type": "fruit",
+        "season": ["summer"],
+        "taste":["sour", "sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1488900128323-21503983a07e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+    },
+    {
+        "name": "broccoli",
+        "type": "vegetable",
+        "season": ["autumn","winter"],
+        "imageUrl": "https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=601&q=80",
+        "cookingTechniques":["boil", "deep-fry","saute", "steam", "stir-fry"]
+    },
+
+    {
+        "name": "broccolini",
+        "type": "vegetable",
+        "season": ["autumn","spring","summer","winter"],
+        "imageUrl": "https://images.unsplash.com/photo-1617007672587-09340061e21d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1030&q=80",
+        "cookingTechniques":["blanch","raw","saute","stir-fry"]
+    },
+    {
+        "name": "broccoli rabe",
+        "type": "vegetable",
+        "season": ["autumn","spring"],
+        "taste":["bitter"],
+        "imageUrl": "https://images.unsplash.com/photo-1600728256967-296f17337b02?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+        "cookingTechniques":["boil","saute","steam","stir-fry"]
+    },
+    {
+        "name": "brussels sprouts",
+        "type": "vegetable",
+        "season": ["winter", "autumn"],
+        "taste":["bitter"],
+        "imageUrl": "https://images.unsplash.com/photo-1438118907704-7718ee9a191a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+        "cookingTechniques":["boil","braise","saute","simmer","steam","stew", "stir-fry"]
+    },
+    {
+        "name": "red cabbage",
+        "type": "vegetable",
+        "season": ["autumn","winter"],
+        "imageUrl": "https://images.unsplash.com/photo-1584701830110-c2ecf0a5f2a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
+        "cookingTechniques":["braise","marinate","raw"]
+    },
+    {
+        "name": "savoy cabbage",
+        "type": "vegetable",
+        "season": ["autumn","winter"],
+        "imageUrl": "https://images.unsplash.com/photo-1594282486756-06f49bb34c05?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=385&q=80",
+        "cookingTechniques":["boil","braise","raw","roast","steam"]
+    },
+    {
+        "name": "cantaloupe",
+        "type": "fruit",
+        "season": ["summer"],
+        "taste":["sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1618020211082-59011bd6129e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=407&q=80"
+    },
+    {
+        "name": "carrots",
+        "type": "vegetable",
+        "season": ["autumn","spring"],
+        "imageUrl": "https://images.unsplash.com/photo-1624764953628-9f1681e44892?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+        "cookingTechniques":["boil","braise","grill","raw","roast","saute","simmer","steam","stir-fry"]
+    },
+    {
+        "name": "cauliflower",
+        "type": "vegetable",
+        "season": ["autumn","winter"],
+        "taste":["astringent"],
+        "imageUrl": "https://images.unsplash.com/photo-1510627498534-cf7e9002facc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+        "cookingTechniques":["boil","braise","deep-fry","gratin","puree", "raw","roast","saute","simmer","steam"]
+    },
+    {
+        "name": "celery",
+        "type": "vegetable",
+        "season": ["autumn","spring","summer","winter"],
+        "taste":["astringent"],
+        "imageUrl": "https://images.unsplash.com/photo-1580391564590-aeca65c5e2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+        "cookingTechniques" :["boil","braise","cream", "gratin", "raw","saute","steam","stir-fry"]
+    },
+    {
+        "name": "celery root",
+        "type": "vegetable",
+        "season": ["autumn","spring"],
+        "imageUrl": "https://images.pexels.com/photos/4117697/pexels-photo-4117697.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "cookingTechniques" :["boil","deep-fry", "raw","roast","steam"],
+        "tips": "Always peel before using"
+    },
+    {
+        "name": "chard",
+        "type": "vegetable",
+        "season": ["autumn","spring","summer","winter"],
+        "taste":["bitter"],
+        "imageUrl": "https://images.unsplash.com/photo-1558373235-cabfa82b2337?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cmh1YmFyYnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+        "cookingTechniques":["boil","braise","parboil", "saute","steam","stir-fry"]
+    },
+    {
+        "name": "cherries",
+        "type": "fruit",
+        "season": ["spring","summer"],
+        "taste":["sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1559181567-c3190ca9959b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
+        "cookingTechniques":["flambe", "poach","raw","stew"]
+    },
+    {
+        "name": "chile peppers",
+        "type": "fruit",
+        "season": ["summer"],
+        "taste":["hot"],
+        "imageUrl": "https://images.unsplash.com/photo-1605025000138-993e2a909812?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+        "cookingTechniques":["roast","raw","saute"],
+        "tips": "Add at the end of the cooking process."
+    },
+    {
+        "name": "chives",
+        "type": "vegetable",
+        "season": ["spring","summer","autumn"],
+        "imageUrl": "https://images.pexels.com/photos/4113894/pexels-photo-4113894.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "tips": "Always use fresh, not cooked. Use in stir-fries"
+    },
+    {
+        "name": "cilantro",
+        "type": "vegetable",
+        "season": ["spring","summer"],
+        "taste":["sweet", "sour"],
+        "imageUrl": "https://images.unsplash.com/photo-1535189487909-a262ad10c165?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=799&q=80",
+        "tips": "Always use fresh, not cooked. Use cilantro to provide a cooling note to chile-pepper-spiced dishes"
+    },
+    {
+        "name": "coconut",
+        "type": "fruit",
+        "season": ["autumn","winter","spring"],
+        "taste":["sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1580554191498-273d5d0ee6ef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+        "cookingTechniques":["stir-fry"]
+    },
+    {
+        "name": "collard greens",
+        "type": "vegetable",
+        "season": ["winter","spring"],
+        "taste":["bitter"],
+        "imageUrl": "https://images.unsplash.com/photo-1559852925-6a5a7125525b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+        "cookingTechniques":["boil","braise","steam","stir-fry"]
+    },
+    {
+        "name": "corn",
+        "type": "vegetable",
+        "season": ["summer"],
+        "taste":["sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1531171000775-75f0213ca8a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+        "cookingTechniques":["boil","grill","roast","saute","steam"]
+    },
+    {
+        "name": "cranberries",
+        "type": "fruit",
+        "season": ["autumn","winter"],
+        "taste":["sour"],
+        "imageUrl": "https://images.unsplash.com/photo-1601406075033-f7a4964d5aa2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
+        "cookingTechniques":["boil"]
+    },
+    {
+        "name": "cucumbers",
+        "type": "fruit",
+        "season": ["spring","summer"],
+        "taste":["sweet","astringent"],
+        "imageUrl": "https://images.unsplash.com/photo-1599448191905-7bedab8ced59?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+        "cookingTechniques":["pickle","raw","salads","saute","soup"]
+    },
+    {
+        "name": "dates",
+        "type": "fruit",
+        "season": ["autumn","winter"],
+        "taste":["sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1629738601425-494c3d6ba3e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80"
+    },
+    {
+        "name": "dill",
+        "type": "vegetable",
+        "season": ["autumn","spring"],
+        "taste":["sweet","sour"],
+        "imageUrl": "https://images.unsplash.com/photo-1509210459313-17feefdff5cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=418&q=80",
+        "tips": "Always use fresh"
+    },
+    {
+        "name": "eggplant",
+        "type": "vegetable",
+        "season": ["summer"],
+        "taste":["bitter"],
+        "imageUrl": "https://images.unsplash.com/photo-1601477572224-cb15a76f30f4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+        "cookingTechniques":["bake","boil","braise","broil","deep-fry","grill","roast","saute","steam","stir-fry","stuff"]
+    },
+    {
+        "name": "endive",
+        "type": "vegetable",
+        "season": ["winter","spring"],
+        "taste":["bitter","sweet"],
+        "imageUrl": "https://img.passeportsante.net/1000x526/2021-05-03/i102036-endive.jpg",
+        "cookingTechniques":["braise", "glaze","grill","raw","roast"]
+    },
+    {
+        "name": "fennel",
+        "type": "vegetable",
+        "season": ["autumn","spring","summer","winter"],
+        "taste":["sweet"],
+        "imageUrl": "https://images.pexels.com/photos/159357/fennel-vegetables-fennel-bulb-food-159357.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "cookingTechniques":["boil","braise","fry","grill","raw","roast","saute","steam"]
+    },
+    {
+        "name": "figs",
+        "type": "fruit",
+        "season": ["summer","autumn"],
+        "taste":["sweet","astringent"],
+        "imageUrl": "https://images.unsplash.com/photo-1601379760883-1bb497c558f0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+        "cookingTechniques":["bake","broil","caramelize","deep-fry","grill","raw","roast"]
+    },
+    {
+        "name": "garlic",
+        "type": "vegetable",
+        "season": ["autumn","spring","summer","winter"],
+        "imageUrl": "https://images.unsplash.com/photo-1625229466998-42ee9c597290?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80",
+        "cookingTechniques":["grill","raw","roast","saute"]
+    },
+    {
+        "name": "grapefruit",
+        "type": "fruit",
+        "season": ["autumn","spring","summer","winter"],
+        "taste":["sour"],
+        "imageUrl": "https://images.unsplash.com/photo-1622912789333-ba8bf8242e27?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+        "cookingTechniques":["bake","broil","raw"]
+    },
+    {
+        "name": "grapes",
+        "type": "fruit",
+        "season": ["summer","autumn"],
+        "taste":["sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1539519532614-723937382b86?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+    },
+    {
+        "name": "green beans",
+        "type": "vegetable",
+        "season": ["summer", "autumn"],
+        "imageUrl": "https://images.unsplash.com/photo-1448293065296-c7e2e5b76ae9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=514&q=80",
+        "cookingTechniques":["boil", "grill", "saute", "steam", "stir-fry"]
+    },
+    {
+        "name": "guava",
+        "type": "fruit",
+        "season": ["summer","autumn"],
+        "taste":["sweet"],
+        "imageUrl": "https://images.pexels.com/photos/5945840/pexels-photo-5945840.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "cookingTechniques":["bake","juice","poach"]
+    },
+
+    {
+        "name": "honeydew melon",
+        "type": "fruit",
+        "season": ["summer"],
+        "taste":["sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1571575173700-afb9492e6a50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=436&q=80"
+    },
+    {
+        "name": "kale",
+        "type": "vegetable",
+        "season": ["autumn","spring"],
+        "taste":["bitter","sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1543364195-bfe6e4932397?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
+        "cookingTechniques":["blanch","boil","braise","saute","steam","stir-fry"]
+    },
+    {
+        "name": "kiwi fruit",
+        "type": "fruit",
+        "season": ["autumn","spring"],
+        "taste":["sour"],
+        "imageUrl": "https://images.unsplash.com/photo-1599874982659-d5418a2da31a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+        "cookingTechniques":["raw"]
+    },
+    {
+        "name": "kohlrabi",
+        "type": "vegetable",
+        "season": ["summer","autumn"],
+        "imageUrl": "https://images.unsplash.com/photo-1592868490948-4722f1805f8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1025&q=80",
+        "cookingTechniques":["boil","steam","stir-fry"]
+    },
+    {
+        "name": "kumquat",
+        "type": "fruit",
+        "season": ["autumn","winter"],
+        "taste":["sour","bitter"],
+        "imageUrl": "https://images.unsplash.com/photo-1580832343645-18a13bbfbe02?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+        "cookingTechniques":["raw","stew"]
+    },
+    {
+        "name": "leeks",
+        "type": "vegetable",
+        "season": ["autumn","winter","spring"],
+        "taste":["sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1526046881250-dbec3e06414c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+        "cookingTechniques":["boil","braise","fry","grill","roast","steam"],
+        "tips": "Add early in cooking process"
+    },
+    {
+        "name": "lemon",
+        "type": "fruit",
+        "season": ["autumn","spring","summer","winter"],
+        "taste":["sour"],
+        "imageUrl": "https://images.unsplash.com/photo-1590004953392-5aba2e72269a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+    },
+    {
+        "name": "romaine lettuce",
+        "type": "vegetable",
+        "season": ["spring","summer","autumn"],
+        "taste":["sweet", "bitter"],
+        "imageUrl": "https://images.unsplash.com/photo-1619571842165-b0f604ad0d86?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=455&q=80"
+    },
+    {
+        "name": "lime",
+        "type": "fruit",
+        "season": ["autumn","spring","summer","winter"],
+        "taste":["sour"],
+        "imageUrl": "https://images.unsplash.com/photo-1622957461168-202e611c8077?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80"
+    },
+    {
+        "name": "lychee",
+        "type": "fruit",
+        "season": ["summer"],
+        "taste":["sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1597975371270-cf80e4f54921?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+        "cookingTechniques":["raw"]
+    },
+    {
+        "name": "mango",
+        "type": "fruit",
+        "season": ["spring","summer"],
+        "taste":["sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1604256913753-eef2d1d8ca21?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80",
+        "cookingTechniques":["raw"]
+    },
+    {
+        "name": "mushroom",
+        "type": "vegetable",
+        "season": ["spring","summer","autumn"],
+        "imageUrl": "https://images.pexels.com/photos/5507581/pexels-photo-5507581.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "cookingTechniques":["bake","broil","deep-fry","grill","pan roast","raw","roast","saute","soup","steam","stew"]
+    },
+    {
+        "name": "nectarine",
+        "type": "fruit",
+        "season": ["spring","summer","autumn"],
+        "taste":["sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1595124245030-41448b199d6d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
+        "cookingTechniques":["bake", "broil","grill","poach", "raw","saute"]
+    },
+    {
+        "name": "okra",
+        "type": "vegetable",
+        "season": ["summer","autumn"],
+        "imageUrl": "https://images.unsplash.com/photo-1632742315671-d77e6feed874?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+        "cookingTechniques":["boil","braise","deep-fry","fry","grill","saute","steam","stew"]
+    },
+    {
+        "name": "onion",
+        "type": "vegetable",
+        "season": ["autumn","spring","summer","winter"],
+        "taste":["pungent"],
+        "imageUrl": "https://images.unsplash.com/photo-1584846786080-99dbf89a744b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=612&q=80",
+        "cookingTechniques":["bake","boil","braise","deep-fry","fry","grill","roast","saute", "stir-fry"],
+        "tips": "Onions increase appetite"
+    },
+    {
+        "name": "orange",
+        "type": "fruit",
+        "season": ["autumn","spring","summer","winter"],
+        "taste":["sour","sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1557800636-894a64c1696f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
+        "cookingTechniques":["poach","raw"],
+        "tips": "Lemon brightens the flavor of orange"
+    },
+    {
+        "name": "papayas",
+        "type": "fruit",
+        "season": ["summer","autumn"],
+        "taste":["sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1517282009859-f000ec3b26fe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
+        "cookingTechniques":["bake","grill","raw","saute"]
+    },
+    {
+        "name": "parsnip",
+        "type": "vegetable",
+        "season": ["autumn","winter"],
+        "taste":["sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1584118247518-68fd1f69ad4a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=481&q=80",
+        "cookingTechniques":["cooked","bake","boil","braise","deep-fry","grill","mash", "puree","roast","steam"]
+    },
+    {
+        "name": "passion fruit",
+        "type": "fruit",
+        "season": ["autumn","spring","summer","winter"],
+        "taste":["sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1502009285422-74e42ac2fd68?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+        "cookingTechniques":["puree","raw"]
+    },
+    {
+        "name": "peach",
+        "type": "fruit",
+        "season": ["summer", "spring","autumn"],
+        "taste":["sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1602813812581-0713dae489da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVhY2h8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+        "cookingTechniques":["bake","broil","grill","poach","raw","roast","saute"]
+    },
+    {
+        "name": "pear",
+        "type": "fruit",
+        "season": ["autumn","winter"],
+        "taste":["sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1601876819102-99560f772713?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+        "cookingTechniques":["bake","deep-fry","chips", "grill","poach","raw","roast","saute","stew"]
+    },
+    {
+        "name": "peas",
+        "type": "vegetable",
+        "season": ["spring","summer"],
+        "taste":["sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1477506252414-b2954dbdacf3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+        "cookingTechniques":["boil","braise","saute","steam"]
+    },
+    {
+        "name": "pineapple",
+        "type": "fruit",
+        "season": ["winter","spring","summer"],
+        "taste":["sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1482598614167-ef164f1679b8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
+        "cookingTechniques":["bake","broil","grill","poach","raw","roast","saute"]
+    },
+    {
+        "name": "green plantains",
+        "type": "fruit",
+        "season":[],
+        "imageUrl": "https://images.unsplash.com/photo-1617631716600-6a454b430367?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+        "cookingTechniques":["bake","boil","deep-fry","mash","saute"],
+        "tips": "Look for green plaintains without any yellow"
+
+    },
+    {
+        "name": "plums",
+        "type": "fruit",
+        "season": ["spring","autumn"],
+        "taste":["sweet","astringent"],
+        "imageUrl": "https://images.unsplash.com/photo-1564750497011-ead0ce4b9448?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGx1bXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+        "cookingTechniques":["bake","poach","raw","stew"]
+    },
+    {
+        "name": "pomegranate",
+        "type": "fruit",
+        "season": ["autumn"],
+        "taste":["sweet","sour"],
+        "imageUrl": "https://images.unsplash.com/photo-1606914998137-d9b33982be02?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+        "cookingTechniques":["raw","sorbet"]
+    },
+    {
+        "name": "potatoes",
+        "type": "vegetable",
+        "season": ["autumn","spring","summer","winter"],
+        "imageUrl": "https://images.unsplash.com/photo-1552845683-cfefc701e423?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8OHw5NTEyMDczfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        "cookingTechniques":["bake","boil","deep-fry","gratin","grill","mash","puree","roast","saute","steam"]
+    },
+    {
+        "name": "pumpkin",
+        "type": "fruit",
+        "season": ["autumn"],
+        "taste":["sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1602457471441-e7099c989338?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cHVtcGtpbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+        "cookingTechniques":["bake","braise","grill","puree","roast"]
+    },
+    {
+        "name": "quince",
+        "type": "fruit",
+        "season": ["autumn"],
+        "taste":["sour"],
+        "imageUrl": "https://images.pexels.com/photos/4577652/pexels-photo-4577652.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        "cookingTechniques":["bake", "poach","stew"]
+    },
+    {
+        "name": "radicchio",
+        "type": "vegetable",
+        "season": ["autumn","spring","summer","winter"],
+        "taste":["bitter"],
+        "imageUrl": "https://images.unsplash.com/photo-1615368651368-3f029263ab4b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+        "cookingTechniques":["braise","grill","roast","sear"]
+    },
+    {
+        "name": "radishes",
+        "type": "vegetable",
+        "season": ["spring","summer","autumn"],
+        "taste":["pungent"],
+        "imageUrl": "https://images.unsplash.com/photo-1609668106037-60375e9d1238?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8JTIycmFkaXNoZXMlMjJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+        "cookingTechniques":["braise","raw"]
+    },
+    {
+        "name": "raspberries",
+        "type": "fruit",
+        "season": ["summer"],
+        "taste":["sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1583513364301-f9339bc184dc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+    },
+    {
+        "name": "rhubarb",
+        "type": "vegetable",
+        "season": ["spring","summer"],
+        "taste":["sour"],
+        "imageUrl": "https://images.unsplash.com/photo-1553536645-f83758b55d23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cmh1YmFyYnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+        "cookingTechniques":["bake","puree","saute","stew"]
+    },
+
+    {
+        "name": "rutabaga",
+        "type": "vegetable",
+        "season": ["autumn","winter","spring"],
+        "imageUrl": "https://images.unsplash.com/photo-1631909808696-969b7aa7ade9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cnV0YWJhZ2F8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+        "cookingTechniques":["boil","braise","deep-fry","puree","roast","steam"]
+    },
+    {
+        "name": "scallions",
+        "type": "vegetable",
+        "season": ["summer"],
+        "imageUrl": "https://images.unsplash.com/photo-1602769515559-e15133a7e992?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2NhbGxpb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+        "cookingTechniques":["braise","grill","raw","saute","stir-fry"]
+    },
+    {
+        "name": "shallots",
+        "type": "vegetable",
+        "season": ["summer"],
+        "taste":["sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1600570948944-c3b826056eb2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c2hhbGxvdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+        "cookingTechniques":["blanch","braise","deep-fry","fry","roast","saute","stir-fry"],
+        "tips": "Shallots are milder than garlic or onions"
+    },    
+    {
+        "name": "snap peas",
+        "type": "vegetable",
+        "season": ["spring"],
+        "taste":["sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1619186687343-d606d9d5f9d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+        "cookingTechniques":["blanch","raw","steam","stir-fry"]
+    },
+    {
+        "name": "spinach",
+        "type": "vegetable",
+        "season": ["autumn","spring","summer","winter"],
+        "taste":["bitter"],
+        "imageUrl": "https://images.unsplash.com/photo-1580910365145-862a086868c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+        "cookingTechniques":["boil","raw","saute","steam","stir-fry","wilt"]
+    },
+    {
+        "name": "sprouts",
+        "type": "vegetable",
+        "season": ["autumn","spring","summer","winter"],
+        "imageUrl": "https://images.unsplash.com/photo-1627899045097-e478157bb638?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3Byb3V0c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+        "cookingTechniques":["saute","steam","stir-fry"],
+        "tips": "Cook for less than 30 seconds or they will wilt"
+    },
+    {
+        "name": "acorn squash",
+        "type": "fruit",
+        "season": ["autumn","winter"],
+        "taste":["sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1560513977-6faee53459d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+        "cookingTechniques":["bake","mash"]
+    },
+    {
+        "name": "butternut squash",
+        "type": "fruit",
+        "season": ["autumn"],
+        "taste":["sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1528496237352-2cb43f05806d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+        "cookingTechniques":["bake","braise","mash","roast","steam","tempura-fry"]
+    },
+    {
+        "name": "strawberries",
+        "type": "fruit",
+        "season": ["spring", "summer"],
+        "taste":["sweet","sour"],
+        "imageUrl": "https://images.unsplash.com/photo-1589533610925-1cffc309ebaa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+        "cookingTechniques":["raw","saute"],
+        "tips": "Adding sugar enhances strawberry flavor as does adding an acid such as citrus juice or vinegar"
+    },
+    {
+        "name": "sweet potato",
+        "type": "vegetable",
+        "season": ["autumn","winter"],
+        "taste":["sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1584699006710-3ad3b82fce7f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+        "cookingTechniques":["bake","boil","deep-fry","fry","grill","mash","roast","saute","steam"]
+    },
+    {
+        "name": "tomatillo",
+        "type": "fruit",
+        "season": ["autumn","spring","summer","winter"],
+        "taste":["sour"],
+        "imageUrl": "https://images.unsplash.com/photo-1599047262004-81ba840c974c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8dG9tYXRpbGxvfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+    },
+    {
+        "name": "tomato",
+        "type": "fruit",
+        "season": ["summer","autumn"],
+        "taste":["sour","sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1576856497337-4f2be24683da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=791&q=80",
+        "cookingTechniques":["bake","broil","confit","fry","grill","raw","roast","saute","stew"]
+    },
+    {
+        "name": "turnip",
+        "type": "vegetable",
+        "season": ["autumn","spring","summer","winter"],
+        "taste":["sweet"],
+        "imageUrl": "https://images.pexels.com/photos/6280406/pexels-photo-6280406.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "cookingTechniques":["boil","braise","deep-fry","roast","simmer","steam"]
+    },
+    {
+        "name": "watermelon",
+        "type": "fruit",
+        "season": ["summer"],
+        "taste":["sweet"],
+        "imageUrl": "https://images.unsplash.com/photo-1589984662646-e7b2e4962f18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+        "cookingTechniques":["raw"]
+    },
+    {
+        "name": "zucchini squash",
+        "type": "vegetable",
+        "season": ["spring","summer"],
+        "taste":["sweet","astringent"],
+        "imageUrl": "https://images.unsplash.com/photo-1543280207-5f62a4c20be2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8enVjY2hpbml8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+        "cookingTechniques":["fry","grill","pan roast","roast","saute"]
+    }
+]

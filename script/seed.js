@@ -4,29 +4,10 @@ const {
   db,
   models: { User, Grocery },
 } = require('../server/db')
-const groceries = require('./groceries')
-// const groceryList = require('./groceries')
+const groceries = require('./groceryData.json')
 
 const faker = require('faker')
 const axios = require('axios')
-
-// const dotenv = require('dotenv').config()
-// const { createClient } = require('pexels')
-// const key = process.env.pexelKey
-// const client = createClient(key)
-
-// for demo --
-// async function test() {
-//   try {
-//     const query = 'potato'
-//     let { photos } = await client.photos.search({ query, per_page: 1 })
-//     console.log('query search', photos[0].src.medium)
-//     // console.log(photos[0].url)
-//   } catch (error) {
-//     console.log(error)
-//   }
-// }
-// test()
 
 /**
  * seed - this function clears the database, updates tables to
@@ -37,35 +18,14 @@ async function seed() {
   console.log('db synced!')
 
   //creating groceries
-  // let groceries = []
 
-  // for (let i = 0; i < groceryList.length; i++) {
-  //   let name = groceryList[i]
-  //   let type = faker.random.arrayElement(['fruit', 'vegetable'])
-  //   let season = faker.random.arrayElement([
-  //     'winter',
-  //     'spring',
-  //     'summer',
-  //     'fall',
-  //   ])
-  //   let price = faker.datatype.float({ min: 1.0, max: 50, precision: 0.01 })
-  //   let { photos } = await client.photos.search({ query: name, per_page: 1 })
-  //   let imageUrl = photos[0]
-  //     ? photos[0].src.medium
-  // ? photos[0].src.medium
-  // : photos[0].src.original
-  //     : 'https://images.unsplash.com/photo-1444459094717-a39f1e3e0903?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80'
-  //   console.log(imageUrl)
-  //   // let imageUrl = faker.image.imageUrl()
-
-  //   groceries.push({
-  //     name,
-  //     type,
-  //     season,
-  //     price,
-  //     imageUrl,
-  //   })
-  // }
+  for (let i = 0; i < groceries.length; i++) {
+    groceries[i].price = faker.datatype.number({
+      min: 100,
+      max: 5000,
+      precision: 25,
+    })
+  }
 
   await Grocery.bulkCreate(groceries)
 
@@ -99,19 +59,31 @@ async function seed() {
 
   await User.bulkCreate(users)
 
-  // const users = await Promise.all([
-  //   User.create({ firstName: 'cody', email: "cody@example.com", password: "123" }),
-  //   User.create({ firstName: 'murphy', email: "murphy@example.com", password: "123" }),
-  // ]);
+  await Promise.all([
+    User.create({
+      firstName: 'hello',
+      email: 'hello@example.com',
+      password: '123',
+    }),
+    User.create({
+      firstName: 'world',
+      email: 'world@example.com',
+      password: '123',
+      isAdmin: true,
+    }),
+  ])
 
   console.log(`seeded ${users.length} users`)
   console.log(`seeded ${groceries.length} groceries`)
   console.log(`seeded successfully`)
 
-  const testUser = await User.findByPk(1)
+  const testUser = await User.findByPk(101)
   const createOrder = await testUser.createOrder()
   console.log(createOrder)
-  const addOrderItem = await createOrder.createOrderItem({quantity: 3, subtotal: 18})
+  const addOrderItem = await createOrder.createOrderItem({
+    quantity: 3,
+    subtotal: 18,
+  })
   const setGrocery = await addOrderItem.setGrocery(1)
 
   return {

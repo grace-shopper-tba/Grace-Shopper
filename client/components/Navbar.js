@@ -3,17 +3,18 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { logout } from '../store'
 
-const Navbar = ({ handleClick, isLoggedIn, admin }) => (
+const Navbar = ({ handleClick, isLoggedIn, admin, userId }) => (
   <div>
     <nav className="flex-container">
       <h1 id="logo">Grace Grocer</h1>
       {isLoggedIn ? (
         <div>
+          {console.log(isLoggedIn, admin, userId)}
           {/* The navbar will show these links after you log in */}
           {/* if the user is an admin, show another link for a users page */}
           {admin ? <Link to="/users">Users</Link> : null}
           <Link to="/products">Products</Link>
-          <Link to="/cart">Cart</Link>
+          <Link to={`/users/${userId}/cart`}>Cart</Link>
           <a href="#" onClick={handleClick}>
             Logout
           </a>
@@ -23,7 +24,7 @@ const Navbar = ({ handleClick, isLoggedIn, admin }) => (
           {/* The navbar will show these links before you log in */}
           <Link to="/products">Products</Link>
           <Link to="/login">Login</Link>
-          <Link to="/cart">Cart</Link>
+          {/* <Link to="/cart">Cart</Link> */}
         </div>
       )}
     </nav>
@@ -38,6 +39,7 @@ const mapState = (state) => {
   return {
     isLoggedIn: !!state.auth.id,
     admin: state.auth.isAdmin,
+    userId: state.auth.id,
   }
 }
 

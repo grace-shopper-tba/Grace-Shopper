@@ -2,54 +2,94 @@ const router = require('express').Router()
 const {
   models: { User, Order, OrderItem, Grocery },
 } = require('../db')
-
+const { isAdmin, authorized, isUser } = require('./authMiddleware')
 module.exports = router
-//api/orders
-router.get('/:userId', async (req, res, next) => {
+
+router.get('/', authorized, isAdmin, async (req, res, next) => {
   try {
-    const order = await Order.findOne({
-      where: { userId: req.params.userId, active: true },
-    })
-    const orderItems = await order.getOrderItems()
-    res.send(orderItems)
+    const orders = await Order.findAll({ include: OrderItem })
+    res.status(200).send(orders)
+  } catch (error) {
+    console.log('Error in (all) orders get route')
+    next(error)
+  }
+})
+
+router.get('/:userId', authorized, isUser, async (req, res, next) => {
+  try {
+    if (req.params.userId === req.user.id) {
+      const orders = await Order.findAll({
+        where: { userId: req.params.userId },
+        include: OrderItem
+      })
+
+      res.status(200).send(orders);
+    } else {
+      res.sendStatus(401)
+    }
   } catch (error) {
     console.log('Error in orders get route')
     next(error)
   }
 })
 
-router.post('/', async (req, res, next) => {
+router.post('/', authorized, isUser, async (req, res, next) => {
   try {
     const { userId, groceryId, quantity, subtotal } = req.body
-    const response = await Order.findOrCreate({
-      where: { userId: userId, active: true },
-    })
-    const order = response[0]
-
-    await order.createOrderItem({
-      groceryId: groceryId,
-      quantity: quantity,
-      subtotal: subtotal,
-    })
-    const orderItems = await order.getOrderItems()
-    res.send(orderItems)
+    if (userId === req.user.id) {
+      let order = await Order.findOrCreate({
+        where: { userId: userId, active: true },
+      })
+      order = order[0]
+      if (groceryId) {
+        await order.createOrderItem({
+          groceryId,
+          quantity,
+          subtotal,
+        })
+        res.send(await order.getOrderItems())
+      } else {
+        res.send(await order.getOrderItems())
+      }
+    }
   } catch (error) {
     console.log('Error in orders post route')
     next(error)
   }
 })
 
-router.delete('/', async (req, res, next) => {
+router.put('/:itemId', authorized, isUser, async (req, res, next) => {
   try {
-    const itemId = req.body.itemId
-    const deletedItem = await OrderItem.destroy({
-      where: { id: itemId },
-    })
-
-    if (deletedItem) {
-      res.send('Deleted item from order')
+    const itemId = req.params.itemId
+    const orderItem = await OrderItem.findByPk(itemId, {include: Order})
+    if (orderItem) {
+      if (orderItem.order.userId === req.user.id) {
+        res.send(await orderItem.update(req.body, { where: { id: itemId } }))
+      } else {
+        res.sendStatus(401)
+      }
     } else {
-      res.send('Item not found')
+      res.sendStatus(404)
+    }
+  } catch(error) {
+    console.log('Error in orders put route')
+    next(error)
+  }
+})
+
+router.delete('/:itemId', authorized, isUser, async (req, res, next) => {
+  try {
+    const itemId = req.params.itemId
+    const orderItem = await OrderItem.findByPk(itemId, {include: Order})
+    if (orderItem) {
+      if (orderItem.order.userId === req.user.id) {
+        const deletedItem = await orderItem.destroy()
+        res.sendStatus(204)
+      } else {
+        res.sendStatus(401)
+      }
+    } else {
+      res.sendStatus(404)
     }
   } catch (error) {
     console.log('Error in orders delete route')

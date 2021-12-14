@@ -1,14 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchSingleProduct } from '../store/singleProduct'
+import { createProduct } from '../store/products'
+import { fetchSingleProduct, updateProduct } from '../store/singleProduct'
 
 class ProductForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       name: '',
-      type: '',
-      season: '',
+      type: 'vegetable',
+      season: 'summer',
       price: 0,
       imageUrl: '',
     }
@@ -16,9 +17,19 @@ class ProductForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
   componentDidMount() {
-    this.setState({
-      ...this.props.product,
-    })
+    if (this.props.match.params.productId) {
+      this.props.fetchProduct(+this.props.match.params.productId)
+      this.setState({
+        ...this.props.product,
+      })
+    }
+  }
+  componentDidUpdate(prevProps) {
+    if (prevProps.product.id !== this.props.product.id) {
+      this.setState({
+        ...this.props.product,
+      })
+    }
   }
   handleChange(evt) {
     this.setState({
@@ -27,38 +38,57 @@ class ProductForm extends React.Component {
   }
   handleSubmit(evt) {
     evt.preventDefault()
+    this.state.price = this.state.price * 100
+    if (this.props.match.params.productId) {
+      this.props.updateProduct({
+        ...this.state,
+
+        id: +this.props.match.params.productId,
+      })
+    } else {
+      this.props.createProduct({
+        ...this.state,
+        season: [`${this.state.season}`],
+      })
+    }
   }
   render() {
-    const { name, type, season, price, imageUrl } = this.state
-    const { handleChange } = this
+    const { name, price, imageUrl } = this.state
+    const { handleChange, handleSubmit } = this
     return (
       <div>
-        <img src="https://images.pexels.com/photos/7543152/pexels-photo-7543152.jpeg?auto=compress&cs=tinysrgb&h=350" />
-        <form>
-          <label htmlFor="name">Name</label>
-          <input name="name" value={name} onChange={handleChange} />
+        {this.props.admin ? (
+          <div>
+            <img src={imageUrl || ''} />
+            <form onSubmit={handleSubmit}>
+              <label htmlFor="name">Name</label>
+              <input name="name" value={name} onChange={handleChange} />
 
-          <label htmlFor="type">Type</label>
-          <select name="type">
-            <option value="vegetable">vegetable</option>
-            <option value="fruit">fruit</option>
-          </select>
+              <label htmlFor="type">Type</label>
+              <select name="type" onChange={handleChange}>
+                <option value="vegetable">vegetable</option>
+                <option value="fruit">fruit</option>
+              </select>
 
-          <label htmlFor="season">Season</label>
-          <select name="season">
-            <option>summer</option>
-            <option>fall</option>
-            <option>winter</option>
-            <option>spring</option>
-          </select>
+              <label htmlFor="season">Season</label>
+              <select name="season" onChange={handleChange}>
+                <option value="summer">summer</option>
+                <option value="autumn">autumn</option>
+                <option value="winter">winter</option>
+                <option value="spring">spring</option>
+              </select>
 
-          <label htmlFor="price">Price: $</label>
-          <input name="price" value={price} onChange={handleChange} />
+              <label htmlFor="price">Price: $</label>
+              <input name="price" value={price} onChange={handleChange} />
 
-          <label htmlFor="image">Image url</label>
-          <input name="imageUrl" value={imageUrl} onChange={handleChange} />
-          <button type="submit">Submit changes</button>
-        </form>
+              <label htmlFor="image">Image url</label>
+              <input name="imageUrl" value={imageUrl} onChange={handleChange} />
+              <button type="submit">Submit changes</button>
+            </form>
+          </div>
+        ) : (
+          <h1>You need to be an admin to view this page</h1>
+        )}
       </div>
     )
   }
@@ -67,11 +97,16 @@ class ProductForm extends React.Component {
 const mapState = (state) => {
   return {
     product: state.singleProduct,
+    admin: state.auth.isAdmin,
   }
 }
-const mapDispatch = (dispatch) => {
+const mapDispatch = (dispatch, { history }) => {
   return {
     fetchProduct: (id) => dispatch(fetchSingleProduct(id)),
+    createProduct: (productObject) =>
+      dispatch(createProduct(productObject, history)),
+    updateProduct: (productObject) =>
+      dispatch(updateProduct(productObject, history)),
   }
 }
 

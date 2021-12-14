@@ -9,7 +9,6 @@ const Navbar = ({ handleClick, isLoggedIn, admin, userId }) => (
       <h1 id="logo">Grace Grocer</h1>
       {isLoggedIn ? (
         <div>
-          {console.log(isLoggedIn, admin, userId)}
           {/* The navbar will show these links after you log in */}
           {/* if the user is an admin, show another link for a users page */}
           {admin ? <Link to="/users">Users</Link> : null}

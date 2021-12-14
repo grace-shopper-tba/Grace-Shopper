@@ -30,27 +30,24 @@ export const _deleteProduct = (productId) => {
 export const fetchProducts = () => {
   return async (dispatch) => {
     try {
-      const { data } = await axios.get('/api/products')
-      dispatch(setProducts(data))
+      const { data: products } = await axios.get('/api/products')
+      dispatch(setProducts(products))
     } catch (err) {
       console.log(err)
     }
   }
 }
 
-export const createProduct = (name, type, season, price, imageUrl) => {
+export const createProduct = (product, history) => {
   return async (dispatch) => {
     if (token) {
-      const { data: created } = await axios.post(
-        '/api/products',
-        { name, type, season, price, imageUrl },
-        {
-          headers: {
-            authorization: token,
-          },
-        }
-      )
-      return dispatch(_createProduct(created))
+      const { data: created } = await axios.post('/api/products', product, {
+        headers: {
+          authorization: token,
+        },
+      })
+      dispatch(_createProduct(created))
+      history.push('/products')
     }
   }
 }
@@ -69,6 +66,9 @@ export const deleteProduct = (productId) => {
 export default function productsReducer(state = [], action) {
   switch (action.type) {
     case SET_PRODUCTS:
+      action.products.map(
+        (product) => (product.price = (product.price / 100).toFixed(2))
+      )
       return action.products
     case CREATE_PRODUCT:
       return [...state, action.product]

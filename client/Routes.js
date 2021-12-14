@@ -35,6 +35,7 @@ class Routes extends Component {
             <Route path="/users" component={AllUsers} />
             <Route path="/home" component={Home} />
             <Route path="/products/:productId/edit" component={ProductForm} />
+            <Route path="/products/add" component={ProductForm} />
             <Route
               exact
               path="/products/:productId"

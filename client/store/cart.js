@@ -13,6 +13,7 @@ export const setCart = (cart) => {
     cart,
   }
 }
+
 // Note: this will need to change or be removed depending on how backend express route is changed
 export const removeFromCart = (placeholder) => {
   return {
@@ -27,12 +28,16 @@ export const fetchCart = (userId) => {
   return async (dispatch) => {
     try {
       const { data: cart } = await axios.get(`/api/orders/${userId}`)
+      // if(!cart){
+      //   await axios.post('/', userId)
+      // }
       dispatch(setCart(cart))
     } catch (err) {
       console.error(err)
     }
   }
 }
+
 // Note: addObj is expected to have userId, groceryId, quantity,
 export const addToCart = (addObj) => {
   return async (dispatch) => {

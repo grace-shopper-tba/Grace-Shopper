@@ -1,19 +1,19 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchSingleProduct } from '../store/singleProduct'
+import { fetchItem } from '../store/cartItem'
 
 class CartItem extends Component {
   constructor(props) {
     super(props)
   }
   componentDidMount() {
-    this.props.fetchProduct(this.props.productId)
+    this.props.fetchItem(this.props.productId)
   }
   render() {
     const { product, qty } = this.props
     const price = (product.price / 100).toFixed(2)
     const subtotal = ((qty * product.price) / 100).toFixed(2)
-
+    console.log('props in cartItem', this.props)
     return (
       <div className="flex-container cartItem">
         <img src={product.imageUrl} />
@@ -34,7 +34,7 @@ const mapState = (state) => {
 
 const mapDispatch = (dispatch) => {
   return {
-    fetchProduct: (id) => dispatch(fetchSingleProduct(id)),
+    fetchItem: (productId) => dispatch(fetchItem(productId)),
   }
 }
 

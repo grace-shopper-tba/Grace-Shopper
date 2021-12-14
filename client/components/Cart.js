@@ -1,17 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { fetchCart } from '../store/cart'
-import { fetchProducts } from '../store/products'
 import CartItem from './CartItem'
 
 class Cart extends React.Component {
   componentDidMount() {
     this.props.getCart(this.props.user.id)
-    this.props.getProducts()
   }
 
   render() {
     const { cart, user } = this.props
+    console.log('props in cart', this.props)
+
     //we can check to see if user is not logged in, if not logged in, get info from local storage
     return (
       <div>
@@ -85,7 +85,6 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
   return {
     getCart: (userId) => dispatch(fetchCart(userId)),
-    getProducts: () => dispatch(fetchProducts()),
   }
 }
 

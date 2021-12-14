@@ -11,10 +11,12 @@ export const setCart = (cart) => {
   }
 }
 
+//thunk to get user's cart aka active order
+
 export const fetchCart = (userId) => {
   return async (dispatch) => {
     if (token) {
-      const { data: cart } = await axios.get(`/api/orders/${userId}`, {
+      const { data: cart } = await axios.post('/api/orders', userId, {
         headers: {
           authorization: token,
         },

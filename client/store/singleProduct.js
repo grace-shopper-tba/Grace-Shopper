@@ -30,19 +30,21 @@ export const fetchSingleProduct = (productId) => {
   }
 }
 
-export const updateProduct = (id, name, type, season, price, imageUrl) => {
+export const updateProduct = (product, history) => {
   return async (dispatch) => {
     if (token) {
       const { data: updated } = await axios.put(
-        `/api/products/${id}`,
-        { name, type, season, price, imageUrl },
+        `/api/products/${product.id}`,
+        product,
         {
           headers: {
             authorization: token,
           },
         }
       )
+      console.log('Dispatching')
       dispatch(_updateProduct(updated))
+      history.push(`/products/${product.id}`)
     }
   }
 }
@@ -52,8 +54,10 @@ const initialState = {}
 export default function (state = initialState, action) {
   switch (action.type) {
     case SET_PRODUCT:
+      action.product.price = (action.product.price / 100).toFixed(2)
       return action.product
     case UPDATE_PRODUCT:
+      action.product.price = (action.product.price / 100).toFixed(2)
       return action.product
     default:
       return state

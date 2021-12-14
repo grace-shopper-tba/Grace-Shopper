@@ -53,7 +53,7 @@ class SingleProduct extends React.Component {
         <div>
           <h1>{product.name}</h1>
           <p>Season: {product.season}</p>
-          <p>Price: ${(product.price / 100).toFixed(2)}</p>
+          <p>Price: ${product.price}</p>
         </div>
       </div>
     )

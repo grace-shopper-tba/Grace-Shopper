@@ -1,42 +1,41 @@
-const router = require('express').Router();
+const router = require('express').Router()
 const {
-  models: { User, Order, OrderItem, Grocery }
-} = require('../db');
-module.exports = router;
+  models: { User, Order, OrderItem, Grocery },
+} = require('../db')
 
-router.get('/', async (req, res, next) => {
+module.exports = router
+//api/orders
+router.get('/:userId', async (req, res, next) => {
   try {
-    const { userId } = req.body;
     const order = await Order.findOne({
-      where: { userId: userId, active: true },
-    });
-
-    const orderItems = await order.getOrderItems();
-    res.send(orderItems);
-  } catch(error) {
-    console.log('Error in orders get route');
-    next(error);
+      where: { userId: req.params.userId, active: true },
+    })
+    const orderItems = await order.getOrderItems()
+    res.send(orderItems)
+  } catch (error) {
+    console.log('Error in orders get route')
+    next(error)
   }
 })
 
 router.post('/', async (req, res, next) => {
   try {
-    const { userId, groceryId, quantity, subtotal } = req.body;
+    const { userId, groceryId, quantity, subtotal } = req.body
     const response = await Order.findOrCreate({
-      where: {userId: userId, active: true}
-    });
-    const order = response[0];
+      where: { userId: userId, active: true },
+    })
+    const order = response[0]
 
     await order.createOrderItem({
       groceryId: groceryId,
       quantity: quantity,
       subtotal: subtotal,
     })
-    const orderItems = await order.getOrderItems();
-    res.send(orderItems);
-  } catch(error) {
-     console.log('Error in orders post route');
-     next(error);
+    const orderItems = await order.getOrderItems()
+    res.send(orderItems)
+  } catch (error) {
+    console.log('Error in orders post route')
+    next(error)
   }
 })
 
@@ -48,14 +47,12 @@ router.delete('/', async (req, res, next) => {
     })
 
     if (deletedItem) {
-      res.send('Deleted item from order');
+      res.send('Deleted item from order')
     } else {
-      res.send('Item not found');
+      res.send('Item not found')
     }
-  } catch(error) {
-    console.log('Error in orders delete route');
-    next(error);
+  } catch (error) {
+    console.log('Error in orders delete route')
+    next(error)
   }
 })
-
-

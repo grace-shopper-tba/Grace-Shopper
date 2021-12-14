@@ -1,6 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { connect } from 'react-redux'
+import { fetchCart } from '../store/cart'
 
-export default class Cart extends Component {
+class Cart extends React.Component {
+  componentDidMount() {
+    this.props.getCart(this.props.userId)
+  }
+
   render() {
     return (
       <div>
@@ -31,3 +37,18 @@ export default class Cart extends Component {
     )
   }
 }
+
+const mapState = (state) => {
+  return {
+    cart: state.cart,
+    userId: state.auth.id,
+  }
+}
+
+const mapDispatch = (dispatch) => {
+  return {
+    getCart: (userId) => dispatch(fetchCart(userId)),
+  }
+}
+
+export default connect(mapState, mapDispatch)(Cart)

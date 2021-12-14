@@ -22,7 +22,6 @@ router.get('/:productId', async (req, res, next) => {
 
 router.post('/', authorized, isAdmin, async (req, res, next) => {
   try {
-    console.log('ehyo', req.body)
     res.send(await Grocery.create(req.body))
   } catch (err) {
     next(err)
@@ -42,7 +41,7 @@ router.delete('/:productId', authorized, isAdmin, async (req, res, next) => {
   try {
     const product = await Grocery.findByPk(req.params.productId)
     await product.destroy()
-    res.send() //tentative
+    res.send()
   } catch (err) {
     next(err)
   }

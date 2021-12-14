@@ -20,7 +20,7 @@ router.get('/:userId', async (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
   try {
-    const { userId, groceryId, quantity, subtotal } = req.body
+    const { userId, groceryId, quantity } = req.body
     const response = await Order.findOrCreate({
       where: { userId: userId, active: true },
     })
@@ -29,7 +29,6 @@ router.post('/', async (req, res, next) => {
     await order.createOrderItem({
       groceryId: groceryId,
       quantity: quantity,
-      subtotal: subtotal,
     })
     const orderItems = await order.getOrderItems()
     res.send(orderItems)

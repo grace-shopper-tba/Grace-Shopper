@@ -33,7 +33,7 @@ export const fetchCart = (userId) => {
     }
   }
 }
-// Note: addObj is expected to have userId, groceryId, quantity, and subtotal
+// Note: addObj is expected to have userId, groceryId, quantity,
 export const addToCart = (addObj) => {
   return async (dispatch) => {
     try {

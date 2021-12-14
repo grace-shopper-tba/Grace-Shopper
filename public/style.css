@@ -97,6 +97,7 @@ nav a {
 .users-container,
 .sidebar,
 .form,
+.cart-info,
 form div {
   flex-flow: column wrap;
   padding: 10px;
@@ -147,6 +148,11 @@ button {
   border-radius: 3px;
   margin: 1em;
   box-sizing: border-box;
+}
+
+.buttons {
+  flex-direction: column;
+  align-items: center;
 }
 
 .products-container,
@@ -213,4 +219,14 @@ button {
 
 .admin-buttons {
   display: none;
+}
+
+.cartItem,
+.input {
+  flex-flow: row;
+  justify-content: space-evenly;
+}
+
+.cartItem img {
+  height: 80px;
 }

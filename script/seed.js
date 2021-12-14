@@ -79,12 +79,21 @@ async function seed() {
 
   const testUser = await User.findByPk(101)
   const createOrder = await testUser.createOrder()
-  console.log(createOrder)
+  // console.log(createOrder)
   const addOrderItem = await createOrder.createOrderItem({
     quantity: 3,
     subtotal: 18,
   })
-  const setGrocery = await addOrderItem.setGrocery(1)
+  await addOrderItem.setGrocery(1)
+
+  const testUser2 = await User.findByPk(102)
+  const createOrder2 = await testUser2.createOrder()
+  // console.log(createOrder)
+  const addOrderItem2 = await createOrder2.createOrderItem({
+    quantity: 5,
+    subtotal: 20,
+  })
+  await addOrderItem2.setGrocery(3)
 
   return {
     users,

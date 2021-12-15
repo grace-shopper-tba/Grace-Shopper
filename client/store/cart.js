@@ -1,6 +1,5 @@
 import axios from 'axios'
 const TOKEN = 'token'
-const token = window.localStorage.getItem(TOKEN)
 
 const SET_CART = 'SET_CART'
 const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
@@ -34,6 +33,7 @@ export const _removeFromCart = (itemId) => {
 
 export const fetchCart = (userId) => {
   return async (dispatch) => {
+    const token = window.localStorage.getItem(TOKEN)
     if (token) {
       const { data: cart } = await axios.get(`/api/orders/${userId}`, {
         headers: {

@@ -101,14 +101,11 @@ const hashPassword = async (user) => {
   }
 }
 
-const giveUsersCarts = async (user) => {
-  // console.log(user)
-  // console.log(Object.keys(User.prototype))
+const giveUserCart = async (user) => {
   await user.createOrder();
 }
 
 const giveBulkUsersCarts = async (users) => {
-  // console.log(users)
   users.map(user => user.createOrder())
 }
 
@@ -119,5 +116,5 @@ User.beforeBulkCreate((users) => Promise.all(users.map(hashPassword)))
 // These hooks will attempt to create an order after a single user is created
 // Or after a bulkCreate is done (like in the seed file!)
 
-User.afterCreate(giveUsersCarts)
+User.afterCreate(giveUserCart)
 User.afterBulkCreate(giveBulkUsersCarts)

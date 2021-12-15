@@ -73,13 +73,6 @@ async function seed() {
     }),
   ])
 
-  // const temp123User = await User.create({
-  //   firstName: 'exp1',
-  //   email: 'exp1@exp.com',
-  //   password: '123'
-  // })
-  // console.log(temp123User)
-
   console.log(`seeded ${users.length} users`)
   console.log(`seeded ${groceries.length} groceries`)
   console.log(`seeded successfully`)

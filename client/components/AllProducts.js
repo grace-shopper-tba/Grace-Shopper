@@ -24,6 +24,14 @@ class AllProducts extends React.Component {
     return (
       <div className="grid-item">
         <h1>Store</h1>
+        <div>
+          <label>Filter Products</label> <br />
+          <select>
+            <option value="all">All Products</option>
+            <option value="fruit">Fruit</option>
+            <option value="vegetable">Vegetables</option>
+          </select>
+        </div>
         <Link to="/products/add">
           <button className={admin ? '' : 'admin-buttons'}>
             Add a product

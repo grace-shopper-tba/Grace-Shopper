@@ -1,11 +1,10 @@
 import axios from 'axios'
-
-// Note: there's some guess work involved especially regarding removing an item from cart. I would need to actually run the app and check console/logger to confirm things. The express route currently just sends back a string; it needs to send back something I can use to filter the removed item from cart, or simply send back the whole cart
+const TOKEN = 'token'
+const token = window.localStorage.getItem(TOKEN)
 
 const SET_CART = 'SET_CART'
 const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
-
-// actions
+// const UPDATE_ITEM = 'UPDATE_ITEM'
 
 export const setCart = (cart) => {
   return {
@@ -13,58 +12,88 @@ export const setCart = (cart) => {
     cart,
   }
 }
-// Note: this will need to change or be removed depending on how backend express route is changed
-export const removeFromCart = (placeholder) => {
+
+export const _removeFromCart = (itemId) => {
   return {
     type: REMOVE_FROM_CART,
-    placeholder,
+    itemId,
   }
 }
 
-// thunks
+// export const _changeItemInCart = (orderItem) => {
+//   return {
+//     type: UPDATE_ITEM,
+//     orderItem
+//   }
+// }
+
+// thunk to get user's cart aka active order
+// a new user with no cart will have a cart made
+// this is an empty array, which you could check for
+// in react and instead render something else
 
 export const fetchCart = (userId) => {
   return async (dispatch) => {
-    try {
-      const { data: cart } = await axios.get(`/api/orders/${userId}`)
+    if (token) {
+      const { data: cart } = await axios.get(`/api/orders/${userId}`, {
+        headers: {
+          authorization: token,
+        },
+      })
       dispatch(setCart(cart))
-    } catch (err) {
-      console.error(err)
-    }
-  }
-}
-// Note: addObj is expected to have userId, groceryId, quantity, and subtotal
-export const addToCart = (addObj) => {
-  return async (dispatch) => {
-    try {
-      const { data } = await axios.post('/api/orders', addObj)
-      dispatch(setCart(data))
-    } catch (err) {
-      console.log(err)
     }
   }
 }
 
-export const _removeFromCart = (itemId) => {
+// thunk to remove an item from cart aka active order
+
+export const removeFromCart = (itemId) => {
   return async (dispatch) => {
-    try {
-      const { data } = await axios.delete('/api/orders', itemId)
-      dispatch(removeFromCart(data))
-    } catch (err) {
-      console.log(err)
+    if (token) {
+      await axios.delete(`/api/orders/${itemId}`, {
+        headers: {
+          authorization: token,
+        },
+      })
+      dispatch(_removeFromCart(itemId))
     }
   }
 }
 
-//reducer
+// thunk to update an item in cart
+// the Express route updates the orderItem with req.body
+
+export const changeItemInCart = (itemId, updateObj) => {
+  return async () => {
+    if (token) {
+      const { data: orderItem } = await axios.put(
+        `/api/orders/${itemId}`,
+        updateObj,
+        {
+          headers: {
+            authorization: token,
+          },
+        }
+      )
+      // data from Express route is including Order, which has userId
+      // so I thought I could use that to refetch the cart here
+      // otherwise you could pass the userId from the frontend
+      const { userId } = orderItem.Order
+      fetchCart(userId)
+      // if this works, you could change how cart is updated when
+      // removing an item from cart
+    }
+  }
+}
 
 export default function cartReducer(state = [], action) {
   switch (action.type) {
     case SET_CART:
       return action.cart
     case REMOVE_FROM_CART:
-      //placeholder; if entire cart is sent back, just use SET_CART
-      return state.filter((item) => item.id != action.item.id)
+      return state.filter((item) => item.groceryId !== action.itemId)
+    // case UPDATE_ITEM:
+    //   return
     default:
       return state
   }

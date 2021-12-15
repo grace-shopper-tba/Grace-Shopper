@@ -77,6 +77,7 @@ async function seed() {
   console.log(`seeded ${groceries.length} groceries`)
   console.log(`seeded successfully`)
 
+
   // const testUser = await User.findByPk(101)
   // console.log(testUser)
   // const createOrder = await testUser.createOrder()

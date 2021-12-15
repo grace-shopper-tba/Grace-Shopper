@@ -34,17 +34,14 @@ export const _removeFromCart = (itemId) => {
 
 export const fetchCart = (userId) => {
   return async (dispatch) => {
-    // if (token) {
-    //   const { data: cart } = await axios.post('/api/orders', userId, {
-    //     headers: {
-    //       authorization: token,
-    //     },
-    //   })
-    //   dispatch(setCart(cart))
-    // } else {
-    const { data: cart } = await axios.get(`/api/orders/${userId}`)
-    dispatch(setCart(cart))
-    // }
+    if (token) {
+      const { data: cart } = await axios.get(`/api/orders/${userId}`, {
+        headers: {
+          authorization: token,
+        },
+      })
+      dispatch(setCart(cart))
+    }
   }
 }
 

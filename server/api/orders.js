@@ -15,26 +15,26 @@ router.get('/', authorized, isAdmin, async (req, res, next) => {
   }
 })
 //had to remove authorized and isUser for cart to work- need to implement security here due to user info returned
-router.get('/:userId', async (req, res, next) => {
+router.get('/:userId', authorized, isUser, async (req, res, next) => {
   try {
-    // if (req.params.userId === req.user.id) {
-    const orders = await Order.findAll({
-      where: { userId: req.params.userId },
-      include: [
-        {
-          model: OrderItem,
-          include: Grocery,
-        },
-        {
-          model: User,
-        },
-      ],
-    })
-
-    res.status(200).send(orders)
-    // } else {
-    //   res.sendStatus(401)
-    // }
+    if (+req.params.userId === req.user.id) {
+      const orders = await Order.findAll({
+        where: { userId: req.params.userId },
+        include: [
+          {
+            model: OrderItem,
+            include: Grocery,
+          },
+          {
+            model: User,
+            attributes: ['firstName', 'lastName', 'phoneNumber', 'address'],
+          },
+        ],
+      })
+      res.status(200).send(orders)
+    } else {
+      res.sendStatus(401)
+    }
   } catch (error) {
     console.log('Error in orders get route')
     next(error)

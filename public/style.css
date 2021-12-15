@@ -214,3 +214,13 @@ button {
 .admin-buttons {
   display: none;
 }
+.cartItem,
+.cartInfo {
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.cartItem img {
+  height: 75px;
+}

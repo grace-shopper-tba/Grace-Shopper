@@ -14,19 +14,27 @@ router.get('/', authorized, isAdmin, async (req, res, next) => {
     next(error)
   }
 })
-
-router.get('/:userId', authorized, isUser, async (req, res, next) => {
+//had to remove authorized and isUser for cart to work- need to implement security here due to user info returned
+router.get('/:userId', async (req, res, next) => {
   try {
-    if (req.params.userId === req.user.id) {
-      const orders = await Order.findAll({
-        where: { userId: req.params.userId },
-        include: OrderItem
-      })
+    // if (req.params.userId === req.user.id) {
+    const orders = await Order.findAll({
+      where: { userId: req.params.userId },
+      include: [
+        {
+          model: OrderItem,
+          include: Grocery,
+        },
+        {
+          model: User,
+        },
+      ],
+    })
 
-      res.status(200).send(orders);
-    } else {
-      res.sendStatus(401)
-    }
+    res.status(200).send(orders)
+    // } else {
+    //   res.sendStatus(401)
+    // }
   } catch (error) {
     console.log('Error in orders get route')
     next(error)
@@ -61,7 +69,7 @@ router.post('/', authorized, isUser, async (req, res, next) => {
 router.put('/:itemId', authorized, isUser, async (req, res, next) => {
   try {
     const itemId = req.params.itemId
-    const orderItem = await OrderItem.findByPk(itemId, {include: Order})
+    const orderItem = await OrderItem.findByPk(itemId, { include: Order })
     if (orderItem) {
       if (orderItem.order.userId === req.user.id) {
         res.send(await orderItem.update(req.body, { where: { id: itemId } }))
@@ -71,7 +79,7 @@ router.put('/:itemId', authorized, isUser, async (req, res, next) => {
     } else {
       res.sendStatus(404)
     }
-  } catch(error) {
+  } catch (error) {
     console.log('Error in orders put route')
     next(error)
   }
@@ -80,7 +88,7 @@ router.put('/:itemId', authorized, isUser, async (req, res, next) => {
 router.delete('/:itemId', authorized, isUser, async (req, res, next) => {
   try {
     const itemId = req.params.itemId
-    const orderItem = await OrderItem.findByPk(itemId, {include: Order})
+    const orderItem = await OrderItem.findByPk(itemId, { include: Order })
     if (orderItem) {
       if (orderItem.order.userId === req.user.id) {
         const deletedItem = await orderItem.destroy()

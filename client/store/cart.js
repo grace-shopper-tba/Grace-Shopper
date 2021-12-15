@@ -9,14 +9,14 @@ const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
 export const setCart = (cart) => {
   return {
     type: SET_CART,
-    cart
+    cart,
   }
 }
 
 export const _removeFromCart = (itemId) => {
   return {
     type: REMOVE_FROM_CART,
-    itemId
+    itemId,
   }
 }
 
@@ -34,14 +34,17 @@ export const _removeFromCart = (itemId) => {
 
 export const fetchCart = (userId) => {
   return async (dispatch) => {
-    if (token) {
-      const { data: cart } = await axios.post('/api/orders', userId, {
-        headers: {
-          authorization: token,
-        },
-      })
-      dispatch(setCart(cart))
-    }
+    // if (token) {
+    //   const { data: cart } = await axios.post('/api/orders', userId, {
+    //     headers: {
+    //       authorization: token,
+    //     },
+    //   })
+    //   dispatch(setCart(cart))
+    // } else {
+    const { data: cart } = await axios.get(`/api/orders/${userId}`)
+    dispatch(setCart(cart))
+    // }
   }
 }
 
@@ -66,11 +69,15 @@ export const removeFromCart = (itemId) => {
 export const changeItemInCart = (itemId, updateObj) => {
   return async () => {
     if (token) {
-      const { data: orderItem } = await axios.put(`/api/orders/${itemId}`, updateObj, {
-        headers: {
-          authorization: token,
-        },
-      })
+      const { data: orderItem } = await axios.put(
+        `/api/orders/${itemId}`,
+        updateObj,
+        {
+          headers: {
+            authorization: token,
+          },
+        }
+      )
       // data from Express route is including Order, which has userId
       // so I thought I could use that to refetch the cart here
       // otherwise you could pass the userId from the frontend
@@ -87,7 +94,7 @@ export default function cartReducer(state = [], action) {
     case SET_CART:
       return action.cart
     case REMOVE_FROM_CART:
-      return state.filter(item => item.groceryId !== action.itemId)
+      return state.filter((item) => item.groceryId !== action.itemId)
     // case UPDATE_ITEM:
     //   return
     default:

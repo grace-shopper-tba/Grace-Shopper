@@ -73,18 +73,26 @@ async function seed() {
     }),
   ])
 
+  // const temp123User = await User.create({
+  //   firstName: 'exp1',
+  //   email: 'exp1@exp.com',
+  //   password: '123'
+  // })
+  // console.log(temp123User)
+
   console.log(`seeded ${users.length} users`)
   console.log(`seeded ${groceries.length} groceries`)
   console.log(`seeded successfully`)
 
-  const testUser = await User.findByPk(101)
-  const createOrder = await testUser.createOrder()
-  console.log(createOrder)
-  const addOrderItem = await createOrder.createOrderItem({
-    quantity: 3,
-    subtotal: 18,
-  })
-  const setGrocery = await addOrderItem.setGrocery(1)
+  // const testUser = await User.findByPk(101)
+  // console.log(testUser)
+  // const createOrder = await testUser.createOrder()
+  // console.log(createOrder)
+  // const addOrderItem = await createOrder.createOrderItem({
+  //   quantity: 3,
+  //   subtotal: 18,
+  // })
+  // const setGrocery = await addOrderItem.setGrocery(1)
 
   return {
     users,

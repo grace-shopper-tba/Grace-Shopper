@@ -12,6 +12,7 @@ import Homepage from './components/Homepage'
 import Sidebar from './components/Sidebar'
 import Cart from './components/Cart'
 import ProductForm from './components/ProductForm'
+import Checkout from './components/Checkout'
 
 /**
  * COMPONENT
@@ -32,6 +33,7 @@ class Routes extends Component {
             <Route path="/" exact component={Homepage} />
             <Route path="/myaccount" component={MyAccount} />
             <Route path="/users/:userId/cart" component={Cart} />
+            <Route path="/users/:userId/checkout" component={Checkout} />
             <Route path="/users" component={AllUsers} />
             <Route path="/home" component={Home} />
             <Route path="/products/:productId/edit" component={ProductForm} />

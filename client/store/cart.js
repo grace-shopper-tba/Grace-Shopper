@@ -73,8 +73,11 @@ export const changeItemInCart = (itemId, updateObj) => {
       })
       // data from Express route is including Order, which has userId
       // so I thought I could use that to refetch the cart here
+      // otherwise you could pass the userId from the frontend
       const { userId } = orderItem.Order
       fetchCart(userId)
+      // if this works, you could change how cart is updated when
+      // removing an item from cart
     }
   }
 }

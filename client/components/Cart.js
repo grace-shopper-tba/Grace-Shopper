@@ -11,15 +11,15 @@ class Cart extends React.Component {
   }
 
   render() {
-    const cart = this.props.cart[0]
-    console.log(this.props.cart)
+    const cart = this.props.cart.filter((order) => order.active === true)
+    // console.log(this.props.cart)
     console.log('cart --->', cart)
     return (
       <div>
         <h2>Shopping Cart</h2>
         <div>
           <h3>Items</h3>
-          {cart ? (
+          {cart.orderItems ? (
             cart.orderItems.map((item) => (
               <div key={item.id} className="flex-container cartItem">
                 <img src={item.grocery.imageUrl} />
@@ -38,50 +38,9 @@ class Cart extends React.Component {
             </small>
           )}
         </div>
-        {cart && (
-          <div>
-            <h3>Recipient Information</h3>
-            <div className="flex-container cartInfo">
-              <h5>First Name</h5>
-              <p>{cart.user.firstName}</p>
-            </div>
-            <div className="flex-container cartInfo">
-              <h5>Last Name</h5>
-              <p>
-                {cart.user.lastName ? (
-                  cart.user.lastName
-                ) : (
-                  <input placeholder="Last Name" />
-                )}
-              </p>
-            </div>
-            <div className="flex-container cartInfo">
-              <h5>Phone Number</h5>
-              <p>
-                {cart.user.phoneNumber ? (
-                  cart.user.phoneNumber
-                ) : (
-                  <input placeholder="Phone Number" />
-                )}
-              </p>
-            </div>
-          </div>
-        )}
-        {cart && (
-          <div>
-            <h3>Shipping Address</h3>
-            <span>{cart.user.firstName}</span>
-            <span>{cart.user.lastName ? cart.user.lastName : null}</span>
-            <p>
-              {cart.user.address ? (
-                cart.user.address
-              ) : (
-                <input placeholder="Address" />
-              )}
-            </p>
-          </div>
-        )}
-        <button>Checkout</button>
+        <Link to="/users/:userId/checkout">
+          <button>Checkout</button>
+        </Link>
         <button>Cancel</button>
       </div>
     )
@@ -91,7 +50,7 @@ class Cart extends React.Component {
 const mapState = (state) => {
   return {
     cart: state.cart,
-    isLoggedIn: !!state.auth.id,
+    // isLoggedIn: !!state.auth.id,
     // userId: state.auth.id,
   }
 }

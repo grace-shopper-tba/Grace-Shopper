@@ -1,6 +1,5 @@
 import axios from 'axios'
 const TOKEN = 'token'
-const token = window.localStorage.getItem(TOKEN)
 
 const SET_PRODUCTS = 'SET_PRODUCTS'
 const CREATE_PRODUCT = 'CREATE_PRODUCT'
@@ -40,6 +39,7 @@ export const fetchProducts = () => {
 
 export const createProduct = (product, history) => {
   return async (dispatch) => {
+    const token = window.localStorage.getItem(TOKEN)
     if (token) {
       const { data: created } = await axios.post('/api/products', product, {
         headers: {
@@ -54,6 +54,7 @@ export const createProduct = (product, history) => {
 
 export const deleteProduct = (productId) => {
   return async (dispatch) => {
+    const token = window.localStorage.getItem(TOKEN)
     await axios.delete(`/api/products/${productId}`, {
       headers: {
         authorization: token,

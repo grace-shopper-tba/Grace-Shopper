@@ -10,10 +10,19 @@ class MyOrders extends React.Component {
     this.props.getOrders(this.props.userId)
   }
   render() {
-    // const { orders } = this.props
+    const { orders } = this.props
     return (
       <div>
-        hi placeholder
+        {orders.map(order => (
+          <p key={order.id}>
+            Order Number: {order.id} <br />
+            Order Items: {order.orderItems.map(orderItem => (
+              <p>
+                {orderItem.groceryId}
+              </p>
+            ))}
+          </p>
+        ))}
       </div>
     )
   }

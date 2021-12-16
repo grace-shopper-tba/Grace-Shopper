@@ -44,17 +44,11 @@ class SingleProduct extends React.Component {
         <div>
           <img src={product.imageUrl} />
           <div className="flex-container" id="add-to-cart-container">
-            <button
-              className="quantity-decrement-button"
-              onClick={this.decrement}
-            >
+            <button className="quantity-button" onClick={this.decrement}>
               -
             </button>
             <p>{this.state.quantity}</p>
-            <button
-              className="quantity-increment-button"
-              onClick={this.increment}
-            >
+            <button className="quantity-button" onClick={this.increment}>
               +
             </button>
             <button id="add-to-cart-button" onClick={this.addToCart}>
@@ -63,7 +57,7 @@ class SingleProduct extends React.Component {
           </div>
         </div>
 
-        <div>
+        <div className="single-product-info">
           <h1>{product.name}</h1>
           <p>Season: {product.season}</p>
           <p>Price: ${product.price}</p>

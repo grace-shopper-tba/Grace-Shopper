@@ -13,6 +13,7 @@ import Sidebar from './components/Sidebar'
 import Cart from './components/Cart'
 import ProductForm from './components/ProductForm'
 import Checkout from './components/Checkout'
+import OrderConfirmation from './components/OrderConfirmation'
 
 /**
  * COMPONENT
@@ -32,6 +33,10 @@ class Routes extends Component {
           <Switch>
             <Route path="/" exact component={Homepage} />
             <Route path="/myaccount" component={MyAccount} />
+            <Route
+              path="/users/:userId/thankyou"
+              component={OrderConfirmation}
+            />
             <Route path="/users/:userId/cart" component={Cart} />
             <Route path="/users/:userId/checkout" component={Checkout} />
             <Route path="/users" component={AllUsers} />

@@ -142,7 +142,8 @@ select,
 .users-container,
 .sidebar,
 .form,
-form div {
+form div,
+.thank-you {
   flex-flow: column wrap;
   padding: 10px;
   gap: 15px;
@@ -190,7 +191,9 @@ form div {
   /* border: 1px solid rebeccapurple; */
 }
 
-.form {
+.form,
+.thank-you,
+.single-product-info {
   margin: 75px auto;
   padding: 30px 30px;
   /* border: 1px solid salmon; */
@@ -273,7 +276,7 @@ input {
 
 .single-product-info {
   /* border: 1px solid red; */
-  margin: 10px;
+  margin: 30px;
   min-width: 300px;
   padding: 10px;
 }
@@ -320,8 +323,7 @@ input {
   align-items: center;
 } */
 
-table,
-.single-product-info {
+table {
   border-radius: 15px;
   backdrop-filter: blur(8px);
   background-color: rgba(190, 74, 80, 0.5);
@@ -337,6 +339,17 @@ table img {
   height: 75px;
 }
 
-.checkout {
+.checkout,
+.thank-you p {
   margin: auto 20px;
 }
+
+.thank-you p {
+  font-size: 1.4em;
+  padding: 20px 20px;
+}
+
+/* .thank-you {
+  width: fit-content;
+  min-height: 300px;
+} */

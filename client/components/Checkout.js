@@ -1,7 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
-const Checkout = ({ user, firstName, lastName, phoneNumber, address }) => {
+const Checkout = ({ userId, firstName, lastName, phoneNumber, address }) => {
   return (
     <div className="grid-item checkout-container">
       <div>
@@ -33,14 +34,16 @@ const Checkout = ({ user, firstName, lastName, phoneNumber, address }) => {
           {address ? address : <input placeholder="Enter shipping address" />}
         </p>
       </div>
-      <button>Confirm Order</button>
+      <Link to={`/users/${userId}/thankyou`}>
+        <button>Confirm Order</button>
+      </Link>
     </div>
   )
 }
 
 const mapState = (state) => {
   return {
-    user: state.auth,
+    userId: state.auth.id,
     firstName: state.auth.firstName,
     lastName: state.auth.lastName,
     phoneNumber: state.auth.phoneNumber,

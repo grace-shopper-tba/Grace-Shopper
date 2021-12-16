@@ -25,20 +25,23 @@ a {
 }
 
 nav,
-.view {
+.view,
+.checkout {
   flex-flow: row wrap;
   align-content: space-around;
   gap: 10px;
   height: fit-content;
   align-items: center;
   padding: 5px 10px;
-  border: 1px solid green;
+  /* border: 1px solid green; */
 }
 
 nav a,
 form button,
 select,
-.grid-item button {
+.grid-item button,
+.quantity-button,
+#add-to-cart-button {
   display: inline-block;
   margin: 1em;
   /* border: 1px solid pink; */
@@ -66,11 +69,11 @@ select,
 
   display: grid;
   grid-template-columns: 200px 1fr;
-  border: 5px solid yellow;
+  /* border: 5px solid yellow; */
 }
 
 .grid-item {
-  border: 5px solid red;
+  /* border: 5px solid red; */
   /* backdrop-filter: blur(7px); */
   margin: 0px 5px;
   border-radius: 15px;
@@ -82,11 +85,8 @@ select,
   margin: 30px;
 }
 
-/* .view-container {
-  width: fit-content;
-} */
-
-.view {
+.view,
+.checkout {
   /* margin-left: auto; */
   /* border: 1px solid green; */
   justify-content: end;
@@ -96,7 +96,7 @@ select,
   border-radius: 15px;
   padding: 5px 10px;
   backdrop-filter: blur(8px);
-  border: 2px solid yellow;
+  /* border: 2px solid yellow; */
   font-size: 1.2em;
   font-weight: bold;
 }
@@ -267,10 +267,21 @@ input {
   width: 200px;
 }
 
+.single-product-container img {
+  margin: 20px;
+}
+
+.single-product-info {
+  /* border: 1px solid red; */
+  margin: 10px;
+  min-width: 300px;
+  padding: 10px;
+}
 #add-to-cart-container {
   flex-flow: row;
   justify-content: space-around;
   align-items: center;
+  /* border: 1px solid blue; */
 }
 
 .homepage-container {
@@ -309,7 +320,8 @@ input {
   align-items: center;
 } */
 
-table {
+table,
+.single-product-info {
   border-radius: 15px;
   backdrop-filter: blur(8px);
   background-color: rgba(190, 74, 80, 0.5);
@@ -325,7 +337,6 @@ table img {
   height: 75px;
 }
 
-#checkout button {
-  position: absolute;
-  right: 0px;
+.checkout {
+  margin: auto 20px;
 }

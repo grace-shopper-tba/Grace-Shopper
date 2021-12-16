@@ -1,11 +1,19 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { fetchOrders } from '../store/myorders'
 
 class MyOrder extends React.Component {
+  constructor() {
+    super()
+  }
+  componentDidMount() {
+    this.props.getOrders(this.props.userId)
+  }
   render() {
+    const { orders } = this.props
     return (
       <div>
-
+        hi placeholder
       </div>
     )
   }
@@ -20,7 +28,7 @@ const mapState = (state) => {
 
 const mapDispatch = (dispatch) => {
   return {
-    getOrder: () => dispatch()
+    getOrders: (userId) => dispatch(fetchOrders(userId))
   }
 }
 

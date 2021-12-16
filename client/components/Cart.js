@@ -6,12 +6,40 @@ import { fetchCart } from '../store/cart'
 //yet to add- ability for visitor to view cart (approach- if not logged in, create empty order)
 //add to cart functionality - thunks needs to be created
 class Cart extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      edit: false,
+      newQuantity: 0,
+    }
+    this.handleEdit = this.handleEdit.bind(this)
+    // this.increment = this.increment.bind(this)
+    // this.decrement = this.decrement.bind(this)
+  }
   componentDidMount() {
     this.props.getCart(this.props.match.params.userId)
   }
 
+  handleEdit() {
+    this.setState({ edit: !this.state.edit })
+  }
+
+  // increment() {
+  //   this.setState({
+  //     quantity: this.state.quantity + 1,
+  //   })
+  // }
+  // decrement() {
+  //   if (this.state.quantity > 1) {
+  //     this.setState({
+  //       quantity: this.state.quantity - 1,
+  //     })
+  //   }
+  // }
+
   render() {
     const cart = this.props.cart.find((order) => order.active === true) || {}
+    console.log('try to find the item qty -->', cart)
     let totalPrice = 0
     let totalQuantity = 0
     cart.orderItems
@@ -20,6 +48,7 @@ class Cart extends React.Component {
           totalQuantity += element.quantity
         })
       : null
+    let newQuantity = 0
     return (
       <div className="grid-item">
         <h1>Shopping Cart</h1>
@@ -46,7 +75,34 @@ class Cart extends React.Component {
                       <td>
                         <h4>{item.grocery.name}</h4>
                       </td>
-                      <td>{item.quantity}</td>
+                      <td>
+                        {this.state.edit ? (
+                          <div
+                            className="flex-container"
+                            id="add-to-cart-container"
+                          >
+                            <button
+                              onClick={function () {
+                                newQuantity = item.quantity--
+                                console.log(newQuantity)
+                              }}
+                            >
+                              -
+                            </button>
+                            {item.quantity}
+                            <button
+                              onClick={function () {
+                                newQuantity = item.quantity++
+                                console.log(newQuantity)
+                              }}
+                            >
+                              +
+                            </button>
+                          </div>
+                        ) : (
+                          item.quantity
+                        )}
+                      </td>
                       <td>${(item.grocery.price / 100).toFixed(2)}</td>
                       <td>${(item.subtotal / 100).toFixed(2)}</td>
                     </tr>
@@ -62,7 +118,10 @@ class Cart extends React.Component {
                   </tr>
                 </tfoot>
               </table>
-              <div id="checkout">
+              <div className="flex-container checkout">
+                <button onClick={this.handleEdit}>
+                  {this.state.edit ? 'Update Cart' : 'Edit Cart'}
+                </button>
                 <Link to="/users/:userId/checkout">
                   <button>Checkout</button>
                 </Link>

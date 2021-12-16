@@ -25,7 +25,8 @@ a {
 }
 
 nav,
-.view {
+.view,
+.checkout {
   flex-flow: row wrap;
   align-content: space-around;
   gap: 10px;
@@ -82,11 +83,8 @@ select,
   margin: 30px;
 }
 
-/* .view-container {
-  width: fit-content;
-} */
-
-.view {
+.view,
+.checkout {
   /* margin-left: auto; */
   /* border: 1px solid green; */
   justify-content: end;
@@ -325,7 +323,6 @@ table img {
   height: 75px;
 }
 
-#checkout button {
-  position: absolute;
-  right: 0px;
+.checkout {
+  margin: auto 20px;
 }

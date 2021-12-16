@@ -10,7 +10,7 @@ class MyOrders extends React.Component {
     this.props.getOrders(this.props.userId)
   }
   render() {
-    const { orders } = this.props
+    // const { orders } = this.props
     return (
       <div>
         hi placeholder

@@ -42,7 +42,7 @@ class ProductForm extends React.Component {
     if (this.props.match.params.productId) {
       this.props.updateProduct({
         ...this.state,
-
+        season: [`${this.state.season}`],
         id: +this.props.match.params.productId,
       })
     } else {

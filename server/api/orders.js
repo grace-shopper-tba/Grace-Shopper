@@ -41,25 +41,29 @@ router.get('/:userId', authorized, isUser, async (req, res, next) => {
   }
 })
 
-router.post('/', authorized, isUser, async (req, res, next) => {
+router.post('/', async (req, res, next) => {
   try {
     const { userId, groceryId, quantity, subtotal } = req.body
-    if (userId === req.user.id) {
-      let order = await Order.findOrCreate({
-        where: { userId: userId, active: true },
+    // if (userId === req.user.id) {
+    const order = await Order.findOne({
+      where: { userId: userId, active: true },
+    })
+    const items = await order.getOrderItems()
+    const exists = items.find((item) => item.groceryId === groceryId)
+    if (exists) {
+      let item = await OrderItem.findByPk(exists.id)
+      item.quantity = item.quantity + quantity
+      item.subtotal = item.subtotal + subtotal
+      await item.save()
+    } else {
+      await order.createOrderItem({
+        groceryId,
+        quantity,
+        subtotal,
       })
-      order = order[0]
-      if (groceryId) {
-        await order.createOrderItem({
-          groceryId,
-          quantity,
-          subtotal,
-        })
-        res.send(await order.getOrderItems())
-      } else {
-        res.send(await order.getOrderItems())
-      }
     }
+    res.send(await order.getOrderItems())
+    // }
   } catch (error) {
     console.log('Error in orders post route')
     next(error)

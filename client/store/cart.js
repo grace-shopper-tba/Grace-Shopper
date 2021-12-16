@@ -4,6 +4,7 @@ const TOKEN = 'token'
 const SET_CART = 'SET_CART'
 const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
 // const UPDATE_ITEM = 'UPDATE_ITEM'
+const ADD_TO_CART = 'ADD_TO_CART'
 
 export const setCart = (cart) => {
   return {
@@ -25,6 +26,12 @@ export const _removeFromCart = (itemId) => {
 //     orderItem
 //   }
 // }
+export const _addToCart = (newCart) => {
+  return {
+    type: ADD_TO_CART,
+    newCart,
+  }
+}
 
 // thunk to get user's cart aka active order
 // a new user with no cart will have a cart made
@@ -85,6 +92,16 @@ export const changeItemInCart = (itemId, updateObj) => {
     }
   }
 }
+// userId, groceryId, quantity, subtotal
+export const addToCart = (item) => {
+  return async (dispatch) => {
+    // const token = window.localStorage.getItem(TOKEN)
+    // if (token) {
+    const { data: newCart } = await axios.post(`/api/orders`, item)
+    dispatch(_addToCart(newCart))
+    // }
+  }
+}
 
 export default function cartReducer(state = [], action) {
   switch (action.type) {
@@ -94,6 +111,8 @@ export default function cartReducer(state = [], action) {
       return state.filter((item) => item.groceryId !== action.itemId)
     // case UPDATE_ITEM:
     //   return
+    case ADD_TO_CART:
+      return action.newCart
     default:
       return state
   }

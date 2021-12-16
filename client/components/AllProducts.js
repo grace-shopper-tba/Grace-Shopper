@@ -6,7 +6,14 @@ import { deleteProduct, fetchProducts } from '../store/products'
 class AllProducts extends React.Component {
   constructor() {
     super()
+    this.state = {
+      productType: "all"
+    }
+    this.changeProductType = this.changeProductType.bind(this)
     this.handleDelete = this.handleDelete.bind(this)
+  }
+  changeProductType(event) {
+    this.setState({productType: event.target.value})
   }
   componentDidMount() {
     this.props.getProducts()
@@ -26,7 +33,7 @@ class AllProducts extends React.Component {
         <h1>Store</h1>
         <div>
           <label>Filter Products</label> <br />
-          <select>
+          <select onChange={this.changeProductType}>
             <option value="all">All Products</option>
             <option value="fruit">Fruit</option>
             <option value="vegetable">Vegetables</option>

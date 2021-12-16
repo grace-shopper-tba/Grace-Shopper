@@ -1,5 +1,6 @@
 import axios from 'axios'
 const TOKEN = 'token'
+const CART = 'cart'
 
 const SET_CART = 'SET_CART'
 const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
@@ -96,11 +97,35 @@ export const changeItemInCart = (itemId, updateObj) => {
 // userId, groceryId, quantity, subtotal
 export const addToCart = (item) => {
   return async (dispatch) => {
-    // const token = window.localStorage.getItem(TOKEN)
-    // if (token) {
-    const { data: newCart } = await axios.post(`/api/orders`, item)
-    dispatch(_addToCart(newCart))
-    // }
+    const token = window.localStorage.getItem(TOKEN)
+    if (token) {
+      const { data: newCart } = await axios.post(`/api/orders`, item)
+      dispatch(_addToCart(newCart))
+    } else {
+      let cart = window.localStorage.getItem(CART)
+      if (cart) {
+        cart = JSON.parse(cart)
+      } else {
+        window.localStorage.setItem(CART, '[]')
+        // cart = window.localStorage.getItem(CART)
+        cart = JSON.parse(window.localStorage.getItem(CART))
+      }
+      cart.push(item)
+      localStorage.setItem(CART, JSON.stringify(cart))
+    }
+    /*
+    else {
+      window.localStorage.setItem(CART, '[]')
+      console.log('new cart -->')
+      let otherVar = JSON.parse(window.localStorage.getItem(CART))
+      console.log(otherVar)
+      console.log(typeof otherVar)
+      console.log(Array.isArray(otherVar))
+      otherVar.push(item)
+      // JSON.stringify(window.localStorage.setItem(CART, otherVar))
+      // console.log(JSON.parse(window.localStorage.getItem(CART)))
+    }
+    */
   }
 }
 

@@ -1,6 +1,5 @@
 import axios from 'axios'
 const TOKEN = 'token'
-// const token = window.localStorage.getItem(TOKEN)
 
 const SET_PRODUCTS = 'SET_PRODUCTS'
 const CREATE_PRODUCT = 'CREATE_PRODUCT'

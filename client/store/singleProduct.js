@@ -1,6 +1,5 @@
 import axios from 'axios'
 const TOKEN = 'token'
-const token = window.localStorage.getItem(TOKEN)
 
 const SET_PRODUCT = 'SET_PRODUCT'
 const UPDATE_PRODUCT = 'UPDATE_PRODUCT'
@@ -32,6 +31,7 @@ export const fetchSingleProduct = (productId) => {
 
 export const updateProduct = (product, history) => {
   return async (dispatch) => {
+    const token = window.localStorage.getItem(TOKEN)
     if (token) {
       const { data: updated } = await axios.put(
         `/api/products/${product.id}`,

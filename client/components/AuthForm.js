@@ -53,12 +53,14 @@ const AuthForm = (props) => {
           <button type="submit">{displayName}</button>
         </div>
         {error && error.response && <div> {error.response.data} </div>}
-        <div>
-          <h3>
-            <span>New To Grace Grocer? </span>
-            <Link to="/signup">Sign Up Here</Link>
-          </h3>
-        </div>
+        {name === 'login' && (
+          <div>
+            <h3>
+              <span>New To Grace Grocer? </span>
+              <Link to="/signup">Sign Up Here</Link>
+            </h3>
+          </div>
+        )}
       </form>
     </div>
   )

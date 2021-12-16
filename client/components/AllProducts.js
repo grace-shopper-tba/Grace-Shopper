@@ -43,18 +43,20 @@ class AllProducts extends React.Component {
       <div className="grid-item">
         <h1>Store</h1>
         <div className="flex-container view">
-          <label>View:</label>
-          <select onChange={this.changeProductType}>
-            <option value="all">All Products</option>
-            <option value="fruit">Fruit</option>
-            <option value="vegetable">Vegetables</option>
-          </select>
+          <div>
+            <label>View:</label>
+            <select onChange={this.changeProductType}>
+              <option value="all">All Products</option>
+              <option value="fruit">Fruit</option>
+              <option value="vegetable">Vegetables</option>
+            </select>
+          </div>
         </div>
-        <Link to="/products/add">
-          <button className={admin ? '' : 'admin-buttons'}>
-            Add a product
-          </button>
-        </Link>
+        {admin ? (
+          <Link to="/products/add">
+            <button>Add a product</button>
+          </Link>
+        ) : null}
         <div className="flex-container products-container">
           {allProducts.map((product) => (
             <div className="flex-container product-items" key={product.id}>
@@ -63,15 +65,16 @@ class AllProducts extends React.Component {
                 <h3 className="product-name">{product.name}</h3>
                 <p>Price: ${product.price}</p>
               </Link>
-              <Link to={`/products/${product.id}/edit`}>
-                <button className={admin ? '' : 'admin-buttons'}>Edit</button>
-              </Link>
-              <button
-                className={admin ? '' : 'admin-buttons'}
-                onClick={() => this.handleDelete(product.id)}
-              >
-                Delete
-              </button>
+              {admin ? (
+                <div>
+                  <Link to={`/products/${product.id}/edit`}>
+                    <button>Edit</button>
+                  </Link>
+                  <button onClick={() => this.handleDelete(product.id)}>
+                    Delete
+                  </button>
+                </div>
+              ) : null}
             </div>
           ))}
         </div>

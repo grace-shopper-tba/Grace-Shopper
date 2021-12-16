@@ -32,11 +32,13 @@ nav,
   height: fit-content;
   align-items: center;
   padding: 5px 10px;
-  /* border: 1px solid green; */
+  border: 1px solid green;
 }
 
 nav a,
-form button {
+form button,
+select,
+.grid-item button {
   display: inline-block;
   margin: 1em;
   /* border: 1px solid pink; */
@@ -55,8 +57,10 @@ form button {
 }
 
 .grid {
-  max-width: 1920px;
+  /* max-width: 1920px; */
   height: fit-content;
+  width: fit-content;
+  min-width: 900px;
   margin: 0 auto;
   gap: 20px 5px;
 
@@ -68,8 +72,14 @@ form button {
 .grid-item {
   border: 5px solid red;
   /* backdrop-filter: blur(7px); */
-  margin: 10px 10px;
+  margin: 0px 5px;
   border-radius: 15px;
+}
+
+.grid-item h1,
+.grid-item h2,
+.checkout-container h3 {
+  margin: 30px;
 }
 
 /* .view-container {
@@ -78,9 +88,19 @@ form button {
 
 .view {
   /* margin-left: auto; */
-  border: 1px solid green;
+  /* border: 1px solid green; */
   justify-content: end;
 }
+
+.view div {
+  border-radius: 15px;
+  padding: 5px 10px;
+  backdrop-filter: blur(8px);
+  border: 2px solid yellow;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
 /* #app {
   display: grid;
   grid-gap: 1em;
@@ -126,17 +146,19 @@ form div {
   flex-flow: column wrap;
   padding: 10px;
   gap: 15px;
-  border: 2px solid pink;
+  /* border: 2px solid pink; */
 }
 
 .sidebar {
   position: relative;
   top: 100px;
-  border: 2px solid orange;
+  /* border: 2px solid orange; */
   height: fit-content;
 }
 
-.sidebar a {
+.sidebar a,
+select,
+option {
   display: inline-block;
   /* border: 1px solid pink; */
   border-radius: 5px;
@@ -145,6 +167,10 @@ form div {
   font-weight: bolder;
   opacity: 0.8;
   color: black;
+}
+
+option {
+  margin: 5px 3px;
 }
 /* form div {
   font-size: 14px;
@@ -212,11 +238,12 @@ input {
 .products-container,
 .homepage-container,
 .single-product-container,
-.account-info {
+.account-info,
+.cartInfo {
   flex-flow: row wrap;
   justify-content: space-evenly;
   box-sizing: border-box;
-  border: 2px solid royalblue;
+  /* border: 2px solid royalblue; */
   border-radius: 15px;
   margin: 10px 10px;
   padding: 10px 10px;
@@ -275,15 +302,18 @@ input {
   box-shadow: 1px 1px 100px rgba(0, 0, 0, 0.4);
 }
 
-.admin-buttons {
-  display: none;
-}
 /* .cartItem,
 .cartInfo {
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
 } */
+
+table {
+  border-radius: 15px;
+  backdrop-filter: blur(8px);
+  background-color: rgba(190, 74, 80, 0.5);
+}
 
 td,
 th {
@@ -293,4 +323,9 @@ th {
 
 table img {
   height: 75px;
+}
+
+#checkout button {
+  position: absolute;
+  right: 0px;
 }

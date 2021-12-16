@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 const Checkout = ({ user, firstName, lastName, phoneNumber, address }) => {
   return (
-    <div>
+    <div className="grid-item checkout-container">
       <div>
         <h3>Recipient Information</h3>
         <div className="flex-container cartInfo">

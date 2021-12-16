@@ -21,46 +21,53 @@ class Cart extends React.Component {
         })
       : null
     return (
-      <div>
-        <h2>Shopping Cart</h2>
+      <div className="grid-item">
+        <h1>Shopping Cart</h1>
         <div>
-          <h3>Items</h3>
+          <h2>Items</h2>
           {cart.orderItems ? (
-            <table>
-              <thead>
-                <tr>
-                  {/* <th className="hidden">Image</th>
+            <div>
+              <table>
+                <thead>
+                  <tr>
+                    {/* <th className="hidden">Image</th>
                   <th className="hidden">Item Name</th> */}
-                  <th colSpan="3">Qty.</th>
-                  <th>Unit Price</th>
-                  <th>Total</th>
-                </tr>
-              </thead>
-              <tbody>
-                {cart.orderItems.map((item) => (
-                  <tr key={item.id}>
-                    <td>
-                      <img src={item.grocery.imageUrl} />
-                    </td>
-                    <td>
-                      <h4>{item.grocery.name}</h4>
-                    </td>
-                    <td>{item.quantity}</td>
-                    <td>${(item.grocery.price / 100).toFixed(2)}</td>
-                    <td>${(item.subtotal / 100).toFixed(2)}</td>
+                    <th colSpan="3">Qty.</th>
+                    <th>Unit Price</th>
+                    <th>Total</th>
                   </tr>
-                ))}
-              </tbody>
-              <tfoot>
-                <tr>
-                  {/* <th className="hidden">Image</th> */}
-                  <th colSpan="2">Total Qty.:</th>
-                  <th>{totalQuantity}</th>
-                  <th>Total Price:</th>
-                  <th>${(totalPrice / 100).toFixed(2)}</th>
-                </tr>
-              </tfoot>
-            </table>
+                </thead>
+                <tbody>
+                  {cart.orderItems.map((item) => (
+                    <tr key={item.id}>
+                      <td>
+                        <img src={item.grocery.imageUrl} />
+                      </td>
+                      <td>
+                        <h4>{item.grocery.name}</h4>
+                      </td>
+                      <td>{item.quantity}</td>
+                      <td>${(item.grocery.price / 100).toFixed(2)}</td>
+                      <td>${(item.subtotal / 100).toFixed(2)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+                <tfoot>
+                  <tr>
+                    {/* <th className="hidden">Image</th> */}
+                    <th colSpan="2">Total Qty.:</th>
+                    <th>{totalQuantity}</th>
+                    <th>Total Price:</th>
+                    <th>${(totalPrice / 100).toFixed(2)}</th>
+                  </tr>
+                </tfoot>
+              </table>
+              <div id="checkout">
+                <Link to="/users/:userId/checkout">
+                  <button>Checkout</button>
+                </Link>
+              </div>
+            </div>
           ) : (
             <small>
               Your cart is empty. See <Link to="/products">products</Link> to
@@ -68,10 +75,6 @@ class Cart extends React.Component {
             </small>
           )}
         </div>
-        <div></div>
-        <Link to="/users/:userId/checkout">
-          <button>Checkout</button>
-        </Link>
       </div>
     )
   }

@@ -6,7 +6,14 @@ import { deleteProduct, fetchProducts } from '../store/products'
 class AllProducts extends React.Component {
   constructor() {
     super()
+    this.state = {
+      productType: "all"
+    }
+    this.changeProductType = this.changeProductType.bind(this)
     this.handleDelete = this.handleDelete.bind(this)
+  }
+  changeProductType(event) {
+    this.setState({productType: event.target.value})
   }
   componentDidMount() {
     this.props.getProducts()
@@ -15,7 +22,16 @@ class AllProducts extends React.Component {
     this.props.deleteProduct(id)
   }
   render() {
-    const allProducts = this.props.products
+    let allProducts = this.props.products
+    if (this.state.productType === "fruit") {
+      allProducts = allProducts.filter(product => product.type === "fruit")
+    }
+    if (this.state.productType === "vegetable") {
+      allProducts = allProducts.filter(product => product.type === "vegetable")
+    }
+    if (this.state.productType === "all") {
+      allProducts = this.props.products
+    }
     const admin = this.props.admin
     const style = {
       textDecoration: 'none',
@@ -24,6 +40,14 @@ class AllProducts extends React.Component {
     return (
       <div className="grid-item">
         <h1>Store</h1>
+        <div>
+          <label>Filter Products</label> <br />
+          <select onChange={this.changeProductType}>
+            <option value="all">All Products</option>
+            <option value="fruit">Fruit</option>
+            <option value="vegetable">Vegetables</option>
+          </select>
+        </div>
         <Link to="/products/add">
           <button className={admin ? '' : 'admin-buttons'}>
             Add a product

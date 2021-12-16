@@ -13,7 +13,7 @@ const Sidebar = ({ admin, userId }) => {
   ) : (
     <div className="grid-item flex-container sidebar">
       <Link to="/myaccount">My Profile</Link>
-      <Link to="">My Orders</Link>
+      <Link to="/myorders">My Orders</Link>
     </div>
   )
 }

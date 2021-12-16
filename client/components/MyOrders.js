@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { fetchOrders } from '../store/myorders'
 
-class MyOrder extends React.Component {
+class MyOrders extends React.Component {
   constructor() {
     super()
   }
@@ -32,4 +32,4 @@ const mapDispatch = (dispatch) => {
   }
 }
 
-export default connect (mapState, mapDispatch)(MyOrder)
+export default connect (mapState, mapDispatch)(MyOrders)

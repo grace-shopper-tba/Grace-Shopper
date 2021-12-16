@@ -14,6 +14,7 @@ import Cart from './components/Cart'
 import ProductForm from './components/ProductForm'
 import Checkout from './components/Checkout'
 import OrderConfirmation from './components/OrderConfirmation'
+import MyOrders from './components/MyOrders'
 
 /**
  * COMPONENT
@@ -32,6 +33,7 @@ class Routes extends Component {
         {isLoggedIn ? (
           <Switch>
             <Route path="/" exact component={Homepage} />
+            <Route path="/myorders" component={MyOrders} />
             <Route path="/myaccount" component={MyAccount} />
             <Route
               path="/users/:userId/thankyou"

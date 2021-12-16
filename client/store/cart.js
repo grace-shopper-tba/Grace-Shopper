@@ -107,25 +107,12 @@ export const addToCart = (item) => {
         cart = JSON.parse(cart)
       } else {
         window.localStorage.setItem(CART, '[]')
-        // cart = window.localStorage.getItem(CART)
         cart = JSON.parse(window.localStorage.getItem(CART))
       }
       cart.push(item)
       localStorage.setItem(CART, JSON.stringify(cart))
     }
-    /*
-    else {
-      window.localStorage.setItem(CART, '[]')
-      console.log('new cart -->')
-      let otherVar = JSON.parse(window.localStorage.getItem(CART))
-      console.log(otherVar)
-      console.log(typeof otherVar)
-      console.log(Array.isArray(otherVar))
-      otherVar.push(item)
-      // JSON.stringify(window.localStorage.setItem(CART, otherVar))
-      // console.log(JSON.parse(window.localStorage.getItem(CART)))
-    }
-    */
+
   }
 }
 

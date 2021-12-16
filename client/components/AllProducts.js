@@ -22,7 +22,16 @@ class AllProducts extends React.Component {
     this.props.deleteProduct(id)
   }
   render() {
-    const allProducts = this.props.products
+    let allProducts = this.props.products
+    if (this.state.productType === "fruit") {
+      allProducts = allProducts.filter(product => product.type === "fruit")
+    }
+    if (this.state.productType === "vegetable") {
+      allProducts = allProducts.filter(product => product.type === "vegetable")
+    }
+    if (this.state.productType === "all") {
+      allProducts = this.props.products
+    }
     const admin = this.props.admin
     const style = {
       textDecoration: 'none',

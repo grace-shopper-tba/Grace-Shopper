@@ -14,14 +14,19 @@ class MyOrders extends React.Component {
     return (
       <div>
         {orders.map(order => (
-          <p key={order.id}>
+          <div key={order.id}>
             Order Number: {order.id} <br />
-            Order Items: {order.orderItems.map(orderItem => (
-              <p>
-                {orderItem.groceryId}
-              </p>
-            ))}
-          </p>
+            Order Items: <br />
+            <ul>
+              {order.orderItems.map(orderItem => (
+                <li key={orderItem.groceryId}>
+                  <img src={orderItem.grocery.imageUrl} /> <br />
+                  {orderItem.grocery.name} <br />
+                  {orderItem.quantity}
+                </li>
+              ))}
+            </ul>
+          </div>
         ))}
       </div>
     )

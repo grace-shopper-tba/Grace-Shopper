@@ -24,7 +24,8 @@ a {
   text-decoration: none;
 }
 
-nav {
+nav,
+.view {
   flex-flow: row wrap;
   align-content: space-around;
   gap: 10px;
@@ -55,20 +56,30 @@ form button {
 
 .grid {
   max-width: 1920px;
-  height: max-content;
+  height: fit-content;
   margin: 0 auto;
-  gap: 20px 20px;
+  gap: 20px 5px;
 
   display: grid;
   grid-template-columns: 200px 1fr;
-  /* border: 5px solid yellow; */
+  border: 5px solid yellow;
 }
 
 .grid-item {
-  /* border: 5px solid red; */
+  border: 5px solid red;
   /* backdrop-filter: blur(7px); */
   margin: 10px 10px;
   border-radius: 15px;
+}
+
+/* .view-container {
+  width: fit-content;
+} */
+
+.view {
+  /* margin-left: auto; */
+  border: 1px solid green;
+  justify-content: end;
 }
 /* #app {
   display: grid;
@@ -115,16 +126,18 @@ form div {
   flex-flow: column wrap;
   padding: 10px;
   gap: 15px;
+  border: 2px solid pink;
 }
 
 .sidebar {
   position: relative;
   top: 100px;
+  border: 2px solid orange;
+  height: fit-content;
 }
 
 .sidebar a {
   display: inline-block;
-  margin: 1em;
   /* border: 1px solid pink; */
   border-radius: 5px;
   padding: 10px 10px;
@@ -203,9 +216,9 @@ input {
   flex-flow: row wrap;
   justify-content: space-evenly;
   box-sizing: border-box;
-  /* border: 2px solid royalblue; */
+  border: 2px solid royalblue;
   border-radius: 15px;
-  margin: 40px 40px;
+  margin: 10px 10px;
   padding: 10px 10px;
   align-content: space-around;
   gap: 15px 15px;
@@ -217,6 +230,8 @@ input {
 .account-info {
   flex-flow: column;
   justify-content: space-evenly;
+  border-radius: 15px;
+  backdrop-filter: blur(9px);
 }
 
 .products-container img,

@@ -7,13 +7,13 @@ class AllProducts extends React.Component {
   constructor() {
     super()
     this.state = {
-      productType: "all"
+      productType: 'all',
     }
     this.changeProductType = this.changeProductType.bind(this)
     this.handleDelete = this.handleDelete.bind(this)
   }
   changeProductType(event) {
-    this.setState({productType: event.target.value})
+    this.setState({ productType: event.target.value })
   }
   componentDidMount() {
     this.props.getProducts()
@@ -23,13 +23,15 @@ class AllProducts extends React.Component {
   }
   render() {
     let allProducts = this.props.products
-    if (this.state.productType === "fruit") {
-      allProducts = allProducts.filter(product => product.type === "fruit")
+    if (this.state.productType === 'fruit') {
+      allProducts = allProducts.filter((product) => product.type === 'fruit')
     }
-    if (this.state.productType === "vegetable") {
-      allProducts = allProducts.filter(product => product.type === "vegetable")
+    if (this.state.productType === 'vegetable') {
+      allProducts = allProducts.filter(
+        (product) => product.type === 'vegetable'
+      )
     }
-    if (this.state.productType === "all") {
+    if (this.state.productType === 'all') {
       allProducts = this.props.products
     }
     const admin = this.props.admin
@@ -40,8 +42,8 @@ class AllProducts extends React.Component {
     return (
       <div className="grid-item">
         <h1>Store</h1>
-        <div>
-          <label>Filter Products</label> <br />
+        <div className="flex-container view">
+          <label>View:</label>
           <select onChange={this.changeProductType}>
             <option value="all">All Products</option>
             <option value="fruit">Fruit</option>

@@ -1,15 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { addToCart } from '../store/cart'
 import { fetchSingleProduct } from '../store/singleProduct'
 
 class SingleProduct extends React.Component {
   constructor(props) {
     super(props),
       (this.state = {
-        quantity: 0,
+        quantity: 1,
       })
     this.increment = this.increment.bind(this)
     this.decrement = this.decrement.bind(this)
+    this.addToCart = this.addToCart.bind(this)
   }
   componentDidMount() {
     this.props.fetchProduct(this.props.match.params.productId)
@@ -20,11 +22,20 @@ class SingleProduct extends React.Component {
     })
   }
   decrement() {
-    if (this.state.quantity > 0) {
+    if (this.state.quantity > 1) {
       this.setState({
         quantity: this.state.quantity - 1,
       })
     }
+  }
+  addToCart() {
+    const item = {
+      userId: this.props.userId,
+      groceryId: this.props.product.id,
+      quantity: this.state.quantity,
+      subtotal: this.state.quantity * this.props.product.price * 100,
+    }
+    this.props.addItem(item)
   }
   render() {
     const { product } = this.props
@@ -46,7 +57,9 @@ class SingleProduct extends React.Component {
             >
               +
             </button>
-            <button id="add-to-cart-button">Add to Cart</button>
+            <button id="add-to-cart-button" onClick={this.addToCart}>
+              Add to Cart
+            </button>
           </div>
         </div>
 
@@ -63,12 +76,14 @@ class SingleProduct extends React.Component {
 const mapState = (state) => {
   return {
     product: state.singleProduct,
+    userId: state.auth.id,
   }
 }
 
 const mapDispatch = (dispatch) => {
   return {
     fetchProduct: (id) => dispatch(fetchSingleProduct(id)),
+    addItem: (item) => dispatch(addToCart(item)),
   }
 }
 

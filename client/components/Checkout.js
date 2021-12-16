@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const Checkout = ({ user, firstName, lastName, phoneNumber, address }) => {
   return (
@@ -33,7 +34,9 @@ const Checkout = ({ user, firstName, lastName, phoneNumber, address }) => {
           {address ? address : <input placeholder="Enter shipping address" />}
         </p>
       </div>
-      <button>Confirm Order</button>
+      <Link to="/users/:userId/thankyou">
+        <button>Confirm Order</button>
+      </Link>
     </div>
   )
 }

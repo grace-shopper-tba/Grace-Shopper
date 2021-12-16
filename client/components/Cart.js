@@ -122,7 +122,7 @@ class Cart extends React.Component {
                 <button onClick={this.handleEdit}>
                   {this.state.edit ? 'Update Cart' : 'Edit Cart'}
                 </button>
-                <Link to="/users/:userId/checkout">
+                <Link to={`/users/${this.props.userId}/checkout`}>
                   <button>Checkout</button>
                 </Link>
               </div>
@@ -143,7 +143,7 @@ const mapState = (state) => {
   return {
     cart: state.cart,
     // isLoggedIn: !!state.auth.id,
-    // userId: state.auth.id,
+    userId: state.auth.id,
   }
 }
 

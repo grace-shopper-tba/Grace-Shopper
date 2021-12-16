@@ -5,6 +5,7 @@ const SET_CART = 'SET_CART'
 const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
 // const UPDATE_ITEM = 'UPDATE_ITEM'
 const ADD_TO_CART = 'ADD_TO_CART'
+const LOGOUT = 'LOGOUT'
 
 export const setCart = (cart) => {
   return {
@@ -113,6 +114,8 @@ export default function cartReducer(state = [], action) {
     //   return
     case ADD_TO_CART:
       return action.newCart
+    case LOGOUT:
+      return []
     default:
       return state
   }

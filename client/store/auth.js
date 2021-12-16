@@ -7,11 +7,16 @@ const TOKEN = 'token'
  * ACTION TYPES
  */
 const SET_AUTH = 'SET_AUTH'
+const LOGOUT = 'LOGOUT'
 
 /**
  * ACTION CREATORS
  */
 const setAuth = (auth) => ({ type: SET_AUTH, auth })
+const _logout = () => ({
+  type: LOGOUT,
+  auth: {},
+})
 
 /**
  * THUNK CREATORS
@@ -49,10 +54,7 @@ export const authenticate =
 export const logout = () => {
   window.localStorage.removeItem(TOKEN)
   history.push('/login')
-  return {
-    type: SET_AUTH,
-    auth: {},
-  }
+  return _logout()
 }
 
 /**
@@ -61,6 +63,8 @@ export const logout = () => {
 export default function (state = {}, action) {
   switch (action.type) {
     case SET_AUTH:
+      return action.auth
+    case LOGOUT:
       return action.auth
     default:
       return state

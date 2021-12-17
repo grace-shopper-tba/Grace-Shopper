@@ -14,6 +14,7 @@ import Cart from './components/Cart'
 import ProductForm from './components/ProductForm'
 import Checkout from './components/Checkout'
 import OrderConfirmation from './components/OrderConfirmation'
+import GuestCart from './components/GuestCart'
 
 /**
  * COMPONENT
@@ -58,7 +59,7 @@ class Routes extends Component {
             <Route path="/signup" component={Signup} />
             <Route path="/products/:productId" component={SingleProduct} />
             <Route path="/products" component={AllProducts} />
-            <Route path="/cart" component={Cart} />
+            <Route path="/cart" component={GuestCart} />
           </Switch>
         )}
       </div>

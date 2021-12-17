@@ -5,10 +5,15 @@ class MyAccount extends React.Component {
   render() {
     const { firstName, lastName, email } = this.props
     return (
-      <div className="grid-item flex-container account-info">
-        <p>First Name: {firstName}</p>
-        <p>Last Name: {lastName}</p>
-        <p>Email: {email}</p>
+      <div className="grid-item flex-container">
+        <div className="my-account">
+          <h3>First Name: </h3>
+          <p>{firstName}</p>
+          <h3>Last Name: </h3>{' '}
+          <p>{lastName ? lastName : 'No last name on file yet'}</p>
+          <h3>Email: </h3>
+          <p>{email}</p>
+        </div>
       </div>
     )
   }

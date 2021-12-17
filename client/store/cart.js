@@ -1,5 +1,6 @@
 import axios from 'axios'
 const TOKEN = 'token'
+const CART = 'cart'
 
 const SET_CART = 'SET_CART'
 const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
@@ -42,6 +43,7 @@ export const _addToCart = (newCart) => {
 export const fetchCart = (userId) => {
   return async (dispatch) => {
     const token = window.localStorage.getItem(TOKEN)
+    let localCart = window.localStorage.getItem(CART)
     if (token) {
       const { data: cart } = await axios.get(`/api/orders/${userId}`, {
         headers: {
@@ -49,6 +51,10 @@ export const fetchCart = (userId) => {
         },
       })
       dispatch(setCart(cart))
+    } else if (localCart) {
+      localCart = window.localStorage.getItem(CART)
+      console.log('heyooo', localCart)
+      dispatch(setCart(JSON.parse(localCart)))
     }
   }
 }
@@ -96,11 +102,37 @@ export const changeItemInCart = (itemId, updateObj) => {
 // userId, groceryId, quantity, subtotal
 export const addToCart = (item) => {
   return async (dispatch) => {
-    // const token = window.localStorage.getItem(TOKEN)
-    // if (token) {
-    const { data: newCart } = await axios.post(`/api/orders`, item)
-    dispatch(_addToCart(newCart))
-    // }
+    const token = window.localStorage.getItem(TOKEN)
+    if (token) {
+      const { data: newCart } = await axios.post(`/api/orders`, item)
+      dispatch(_addToCart(newCart))
+    } else {
+      let cart = window.localStorage.getItem(CART)
+      if (cart) {
+        cart = JSON.parse(cart)
+      } else {
+        window.localStorage.setItem(CART, '{}')
+        cart = JSON.parse(window.localStorage.getItem(CART))
+        cart.orderItems = []
+      }
+
+      const { data: updatedItem } = await axios.get(
+        `/api/products/${item.groceryId}`
+      )
+      let hasGrocery = cart.orderItems.find(
+        (obj, idx) => obj.groceryId === item.groceryId
+      )
+
+      if (hasGrocery) {
+        hasGrocery.quantity += item.quantity
+        hasGrocery.subtotal += item.subtotal
+      } else {
+        cart.orderItems.push({ ...item, ...updatedItem })
+      }
+
+      localStorage.setItem(CART, JSON.stringify(cart))
+      dispatch(_addToCart(JSON.parse(window.localStorage.getItem(CART))))
+    }
   }
 }
 

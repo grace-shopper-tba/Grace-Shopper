@@ -9,7 +9,7 @@ const Checkout = ({ userId, firstName, lastName, phoneNumber, address }) => {
         <h3>Recipient Information</h3>
         <div className="flex-container cartInfo">
           <h5>First Name</h5>
-          <p>{firstName}</p>
+          <p>{firstName ? firstName : <input placeholder="First Name" />}</p>
         </div>
         <div className="flex-container cartInfo">
           <h5>Last Name</h5>
@@ -34,7 +34,8 @@ const Checkout = ({ userId, firstName, lastName, phoneNumber, address }) => {
           {address ? address : <input placeholder="Enter shipping address" />}
         </p>
       </div>
-      <Link to={`/users/${userId}/thankyou`}>
+
+      <Link to="/thankyou">
         <button>Confirm Order</button>
       </Link>
     </div>
@@ -48,6 +49,7 @@ const mapState = (state) => {
     lastName: state.auth.lastName,
     phoneNumber: state.auth.phoneNumber,
     address: state.auth.address,
+    isLoggedIn: !!state.auth.id,
   }
 }
 

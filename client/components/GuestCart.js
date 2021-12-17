@@ -88,7 +88,6 @@ class GuestCart extends React.Component {
                 </tbody>
                 <tfoot>
                   <tr>
-                    {/* <th className="hidden">Image</th> */}
                     <th colSpan="2">Total Qty.:</th>
                     <th>{totalQuantity}</th>
                     <th>Total Price:</th>

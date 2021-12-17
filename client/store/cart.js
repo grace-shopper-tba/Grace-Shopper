@@ -116,8 +116,12 @@ export const addToCart = (item) => {
         cart.orderItems = []
       }
 
-      const { data: updatedItem } = await axios.get(`/api/products/${item.groceryId}`)
-      let hasGrocery = cart.orderItems.find((obj, idx) => obj.groceryId === item.groceryId)
+      const { data: updatedItem } = await axios.get(
+        `/api/products/${item.groceryId}`
+      )
+      let hasGrocery = cart.orderItems.find(
+        (obj, idx) => obj.groceryId === item.groceryId
+      )
 
       if (hasGrocery) {
         hasGrocery.quantity += item.quantity

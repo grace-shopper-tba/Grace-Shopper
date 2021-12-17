@@ -106,9 +106,9 @@ class GuestCart extends React.Component {
                 <button onClick={this.handleEdit}>
                   {this.state.edit ? 'Update Cart' : 'Edit Cart'}
                 </button>
-                {/* <Link to={`/users/${this.props.userId}/checkout`}>
+                <Link to="/checkout">
                   <button>Checkout</button>
-                </Link> */}
+                </Link>
               </div>
             </div>
           ) : (

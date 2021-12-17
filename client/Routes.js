@@ -53,7 +53,13 @@ class Routes extends Component {
             <Route path="/signup" component={Signup} />
             <Route path="/products/:productId" component={SingleProduct} />
             <Route path="/products" component={AllProducts} />
+<<<<<<< Updated upstream
             <Route path="/cart" component={Cart} />
+=======
+            <Route path="/cart" component={GuestCart} />
+            <Route path="/checkout" component={Checkout} />
+            <Route path="/thankyou" component={OrderConfirmation} />
+>>>>>>> Stashed changes
           </Switch>
         )}
       </div>

@@ -61,6 +61,20 @@ async function seed() {
 
   await User.bulkCreate(users)
 
+  await Promise.all([
+    User.create({
+      firstName: 'hello',
+      email: 'hello@example.com',
+      password: secretPass,
+    }),
+    User.create({
+      firstName: 'world',
+      email: 'world@example.com',
+      password: secretAdmin,
+      isAdmin: true,
+    }),
+  ])
+
   console.log(`seeded ${users.length} users`)
   console.log(`seeded ${groceries.length} groceries`)
   console.log(`seeded successfully`)

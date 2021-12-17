@@ -35,11 +35,6 @@ export const _addToCart = (newCart) => {
   }
 }
 
-// thunk to get user's cart aka active order
-// a new user with no cart will have a cart made
-// this is an empty array, which you could check for
-// in react and instead render something else
-
 export const fetchCart = (userId) => {
   return async (dispatch) => {
     const token = window.localStorage.getItem(TOKEN)
@@ -53,7 +48,7 @@ export const fetchCart = (userId) => {
       dispatch(setCart(cart))
     } else if (localCart) {
       localCart = window.localStorage.getItem(CART)
-      console.log('heyooo', localCart)
+
       dispatch(setCart(JSON.parse(localCart)))
     }
   }

@@ -9,7 +9,6 @@ export const setUsers = (users) => {
     users,
   }
 }
-// Note: May need a new backend route for admins to see all user data, or to modify the existing one?
 
 //send the request only if the user is logged in
 export const fetchUsers = () => {

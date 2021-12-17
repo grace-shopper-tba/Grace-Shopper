@@ -15,24 +15,22 @@ const AuthForm = (props) => {
         {name === 'signup' && (
           <div>
             <div>
-              <label htmlFor="firstName">
-                {/* <small>First Name</small> */}
-              </label>
+              <label htmlFor="firstName" />
               <input name="firstName" type="text" placeholder="First Name" />
             </div>
             <div>
-              <label htmlFor="lastName">{/* <small>Last Name</small> */}</label>
+              <label htmlFor="lastName" />
               <input name="lastName" type="text" placeholder="Last Name" />
             </div>
             <div>
-              <label htmlFor="address">{/* <small>Address</small> */}</label>
+              <label htmlFor="address" />
               <input name="address" type="text" placeholder="Address" />
             </div>
           </div>
         )}
 
         <div>
-          <label htmlFor="email">{/* <small>Email</small> */}</label>
+          <label htmlFor="email" />
           <input
             name="email"
             type="text"
@@ -41,7 +39,7 @@ const AuthForm = (props) => {
           />
         </div>
         <div>
-          <label htmlFor="password">{/* <small>Password</small> */}</label>
+          <label htmlFor="password" />
           <input
             name="password"
             type="password"

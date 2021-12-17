@@ -41,11 +41,7 @@ class GuestCart extends React.Component {
               <table>
                 <thead>
                   <tr>
-                    {/* <th className="hidden">Image</th>
-                  <th className="hidden">Item Name</th> */}
-                    <th></th>
-                    <th>Name</th>
-                    <th>Qty.</th>
+                    <th colSpan="3">Qty.</th>
                     <th>Unit Price</th>
                     <th>Total</th>
                   </tr>
@@ -68,7 +64,6 @@ class GuestCart extends React.Component {
                             <button
                               onClick={function () {
                                 newQuantity = item.quantity--
-                                console.log(newQuantity)
                               }}
                             >
                               -
@@ -77,7 +72,6 @@ class GuestCart extends React.Component {
                             <button
                               onClick={function () {
                                 newQuantity = item.quantity++
-                                console.log(newQuantity)
                               }}
                             >
                               +

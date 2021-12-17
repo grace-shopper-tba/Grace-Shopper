@@ -39,7 +39,6 @@ class Cart extends React.Component {
 
   render() {
     const cart = this.props.cart.find((order) => order.active === true) || {}
-    console.log('try to find the item qty -->', cart)
     let totalPrice = 0
     let totalQuantity = 0
     cart.orderItems
@@ -84,7 +83,6 @@ class Cart extends React.Component {
                             <button
                               onClick={function () {
                                 newQuantity = item.quantity--
-                                console.log(newQuantity)
                               }}
                             >
                               -
@@ -93,7 +91,6 @@ class Cart extends React.Component {
                             <button
                               onClick={function () {
                                 newQuantity = item.quantity++
-                                console.log(newQuantity)
                               }}
                             >
                               +

@@ -23,12 +23,6 @@ const User = db.define('user', {
       isEmail: true,
     },
   },
-  //--- username will be replaced with email---
-  // username: {
-  //   type: Sequelize.STRING,
-  //   unique: true,
-  //   allowNull: false,
-  // },
   password: {
     type: Sequelize.STRING,
     allowNull: false,
@@ -49,7 +43,7 @@ const User = db.define('user', {
   },
 })
 
-module.exports = User;
+module.exports = User
 
 /**
  * instanceMethods
@@ -102,11 +96,11 @@ const hashPassword = async (user) => {
 }
 
 const giveUserCart = async (user) => {
-  await user.createOrder();
+  await user.createOrder()
 }
 
 const giveBulkUsersCarts = async (users) => {
-  users.map(user => user.createOrder())
+  users.map((user) => user.createOrder())
 }
 
 User.beforeCreate(hashPassword)

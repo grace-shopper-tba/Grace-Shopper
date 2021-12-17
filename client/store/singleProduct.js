@@ -42,7 +42,6 @@ export const updateProduct = (product, history) => {
           },
         }
       )
-      console.log('Dispatching')
       dispatch(_updateProduct(updated))
       history.push(`/products/${product.id}`)
     }

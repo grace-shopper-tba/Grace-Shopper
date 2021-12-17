@@ -53,7 +53,7 @@ export const fetchCart = (userId) => {
       dispatch(setCart(cart))
     } else if (localCart) {
       localCart = window.localStorage.getItem(CART)
-      console.log('heyooo', localCart)
+
       dispatch(setCart(JSON.parse(localCart)))
     }
   }

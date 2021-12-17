@@ -68,7 +68,6 @@ class GuestCart extends React.Component {
                             <button
                               onClick={function () {
                                 newQuantity = item.quantity--
-                                console.log(newQuantity)
                               }}
                             >
                               -
@@ -77,7 +76,6 @@ class GuestCart extends React.Component {
                             <button
                               onClick={function () {
                                 newQuantity = item.quantity++
-                                console.log(newQuantity)
                               }}
                             >
                               +

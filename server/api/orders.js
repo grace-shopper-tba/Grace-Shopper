@@ -10,7 +10,7 @@ router.get('/', authorized, isAdmin, async (req, res, next) => {
     const orders = await Order.findAll({ include: OrderItem })
     res.status(200).send(orders)
   } catch (error) {
-    console.log('Error in (all) orders get route')
+    console.error(error)
     next(error)
   }
 })
@@ -36,7 +36,7 @@ router.get('/:userId', authorized, isUser, async (req, res, next) => {
       res.sendStatus(401)
     }
   } catch (error) {
-    console.log('Error in orders get route')
+    console.error(error)
     next(error)
   }
 })
@@ -65,7 +65,7 @@ router.post('/', async (req, res, next) => {
     res.send(await order.getOrderItems())
     // }
   } catch (error) {
-    console.log('Error in orders post route')
+    console.error(error)
     next(error)
   }
 })
@@ -84,7 +84,7 @@ router.put('/:itemId', authorized, isUser, async (req, res, next) => {
       res.sendStatus(404)
     }
   } catch (error) {
-    console.log('Error in orders put route')
+    console.error(error)
     next(error)
   }
 })
@@ -104,7 +104,7 @@ router.delete('/:itemId', authorized, isUser, async (req, res, next) => {
       res.sendStatus(404)
     }
   } catch (error) {
-    console.log('Error in orders delete route')
+    console.error(error)
     next(error)
   }
 })

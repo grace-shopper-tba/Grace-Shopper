@@ -7,7 +7,9 @@ const {
 const groceries = require('./groceryData.json')
 
 const faker = require('faker')
-const axios = require('axios')
+const dotenv = require('dotenv').config()
+const secretPass = process.env.secretPass
+const secretAdmin = process.env.secretAdmin
 
 /**
  * seed - this function clears the database, updates tables to
@@ -17,7 +19,7 @@ async function seed() {
   await db.sync({ force: true }) // clears db and matches models to tables
   console.log('db synced!')
 
-  //creating groceries
+  //creating dummy grocery prices
 
   for (let i = 0; i < groceries.length; i++) {
     groceries[i].price = faker.datatype.number({
@@ -43,7 +45,7 @@ async function seed() {
     )}, ${faker.address.city()}, ${state}, ${faker.address.zipCodeByState(
       state
     )}`
-    let isAdmin = faker.datatype.boolean()
+    let isAdmin = false
 
     users.push({
       firstName,
@@ -63,12 +65,12 @@ async function seed() {
     User.create({
       firstName: 'hello',
       email: 'hello@example.com',
-      password: '123',
+      password: secretPass,
     }),
     User.create({
       firstName: 'world',
       email: 'world@example.com',
-      password: '123',
+      password: secretAdmin,
       isAdmin: true,
     }),
   ])
@@ -76,17 +78,6 @@ async function seed() {
   console.log(`seeded ${users.length} users`)
   console.log(`seeded ${groceries.length} groceries`)
   console.log(`seeded successfully`)
-
-
-  // const testUser = await User.findByPk(101)
-  // console.log(testUser)
-  // const createOrder = await testUser.createOrder()
-  // console.log(createOrder)
-  // const addOrderItem = await createOrder.createOrderItem({
-  //   quantity: 3,
-  //   subtotal: 18,
-  // })
-  // const setGrocery = await addOrderItem.setGrocery(1)
 
   return {
     users,

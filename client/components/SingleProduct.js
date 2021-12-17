@@ -59,8 +59,10 @@ class SingleProduct extends React.Component {
 
         <div className="single-product-info">
           <h1>{product.name}</h1>
-          <p>Season: {product.season}</p>
-          <p>Price: ${product.price}</p>
+          <h4>Season: </h4>
+          <p>{product.season}</p>
+          <h4>Price: </h4>
+          <p>${product.price}</p>
         </div>
       </div>
     )

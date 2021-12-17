@@ -38,7 +38,8 @@ class SingleProduct extends React.Component {
     this.props.addItem(item)
   }
   render() {
-    const { product } = this.props
+    const product = this.props.product || {}
+    const season = product.season || []
     return (
       <div className="flex-container single-product-container">
         <div>
@@ -59,8 +60,12 @@ class SingleProduct extends React.Component {
 
         <div className="single-product-info">
           <h1>{product.name}</h1>
-          <h4>Season: </h4>
-          <p>{product.season}</p>
+          <h4>Season(s): </h4>
+          <ul>
+            {season.map((season) => (
+              <li key={season}>{season}</li>
+            ))}
+          </ul>
           <h4>Price: </h4>
           <p>${product.price}</p>
         </div>

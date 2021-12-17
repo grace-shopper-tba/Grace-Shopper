@@ -32,8 +32,8 @@ const Checkout = ({
           </p>
         </div>
       </div>
-      <div>
-        <h3>Shipping Address</h3>
+      <h3>Shipping Address</h3>
+      <div className="flex-container cartInfo">
         <span>{firstName}</span>
         <span>{lastName ? lastName : null}</span>
         <p>

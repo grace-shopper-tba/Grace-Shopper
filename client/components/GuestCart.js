@@ -106,10 +106,12 @@ class GuestCart extends React.Component {
               </div>
             </div>
           ) : (
-            <small>
-              Your cart is empty. See <Link to="/products">products</Link> to
-              start shopping
-            </small>
+            <div className="form">
+              <h3>
+                Your cart is empty. See <Link to="/products">products</Link> to
+                start shopping{' '}
+              </h3>
+            </div>
           )}
         </div>
       </div>

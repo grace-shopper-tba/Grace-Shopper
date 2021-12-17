@@ -11,8 +11,6 @@ class Cart extends React.Component {
       newQuantity: 0,
     }
     this.handleEdit = this.handleEdit.bind(this)
-    // this.increment = this.increment.bind(this)
-    // this.decrement = this.decrement.bind(this)
   }
   componentDidMount() {
     this.props.getCart(this.props.match.params.userId)
@@ -21,19 +19,6 @@ class Cart extends React.Component {
   handleEdit() {
     this.setState({ edit: !this.state.edit })
   }
-
-  // increment() {
-  //   this.setState({
-  //     quantity: this.state.quantity + 1,
-  //   })
-  // }
-  // decrement() {
-  //   if (this.state.quantity > 1) {
-  //     this.setState({
-  //       quantity: this.state.quantity - 1,
-  //     })
-  //   }
-  // }
 
   render() {
     const cart = this.props.cart.find((order) => order.active === true) || {}
@@ -103,7 +88,6 @@ class Cart extends React.Component {
                 </tbody>
                 <tfoot>
                   <tr>
-                    {/* <th className="hidden">Image</th> */}
                     <th colSpan="2">Total Qty.:</th>
                     <th>{totalQuantity}</th>
                     <th>Total Price:</th>
@@ -121,10 +105,12 @@ class Cart extends React.Component {
               </div>
             </div>
           ) : (
-            <small>
-              Your cart is empty. See <Link to="/products">products</Link> to
-              start shopping
-            </small>
+            <div>
+              <h3>
+                Your cart is empty. See <Link to="/products">products</Link> to
+                start shopping
+              </h3>
+            </div>
           )}
         </div>
       </div>

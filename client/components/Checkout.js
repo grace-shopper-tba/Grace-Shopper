@@ -2,7 +2,13 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-const Checkout = ({ userId, firstName, lastName, phoneNumber, address }) => {
+const Checkout = ({
+  isLoggedIn,
+  firstName,
+  lastName,
+  phoneNumber,
+  address,
+}) => {
   return (
     <div className="grid-item checkout-container">
       <div>
@@ -44,7 +50,6 @@ const Checkout = ({ userId, firstName, lastName, phoneNumber, address }) => {
 
 const mapState = (state) => {
   return {
-    userId: state.auth.id,
     firstName: state.auth.firstName,
     lastName: state.auth.lastName,
     phoneNumber: state.auth.phoneNumber,

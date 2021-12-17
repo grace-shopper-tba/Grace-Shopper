@@ -2,9 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { fetchCart } from '../store/cart'
-//component has been tested for logged in user with active cart, admin user with empty cart
-//yet to add- ability for visitor to view cart (approach- if not logged in, create empty order)
-//add to cart functionality - thunks needs to be created
+
 class Cart extends React.Component {
   constructor() {
     super()
@@ -58,8 +56,6 @@ class Cart extends React.Component {
               <table>
                 <thead>
                   <tr>
-                    {/* <th className="hidden">Image</th>
-                  <th className="hidden">Item Name</th> */}
                     <th colSpan="3">Qty.</th>
                     <th>Unit Price</th>
                     <th>Total</th>
@@ -139,7 +135,6 @@ class Cart extends React.Component {
 const mapState = (state) => {
   return {
     cart: state.cart,
-    // isLoggedIn: !!state.auth.id,
     userId: state.auth.id,
   }
 }

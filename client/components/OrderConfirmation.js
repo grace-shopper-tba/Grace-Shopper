@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default function OrderConfirmation() {
+  window.localStorage.removeItem('cart')
   return (
     <div className="grid-item flex-container thank-you">
       <h1>Thank you for your order!</h1>

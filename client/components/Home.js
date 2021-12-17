@@ -49,9 +49,7 @@ export const Home = (props) => {
               functionality for seeing a single product, adding an item to the
               cart, and guest user cart functionality.
               <div>
-                <a href="https://www.linkedin.com/in/chenelmorgan/">
-                  Linked In
-                </a>
+                <a href="https://www.linkedin.com/in/chenelmorgan/">LinkedIn</a>
               </div>
             </div>
           </div>
